@@ -3,6 +3,8 @@ import openai
 from dotenv import load_dotenv, find_dotenv
 import pandas as pd
 import time
+from langchain.cache import InMemoryCache
+from langchain.globals import set_llm_cache
 
 app = Flask(__name__)
 
@@ -15,6 +17,9 @@ df['Primeira vez que entrou na fase Ganho'] = pd.to_datetime(df['Primeira vez qu
 
 # Carregar variáveis de ambiente
 _ = load_dotenv(find_dotenv())
+
+# Ativar o cacheamento
+set_llm_cache(InMemoryCache())
 
 # Cria o client da openai
 client = openai.Client()
