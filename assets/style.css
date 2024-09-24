@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda, ou flex-end para à direita */
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 1500px; /* Ajuste o tamanho da imagem aqui */
+    height: 100px;
+}
+
+
+/* Aplica a fonte globalmente a todos os elementos */
+body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, ul, ol, header {
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    background-color: #292929;
+}
+.st-bh {
+    color-scheme: #1a1a1a;
+    background-color: rgb(104, 0, 228);
+}
+
+.st-c2 {
+    background: color #292929;;
+}
+
+.st-az {
+    background-color: rgb(104, 0, 228);
+}
+
+.st-emotion-cache-h4xjwg {
+    background: #292929;
+}
+
+
+.st-emotion-cache-1itdyc2 {
+
+    background-color: rgb(21, 21, 16) !important;
+}
+
