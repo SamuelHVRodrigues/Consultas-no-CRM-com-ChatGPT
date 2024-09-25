@@ -10,7 +10,7 @@ def carregar_base():
     Returns:
         DataFrame: DataFrame contendo os dados carregados e pré-processados.
     """
-    base = pd.read_csv("df_CRM.csv")
+    base = pd.read_csv("data/df_CRM.csv")
     base['Valor Final'] = pd.to_numeric(base['Valor Final'], errors='coerce')
     base['Data de cadastro'] = pd.to_datetime(base['Data de cadastro'], errors='coerce')
     base['Ano'] = base['Data de cadastro'].dt.year
