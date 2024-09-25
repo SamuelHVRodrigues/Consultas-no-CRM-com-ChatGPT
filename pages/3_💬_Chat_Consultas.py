@@ -12,7 +12,7 @@ def contar_tokens(texto):
 MAX_TOKENS_INPUT = 100  # Exemplo: limite de 100 tokens de entrada
 
 # Carregar a base de dados que foi tratada em outro arquivo
-df = pd.read_csv(r'df_CRM.csv')
+df = pd.read_csv(r'/dados/df_CRM.csv')
 
 # Inicializar o estado da sessão para armazenar o histórico
 if 'historico' not in st.session_state:
