@@ -10,7 +10,7 @@ st.title("Análise de Desempenho Individual")
 base = carregar_base()
 
 # Selecionar vendedor
-vendedores = base['Responsável'].dropna().unique()
+vendedores = base['Vendedor'].dropna().unique()  # Alterado para 'Vendedor' na nova base
 vendedor_selecionado = st.sidebar.selectbox("Selecione o Vendedor:", vendedores)
 
 # Filtro de ano
@@ -19,7 +19,7 @@ anos_disponiveis.append('Tudo')
 ano_selecionado = st.sidebar.selectbox("Selecione o ano:", anos_disponiveis)
 
 # Filtrar base de acordo com o vendedor e ano selecionados
-base_vendedor = base[base['Responsável'] == vendedor_selecionado]
+base_vendedor = base[base['Vendedor'] == vendedor_selecionado]
 
 if ano_selecionado != 'Tudo':
     base_vendedor = base_vendedor[base_vendedor['Ano'] == int(ano_selecionado)]
@@ -39,7 +39,7 @@ col3.metric("Taxa de Conversão", f"{taxa_conversao:.2f}%")
 
 # Gráfico de Vendas por Mês
 if not base_ganho.empty:
-    base_ganho['Mês'] = pd.to_datetime(base_ganho['Finalizado em']).dt.strftime('%Y-%m')
+    base_ganho['Mês'] = pd.to_datetime(base_ganho['Data de cadastro']).dt.strftime('%Y-%m')  # Atualizado para 'Data de cadastro'
     vendas_por_mes = base_ganho.groupby('Mês')['Valor Final'].sum().reset_index()
 
     st.subheader("Faturamento por Mês")

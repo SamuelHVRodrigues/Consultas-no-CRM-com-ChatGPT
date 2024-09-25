@@ -131,10 +131,10 @@ with col6:
     # Resetar o índice para uso com Altair
     dados_faturamento = dados_faturamento.reset_index(drop=True)
     chart_faturamento = alt.Chart(dados_faturamento).mark_line(point=True).encode(
-        x=alt.X('Finalizado em:T', title='Data'),
+        x=alt.X('Data de cadastro:T', title='Data'),
         y=alt.Y('Faturamento Acumulado:Q', title='Faturamento Acumulado (R$)'),
         tooltip=[
-            alt.Tooltip('Finalizado em:T', title='Data'),
+            alt.Tooltip('Data de cadastro:T', title='Data'),
             alt.Tooltip('Faturamento Acumulado:Q', title='Faturamento (R$)')
         ]
     ).properties(
