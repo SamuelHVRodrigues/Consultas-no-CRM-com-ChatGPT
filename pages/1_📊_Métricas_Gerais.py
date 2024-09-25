@@ -70,7 +70,7 @@ taxa_conversao = calcular_taxa_conversao(base_ano)
 col_title, col1, col2, col3 = st.columns([2, 1, 1, 1])
 
 with col_title:
-    st.markdown("# Métricas Gerais")
+    st.markdown("# Métricas Gerai")
 with col1:
     st.markdown(f"""
         <div class="metric">
