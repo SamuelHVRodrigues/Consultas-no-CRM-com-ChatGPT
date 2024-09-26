@@ -116,7 +116,7 @@ def ask_openai():
 
             # Capturar os tokens usados
             # tokens_usados = run.get('usage', {}).get('total_tokens', 'Não disponível')  # Pega o total de tokens usados
-            tokens_usados = run.usage.total_tokens
+            tokens_usados = run.usage.completion_tokens
             resposta = messages.data[0].content[0].text.value
 
             return jsonify({'answer': resposta, 'tokens_usados': tokens_usados})
