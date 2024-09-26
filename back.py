@@ -6,8 +6,11 @@ import time
 
 app = Flask(__name__)
 
+# Definir limite de tokens de saída
+MAX_TOKENS_OUTPUT = 150  # Exemplo: limite de 150 tokens de resposta
+
 # Carregar a base de dados que foi tratada em outro arquivo
-df = pd.read_csv(r'df_CRM.csv')
+df = pd.read_csv(r'data\df_CRM.csv')
 
 # Converter para datetime
 df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
@@ -21,7 +24,7 @@ client = openai.Client()
 
 # Passa o arquivo para a openai
 file = client.files.create(
-    file = open(r'df_CRM.csv', 'rb'),
+    file = open(r'data\df_CRM.csv', 'rb'),
     purpose='assistants'
 )
 file_id = file.id # Salva o ID do arquivo
@@ -83,7 +86,8 @@ def ask_openai():
         run = client.beta.threads.runs.create(
             thread_id = thread_id,
             assistant_id = assistant_id,
-            instructions=''
+            instructions='',
+            # max_completion_tokens=MAX_TOKENS_OUTPUT # TEM QUE AUMENTAR A QUANTIDADE DE TOKENS, SE FOR MUITO BAIXA O GPT RETORNA UM ERRO DE RESPOSTA INCOMPLETA
         )
 
         # Define um timeout de 30 segundos e o tempo de espera entre verificações
@@ -109,7 +113,13 @@ def ask_openai():
             messages = client.beta.threads.messages.list(
                 thread_id = thread_id
             )
-            return jsonify({'answer': messages.data[0].content[0].text.value})
+
+            # Capturar os tokens usados
+            # tokens_usados = run.get('usage', {}).get('total_tokens', 'Não disponível')  # Pega o total de tokens usados
+            tokens_usados = run.usage.total_tokens
+            resposta = messages.data[0].content[0].text.value
+
+            return jsonify({'answer': resposta, 'tokens_usados': tokens_usados})
         elif run.status == 'in_progress':
             return jsonify({'answer': 'Erro na execução: O processamento demorou mais do que o esperado.'})
         else:
