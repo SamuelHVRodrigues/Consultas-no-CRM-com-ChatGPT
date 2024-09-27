@@ -1,0 +1,44 @@
+name: Deploy Consultas no CRM to EC2
+
+# on -> Define quando o workflow será acionado (neste caso, a cada push na branch main)
+on:
+  push:
+    branches:
+      - main
+
+# jobs -> Cada job define um conjunto de ações que o workflow vai realizar
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Chekout do código
+      - name: Check out the repository
+        # actions/checkout@v2 -> Faz o clone do repositório no GitHub Actions
+        uses: actions/checkout@v2
+
+      # Adiciona a chave privada da instância EC2 da AWS
+      - name: Add SSH Key
+        # A primeira linha cria um arquivo .pem a partir da Secret do GitHub
+        # chmod 600 ~/ec2-key.pem -> Dá permissão de leitura e escrita ao proprietário do arquivo (quem gerou a chave)
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/ec2-key.pem
+          chmod 600 ~/ec2-key.pem
+
+      # Faz o deploy na instância EC2 da AWS
+      - name: Deploy to EC2
+        # A primeira linha é para conectar à instância EC2 da AWS
+        # << EOF -> (End of File) Indica que os comandos que foram passados até o momento do '<< EOF' são um bloco
+        # cd ~/app -> Navega para o diretório do projeto
+        # git pull origin main -> Faz o 'git pull' para pegar as últimas mudanças
+        # python3 back.py -> Reinicia a aplicação com 'python3 back.py'
+        # EOF -> (End of File) Finaliza o bloco de comandos, indicando que não há mais comandos para serem lidos
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ~/ec2-key.pem ubuntu@ec2-15-228-13-32.sa-east-1.compute.amazonaws.com << EOF
+          cd ~/app
+          git pull origin main
+          python3 back.py  # Reinicia a aplicação
+          EOF
+        env:
+          # Passa a chave privada como variável de ambiente
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
