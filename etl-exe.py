@@ -1,2 +1,3 @@
 import ETL
 
+ETL.ETLPipefy()
