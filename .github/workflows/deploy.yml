@@ -41,6 +41,7 @@ jobs:
           source venv-crm/bin/activate
           git pull origin main
           killall gunicorn || true
+          python -m back
           gunicorn --bind 0.0.0.0:3333 back:app
           EOF
         env:
