@@ -30,12 +30,14 @@ jobs:
         # A primeira linha é para conectar à instância EC2 da AWS
         # << EOF -> (End of File) Indica que os comandos que foram passados até o momento do '<< EOF' são um bloco
         # cd ~/app -> Navega para o diretório do projeto
+        # source venv-crm/bin/activate -> Ativar o ambiente virtual
         # git pull origin main -> Faz o 'git pull' para pegar as últimas mudanças
         # python3 back.py -> Reinicia a aplicação com 'python3 back.py'
         # EOF -> (End of File) Finaliza o bloco de comandos, indicando que não há mais comandos para serem lidos
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/ec2-key.pem ubuntu@ec2-15-228-13-32.sa-east-1.compute.amazonaws.com << EOF
           cd ~/app
+          source venv-crm/bin/activate
           git pull origin main
           python3 back.py  # Reinicia a aplicação
           EOF
