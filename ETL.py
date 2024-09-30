@@ -102,7 +102,7 @@ def get_data_gsheet():
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
     return df
-
+# a partir daqui, todas as variaveis que estão sendo usadas são do tipo DataFrame
 def rename_columns_ENG(relatorio):
     relatorio.rename(columns={
         'Title': 'Nome do cliente',
@@ -187,8 +187,8 @@ def treat_data(relatorio):
     base_completa = base_completa.sort_values(by='Criado em')
 
     # Preenchendo valores NaN com strings vazias
-    relatorio = base_completa.fillna('')
-    return relatorio
+    atualizada = base_completa.fillna('')
+    return atualizada
 
 def UploadDataToGSheet(df):
     try:
