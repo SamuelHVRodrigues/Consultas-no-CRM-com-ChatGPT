@@ -250,7 +250,7 @@ def ETLPipefy():
         print("Relatório salvo com sucesso.")
     else:
         print("Não foi possível extrair o relatório.")
-
+    #upa as base atualizada para o Google Sheets
     UploadDataToGSheet(relatorio)
 
 
