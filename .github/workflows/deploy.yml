@@ -32,7 +32,7 @@ jobs:
         # cd ~/app -> Navega para o diretório do projeto
         # source venv-crm/bin/activate -> Ativar o ambiente virtual
         # git pull origin main -> Faz o 'git pull' para pegar as últimas mudanças
-        # gunicorn killall -> Interrompe todos os processos em andamento
+        # killall gunicorn -> Interrompe todos os processos em andamento
         # gunicorn --bind 0.0.0.0:3333 back:app -> Executa a aplicação
         # EOF -> (End of File) Finaliza o bloco de comandos, indicando que não há mais comandos para serem lidos
         run: |
@@ -40,7 +40,7 @@ jobs:
           cd ~/app
           source venv-crm/bin/activate
           git pull origin main
-          gunicorn killall
+          killall gunicorn
           gunicorn --bind 0.0.0.0:3333 back:app
           EOF
         env:
