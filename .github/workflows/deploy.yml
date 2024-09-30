@@ -40,6 +40,7 @@ jobs:
           cd ~/app
           source venv-crm/bin/activate
           git pull origin main
+          pip install gunicorn
           killall gunicorn || true
           gunicorn --bind 0.0.0.0:3333 back:app
           EOF
