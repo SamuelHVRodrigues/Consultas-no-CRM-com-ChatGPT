@@ -7,10 +7,10 @@ import time
 app = Flask(__name__)
 
 # Definir limite de tokens de saída
-MAX_TOKENS_OUTPUT = 300  # Exemplo: limite de 150 tokens de resposta
+MAX_TOKENS_OUTPUT = 500  # Exemplo: limite de 500 tokens de resposta
 
 # Carregar a base de dados que foi tratada em outro arquivo
-df = pd.read_csv(r'data\df_CRM.csv')
+df = pd.read_csv(r'data/df_CRM.csv')
 
 # Converter para datetime
 df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
@@ -32,32 +32,26 @@ file_id = file.id # Salva o ID do arquivo
 # Cria o assistant
 assistant = client.beta.assistants.create(
     name='Consultor CRM de vendas CITi',
-    instructions='Você é um especialista nas informações de negociações e vendas do CITi \
-        , empresa júnior de tecnologia do Centro de Informática da UFPE. Você deve usar os \
-        dados informados, que estão em csv, relativos às oportunidades de vendas do CITi para responder às perguntas'
-        'Colunas:\n'
-        '- Fase atual: Indica em qual fase do processo de vendas a oportunidade se encontra (Perdido, Renegociação, Ganho,'
-        'Leads não-qualificados, Negociação, Montagem de proposta, Diagnóstico, Apresentação de proposta, Base de prospects,' 
-        'Qualificação).\n'
-        '- Data de cadastro: Data e hora em que a oportunidade foi registrada.\n'
-        '- Nome do cliente: Nome da pessoa responsável pelo contato pelo lado do cliente.\n'
-        '- Empresa: Nome da empresa do cliente.\n'
-        '- Vendedor: Nome do colaborador da nossa empresa responsável pela oportunidade (vendedor responsável).\n'
-        '- Perfil de cliente: Tipo de cliente (Empresa consolidada, Startup, Empreendedor, Empresas Juniores, Grupo de pesquisa).\n'
-        '- Setor: Indústria ou setor em que o cliente atua (Energia e Sustentabilidade, Saúde e Cuidados Médicos, Ciências e Inovação' 
-        'Transporte e Logística, Tecnologia da Informação (TI), entre outros).\n'
-        '- Checklist vertical: Tipo de serviço solicitado pelo cliente (Desenvolvimento Web, Concepção, Construção de API, entre outros)'
-        'Obs: Nesse campo de Checklist vertical pode aparecer mais de um tipo de serviço junto (para o caso do cliente querer mais de uma coisa).\n'
-        '- Origem: Canal de origem do lead (Marketing, Indicação de Ej, UFPE, Indicação MEJ, Parcerias, Ex cliente, Comunidade CITi, Prospecção Ativa' 
-        'CIn, Porto Digital, Membre do CITi, Eventos, Renegociação).\n'
-        '- Valor Final: Valor final da proposta.\n'
-        '- Motivo da perda: Razão pela qual a oportunidade foi perdida, se aplicável.\n'
-        '- Motivo da não qualificação: Razão pela qual o lead não foi qualificado, se aplicável.\n'
-        '- Tempo total na fase Base de prospects (dias): Quantidade de tempo que a oportunidade permaneceu na fase inicial.\n'
-        '- Tempo total nas outras fases: Colunas que indicam o tempo em dias que a oportunidade permaneceu em cada uma '
-        'das fases (qualificação, diagnóstico, montagem de proposta, apresentação, negociação, renegociação).\n'
-        '- Primeira vez que entrou na fase Ganho: Indica quando a oportunidade foi marcada como "Ganho", caso tenha ocorrido.\n\n'
-        'Essa estrutura permite acompanhar o andamento das oportunidades de venda e identificar potenciais gargalos no processo comercial.',
+    instructions="Você deve usar os dados informados, que estão em csv, relativos às oportunidades de vendas do CITi para responder às perguntas."
+"Colunas:"
+"- Fase atual: Indica em qual fase do processo de vendas a oportunidade se encontra (Perdido, Renegociação, Ganho, Leads não-qualificados, Negociação, Montagem de proposta, Diagnóstico, Apresentação de proposta, Base de prospects, Qualificação)."
+"- Data de cadastro: Data e hora em que a oportunidade foi registrada."
+"- Nome do cliente: Nome da pessoa responsável pelo contato pelo lado do cliente."
+"- Empresa: Nome da empresa do cliente."
+"- Vendedor: Nome do colaborador da nossa empresa responsável pela oportunidade (vendedor responsável)."
+"- Perfil de cliente: Tipo de cliente (Empresa consolidada, Startup, Empreendedor, Empresas Juniores, Grupo de pesquisa)."
+"- Setor: Indústria ou setor em que o cliente atua (Energia e Sustentabilidade, Saúde e Cuidados Médicos, Ciências e Inovação, Transporte e Logística, Tecnologia da Informação (TI), entre outros)."
+"- Checklist vertical: Tipo de serviço solicitado pelo cliente (Desenvolvimento Web, Concepção, Construção de API, entre outros)."
+"Obs: Nesse campo de Checklist vertical pode aparecer mais de um tipo de serviço junto (para o caso do cliente querer mais de uma coisa)."
+"- Origem: Canal de origem do lead (Marketing, Indicação de Ej, UFPE, Indicação MEJ, Parcerias, Ex cliente, Comunidade CITi, Prospecção Ativa, CIn, Porto Digital, Membre do CITi, Eventos, Renegociação)."
+"- Valor Final: Valor final da proposta."
+"- Motivo da perda: Razão pela qual a oportunidade foi perdida, se aplicável."
+"- Motivo da não qualificação: Razão pela qual o lead não foi qualificado, se aplicável."
+"- Tempo total na fase Base de prospects (dias): Quantidade de tempo que a oportunidade permaneceu na fase inicial."
+"- Tempo total nas outras fases: Colunas que indicam o tempo em dias que a oportunidade permaneceu em cada uma das fases (qualificação, diagnóstico, montagem de proposta, apresentação, negociação, renegociação)."
+"- Primeira vez que entrou na fase Ganho: Indica quando a oportunidade foi marcada como 'Ganho', caso tenha ocorrido."
+"Essa estrutura permite acompanhar o andamento das oportunidades de venda e identificar potenciais gargalos no processo comercial."
+"- Entenda vendas como vendas concluídas, ou seja oportunidades que foram ganhas e faturamento como soma das vendas concluídas.",
     tools=[{'type': 'code_interpreter'}],
     tool_resources={'code_interpreter': {'file_ids': [file_id]}},
     model='gpt-4o-mini'
