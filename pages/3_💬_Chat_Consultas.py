@@ -2,6 +2,12 @@ import streamlit as st
 import requests
 import pandas as pd
 import tiktoken  # Biblioteca para calcular tokens
+import uuid
+
+if 'session_id' not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+session_id = st.session_state.session_id
 
 # Função para contar tokens de entrada
 def contar_tokens(texto):
@@ -26,7 +32,7 @@ st.subheader("Tabela Completa")
 st.dataframe(df)
 
 # Entrada de pergunta
-question = st.text_input("Digite sua pergunta:")
+prompt = st.text_input("Digite sua pergunta:")
 
 # Contar tokens da pergunta
 tokens_usados = contar_tokens(question)
@@ -38,7 +44,9 @@ if st.button("Perguntar"):
         st.warning(f"A pergunta excede o limite máximo de {MAX_TOKENS_INPUT} tokens.")
     elif question:
         # Fazer a requisição para a API do back-end
-        response = requests.post("http://15.228.13.32:3333/ask", json={"question": question})
+        url = "http://127.0.0.1:5000/ask"
+        data = {'session_id': session_id, 'prompt': prompt}
+        response = requests.post(url, json=data)
         if response.status_code == 200:
             data = response.json()
             resposta = data.get('answer')

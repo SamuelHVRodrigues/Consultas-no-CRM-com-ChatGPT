@@ -72,7 +72,8 @@ thread_id = thread.id # Salva o ID da thread
 @app.route("/ask", methods=["POST"])
 def ask_openai():
     data = request.json
-    question = data.get("question", "")
+    prompt = data.get("prompt", "")
+    session_id = data['session_id']
     
     if question:
         # Adiciona mensagem à thread existente
