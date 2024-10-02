@@ -65,3 +65,21 @@ def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
         base_agrupado = base_filtrada.groupby(categoria)['Valor Final'].sum().reset_index()
         base_agrupado.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
     return base_agrupado
+
+def preparar_dados_metricas_vendedores(base_filtrada, metrica):
+    """
+    Prepara os dados para o gráfico de metricas de vendedores.
+
+    Args:
+        base_filtrada (DataFrame): DataFrame com os dados filtrados.
+
+    Returns:
+        DataFrame: DataFrame com 'Vendedor' e 'Faturamento'.
+    """
+    if metrica == 'Quantidade':
+        base_metricas = base_filtrada.groupby('Vendedor').size().reset_index(name='Quantidade')
+    else:
+        base_metricas = base_filtrada.groupby('Vendedor')['Valor Final'].sum().reset_index()
+        base_metricas.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
+        base_metricas = base_metricas.sort_values('Faturamento', ascending=False)
+    return base_metricas
