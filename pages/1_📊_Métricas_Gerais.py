@@ -10,6 +10,10 @@ from utils import (
 # Configurar a página para ter layout largo
 st.set_page_config(layout="wide")
 
+# Estilização com CSS
+with open("assets/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Estilização adicional para ajustar alinhamentos e espaçamentos
 st.markdown("""
     <style>

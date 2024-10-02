@@ -9,6 +9,10 @@ def contar_tokens(texto):
     encoding = tiktoken.encoding_for_model("gpt-4o-mini")  # Altere para o modelo gpt-4o-mini
     return len(encoding.encode(texto))
 
+# Estilização com CSS
+with open("assets/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Definir limites de tokens
 MAX_TOKENS_INPUT = 100  # Exemplo: limite de 100 tokens de entrada
 

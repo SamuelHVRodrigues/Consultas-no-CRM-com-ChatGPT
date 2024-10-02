@@ -8,6 +8,10 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# Estilização com CSS
+with open("assets/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Exibição da imagem do logo
 st.image("assets/icon_citi.png")
 
