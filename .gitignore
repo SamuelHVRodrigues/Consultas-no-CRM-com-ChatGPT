@@ -6,19 +6,6 @@ Teste.py
 base_CRM
 Consulta_CRM_assistant.py
 dados_tratados.csv
-
-
-# Arquivos úteis
-# 
-# \data
-# \assets
-# \pages
-# .gitignore
-# app.py
-# back.py
-# front.py
-# Pipefy.ipynb
-# report.xlsx
-# requirements.txt
-# tratamento_base.ipynb
-# utils.py
+\venv-crm
+req.txt
+gunicorn.log
