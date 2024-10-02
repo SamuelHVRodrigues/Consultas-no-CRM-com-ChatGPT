@@ -33,16 +33,21 @@ jobs:
         # source venv-crm/bin/activate -> Ativar o ambiente virtual
         # git pull origin main -> Faz o 'git pull' para pegar as últimas mudanças
         # killall gunicorn -> Interrompe todos os processos em andamento
-        # gunicorn --bind 0.0.0.0:3333 back:app -> Executa a aplicação
+        # nohup gunicorn --bind 0.0.0.0:3333 back:app > gunicorn.log 2>&1 &
+        #   nohup -> Permite que o processo seja executado em segundo plano, mesmo após o encerramento da sessão SSH. Ele ignora o hangup quando a sessão termina
+        #   gunicorn -> Inicia um servidor WSGI
+        #   --bind 0.0.0.0:3333 -> Faz o servidor ouvir em todas as interfaces de rede (0.0.0.0) na porta 3333
+        #   back:app -> É o caminho para o módulo da aplicação. 'back' se refere ao arquivo 'back.py', 'app' se refere à variável 'app' dentro do arquivo, que representa a instância do Flask
+        #   > gunicorn.log 2>&1 -> Redireciona a saída padrão (stdout) e a saída de erro (stderr) para o arquivo gunicorn.log
+        #   & -> Libera o terminal de ficar 'preso' esperando o gunicorn terminar, permitindo que outros comandos sejam executados e/ou que o GitHub Actions seja encerrado
         # EOF -> (End of File) Finaliza o bloco de comandos, indicando que não há mais comandos para serem lidos
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/ec2-key.pem ubuntu@ec2-15-228-13-32.sa-east-1.compute.amazonaws.com << EOF
           cd ~/app
           source venv-crm/bin/activate
           git pull origin main
-          pip install gunicorn
-          killall gunicorn || true
-          gunicorn --bind 0.0.0.0:3333 back:app
+          killall gunicorn || echo "No gunicorn process found."
+          nohup gunicorn --bind 0.0.0.0:3333 back:app > gunicorn.log 2>&1 &
           EOF
         env:
           # Passa a chave privada como variável de ambiente
