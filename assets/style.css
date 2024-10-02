@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
 
+/* Oculta a barra padrão do Streamlit */
+header {
+    visibility: hidden;
+}
+
 .logo-container {
     display: flex;
     justify-content: flex-start; /* Alinha à esquerda, ou flex-end para à direita */
