@@ -96,10 +96,10 @@ tempo_medio_fechamento = base_filtrada_ganho[
 def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento):
     # Criar colunas para o título e gráficos
 # Criar colunas para o título e gráficos
-    col_title, col1, col2, col3 = st.columns([2.5, 1, 1, 1])
+    col_title, col1, col2, col3 = st.columns([2, 1, 1, 1])
 
     with col_title:
-        st.markdown(f"# Desempenho Individual Geral {ano_selecionado}")
+        st.markdown(f"# Desempenho {ano_selecionado}")
     with col1:
         st.markdown(f"""
             <div class="metric">
@@ -117,7 +117,7 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
     with col3:
         st.markdown(f"""
             <div class="metric">
-                <div class="label">Tempo médio de fechamento em dias</div> <div class="value">{tempo_medio_fechamento:,.2f}</div>
+                <div class="label">Média de fechamento</div> <div class="value">{tempo_medio_fechamento:,.2f} dias</div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -175,9 +175,9 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
 
 def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento):
     # Criar colunas para o título e as métricas
-    col_title, col1, col2, col3 = st.columns([2, 1, 1, 1])
+    col_title, col1, col2, col3 = st.columns([4, 1.5, 1, 1.5])
     with col_title:
-        st.markdown(f"# Desempenho {vendedor_selecionado} {ano_selecionado}")
+        st.markdown(f"# {vendedor_selecionado} {ano_selecionado}")
     with col1:
         st.markdown(f"""
             <div class="metric">
@@ -196,7 +196,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
     with col3:
         st.markdown(f"""
             <div class="metric">
-                <div class="label">Tempo médio de fechamento em dias</div> <div class="value">{tempo_medio_fechamento:,.2f}</div>
+                <div class="label">Média de fechamento</div> <div class="value">{tempo_medio_fechamento:,.2f} dias</div>
             </div>
             """, unsafe_allow_html=True)
 
