@@ -4,10 +4,11 @@ import pandas as pd
 import tiktoken  # Biblioteca para calcular tokens
 import uuid
 
+# Verifica se já existe um session_id e, caso não exista, cria um
 if 'session_id' not in st.session_state:
-    st.session_state.session_id = str(uuid.uuid4())
+    st.session_state.session_id = str(uuid.uuid4()) # Gera um UUID para a sessão
 
-session_id = st.session_state.session_id
+session_id = st.session_state.session_id # Armazena o session_id da sessão atual
 
 # Função para contar tokens de entrada
 def contar_tokens(texto):
@@ -35,14 +36,14 @@ st.dataframe(df)
 prompt = st.text_input("Digite sua pergunta:")
 
 # Contar tokens da pergunta
-tokens_usados = contar_tokens(question)
+tokens_usados = contar_tokens(prompt)
 st.write(f"Tokens usados na pergunta: {tokens_usados}/{MAX_TOKENS_INPUT}")
 
 # Lidar com o botão de enviar pergunta
 if st.button("Perguntar"):
     if tokens_usados > MAX_TOKENS_INPUT:
         st.warning(f"A pergunta excede o limite máximo de {MAX_TOKENS_INPUT} tokens.")
-    elif question:
+    elif prompt:
         # Fazer a requisição para a API do back-end
         url = "http://127.0.0.1:5000/ask"
         data = {'session_id': session_id, 'prompt': prompt}
@@ -58,7 +59,7 @@ if st.button("Perguntar"):
             st.write(f"Tokens usados na resposta: {tokens_saida}")
 
             # Adicionar ao histórico
-            st.session_state.historico.append({"pergunta": question, "resposta": resposta, "tokens": tokens_saida})
+            st.session_state.historico.append({"pergunta": prompt, "resposta": resposta, "tokens": tokens_saida})
         else:
             st.write("Status code:", response.status_code)
             st.write("Resposta bruta:", response.text)

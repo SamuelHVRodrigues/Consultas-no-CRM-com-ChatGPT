@@ -3,6 +3,7 @@ import openai
 from dotenv import load_dotenv, find_dotenv
 import pandas as pd
 import time
+import uuid
 
 app = Flask(__name__)
 
@@ -64,23 +65,30 @@ assistant = client.beta.assistants.create(
 )
 assistant_id = assistant.id # Salva o ID do assistant
 
-# Cria uma thread
-thread = client.beta.threads.create()
-thread_id = thread.id # Salva o ID da thread
+# Cria um dicionário para armazenar os IDs das threads (thread_id) associados à aba (session_id)
+threads = {}
 
 # Requisição para a API da OpenAI
 @app.route("/ask", methods=["POST"])
 def ask_openai():
     data = request.json
     prompt = data.get("prompt", "")
-    session_id = data['session_id']
+    session_id = data.get('session_id', str(uuid.uuid4()))
+
+    if session_id not in threads:
+        # Cria uma thread
+        thread = client.beta.threads.create()
+        thread_id = thread.id # Salva o ID da thread
+        threads[session_id] = thread_id # Armazena a nova thread no dicionário com a chave session_id
+    else:
+        thread_id = threads[session_id] # Recupera a thread existente para a sessão atual
     
-    if question:
+    if prompt:
         # Adiciona mensagem à thread existente
         message = client.beta.threads.messages.create(
             thread_id=thread_id,
             role='user',
-            content=question
+            content=prompt
         )
 
         # Roda a thread
