@@ -3,18 +3,20 @@ import openai
 from dotenv import load_dotenv, find_dotenv
 import pandas as pd
 import time
+import os
+from utils import carregar_base
 
 app = Flask(__name__)
 
 # Definir limite de tokens de saída
 MAX_TOKENS_OUTPUT = 500  # Exemplo: limite de 500 tokens de resposta
 
-# Carregar a base de dados que foi tratada em outro arquivo
-df = pd.read_csv(r'data/df_CRM.csv')
+# Carregar a base de dados diretamente do sheets
+df = carregar_base()
 
-# Converter para datetime
-df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
-df['Primeira vez que entrou na fase Ganho'] = pd.to_datetime(df['Primeira vez que entrou na fase Ganho'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
+# Salvar o DataFrame como CSV temporariamente
+csv_file_path = 'dados_oportunidades.csv'  # Caminho do arquivo CSV
+df.to_csv(csv_file_path, index=False)  # Salva o DataFrame como CSV
 
 # Carregar variáveis de ambiente
 _ = load_dotenv(find_dotenv())
@@ -24,10 +26,10 @@ client = openai.Client()
 
 # Passa o arquivo para a openai
 file = client.files.create(
-    file = open(r'data/df_CRM.csv', 'rb'),
+    file=open(csv_file_path, 'rb'),  # Abre o arquivo CSV
     purpose='assistants'
 )
-file_id = file.id # Salva o ID do arquivo
+file_id = file.id  # Salva o ID do arquivo
 
 # Cria o assistant
 assistant = client.beta.assistants.create(
@@ -124,3 +126,6 @@ def ask_openai():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+

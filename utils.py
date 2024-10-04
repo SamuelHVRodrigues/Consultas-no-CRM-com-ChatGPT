@@ -2,20 +2,30 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 
-@st.cache_data
-def carregar_base():
-    """
-    Carrega a base de dados a partir de um arquivo CSV e realiza pré-processamentos iniciais.
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from gspread_dataframe import set_with_dataframe, get_as_dataframe
+import os
 
-    Returns:
-        DataFrame: DataFrame contendo os dados carregados e pré-processados.
-    """
-    base = pd.read_csv("data/df_CRM.csv")
-    base['Valor Final'] = pd.to_numeric(base['Valor Final'], errors='coerce')
-    base['Data de cadastro'] = pd.to_datetime(base['Data de cadastro'], errors='coerce')
-    base['Ano'] = base['Data de cadastro'].dt.year
-    base = base.dropna(subset=['Valor Final', 'Data de cadastro'])
-    return base
+def carregar_base():
+    # Acessa as variáveis de ambiente
+    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+    creds = ServiceAccountCredentials.from_json_keyfile_name(os.path.join(os.getcwd(), 'credentials.json'), scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    client = gspread.authorize(creds)
+    
+    # Insira o ID da planilha diretamente para testar
+    SheetsID = '18Ub6-90lW3CXIpezs2Sjrtx5tlnRhMBaUEY_Jz30hHg' # Verificar para substituir o código bruto
+    
+    # Abre a planilha
+    sheet = client.open_by_key(SheetsID)
+    worksheet = sheet.worksheet('Upload')
+
+    # Lê os dados
+    data = worksheet.get_all_values()
+    headers = data.pop(0)
+    df = pd.DataFrame(data, columns=headers)
+    return df
+
 
 def calcular_taxa_conversao(base):
     """
@@ -65,21 +75,3 @@ def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
         base_agrupado = base_filtrada.groupby(categoria)['Valor Final'].sum().reset_index()
         base_agrupado.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
     return base_agrupado
-
-def preparar_dados_metricas_vendedores(base_filtrada, metrica):
-    """
-    Prepara os dados para o gráfico de metricas de vendedores.
-
-    Args:
-        base_filtrada (DataFrame): DataFrame com os dados filtrados.
-
-    Returns:
-        DataFrame: DataFrame com 'Vendedor' e 'Faturamento'.
-    """
-    if metrica == 'Quantidade':
-        base_metricas = base_filtrada.groupby('Vendedor').size().reset_index(name='Quantidade')
-    else:
-        base_metricas = base_filtrada.groupby('Vendedor')['Valor Final'].sum().reset_index()
-        base_metricas.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
-        base_metricas = base_metricas.sort_values('Faturamento', ascending=False)
-    return base_metricas
