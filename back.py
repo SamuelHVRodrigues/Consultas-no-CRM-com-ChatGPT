@@ -24,7 +24,7 @@ client = openai.Client()
 
 # Passa o arquivo para a openai
 file = client.files.create(
-    file = open(r'data\df_CRM.csv', 'rb'),
+    file = open(r'data/df_CRM.csv', 'rb'),
     purpose='assistants'
 )
 file_id = file.id # Salva o ID do arquivo
