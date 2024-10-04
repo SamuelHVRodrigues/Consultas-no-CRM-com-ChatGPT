@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import altair as alt
 from utils import (
     carregar_base,
@@ -220,6 +221,54 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         
         # Exibir as informações dos leads do vendedor
         st.dataframe(base_vendedor[['Fase atual', 'Empresa', 'Nome do cliente', 'Setor', 'Valor Final', 'Data de cadastro', 'Origem', 'Checklist vertical', 'Perfil de cliente']])
+
+    with col5:
+        # Gráfico de indicador com a taxa de conversão do vendedor selecionado
+        taxa_conversao_vendedor = base_filtrada.groupby('Vendedor').apply(calcular_taxa_conversao).reset_index()
+        # Mondando gráfico 
+        fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=taxa_conversao,
+        title={'text': f" Taxa de Conversão de {vendedor_selecionado}",
+               'font': {'size': 24, 'weight': 'bold'},
+                'align': 'center'},
+        gauge={
+            'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "rgba(0, 0, 0, 0)", 'showticklabels': False},
+            'bar': {'color': "darkblue",  'thickness': 1},
+            'bgcolor': "white",
+            'borderwidth': 0,    
+        }
+        ))
+        # Ajustando o layout para definir width e height
+        fig.update_layout(
+            width=390,  # Largura do gráfico
+            height=250,  # Altura do gráfico
+            margin={'t': 60},
+        )
+
+        # Exibindo o gráfico de conversão
+        st.plotly_chart(fig)
+        # Placeholder para o título dinâmico 
+        title_placeholder = st.empty()  
+
+        subcol1, subcol2 = st.columns(2)
+
+        with subcol1:
+            categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Checklist vertical', 'Perfil de cliente'])
+             # Contando quantas vezes cada valor da categoria aparece
+            categoria_count = base_filtrada[categoria].value_counts().reset_index()
+            categoria_count.columns = [categoria, 'Quantidade']
+            # Atualiza o título dinamicamente baseado na seleção do selectbox 
+            title_placeholder.markdown(f"### Análise dos leads por {categoria}")
+            
+            # Criando o gráfico de pizza com base na contagem
+        fig = px.pie(categoria_count, names=categoria, values='Quantidade', 
+               )
+
+        # Exibindo o gráfico no Streamlit
+        st.plotly_chart(fig)
+
+
 
 if vendedor_selecionado == 'Todos':
     todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento)
