@@ -16,28 +16,34 @@
 body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, ul, ol, header {
     font-family: 'Barlow', sans-serif;
     text-align: center;
-    background-color: #292929;
-}
-.st-bh {
-    color-scheme: #1a1a1a;
-    background-color: rgb(104, 0, 228);
 }
 
-.st-c2 {
-    background: color #292929;;
+.info_col1 > div, .info_col2 > div {
+    margin-bottom: 100px;
+    padding-top: 2rem;
+    padding-bottom: 5rem; /* Aumenta o espaçamento entre as divs */
 }
 
-.st-az {
-    background-color: rgb(104, 0, 228);
+.info_col1, .info_col2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.st-emotion-cache-h4xjwg {
-    background: #292929;
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre label e value dentro do mesmo bloco */
+    margin-bottom: 25px; /* Espaço entre blocos diferentes de .metric */
 }
 
+.label {
+    font-weight: bold;
+    font-size: 16px;
+}
 
-.st-emotion-cache-1itdyc2 {
-
-    background-color: rgb(21, 21, 16) !important;
+.value {
+    font-size: 14px;
 }
 
