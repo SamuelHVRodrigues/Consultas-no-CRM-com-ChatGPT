@@ -200,9 +200,12 @@ def UploadDataToGSheet(df):
         # Converte objetos Timestamp para string
         df = df.applymap(lambda x: x.strftime('%Y-%m-%d %H:%M:%S') if isinstance(x, pd.Timestamp) else x)
 
+        credentials_json = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
+        credentials_dict = json.loads(credentials_json)
+
         # Acessa as variáveis de ambiente
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-        creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+        creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_dict, scope)
         client = gspread.authorize(creds)
         
         SheetsID = os.getenv('SheetsID')
