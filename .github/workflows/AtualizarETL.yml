@@ -3,7 +3,7 @@ name: Executar ETL Periodicamente
 # Define quando o workflow será executado
 on:
   schedule:
-    - cron: '0 0 * * *'  # Executa diariamente à meia-noite UTC
+    - cron: '20 19 * * *'  # Executa diariamente à meia-noite UTC
   workflow_dispatch:    # Permite execução manual
 
 jobs:
