@@ -5,12 +5,13 @@ import altair as alt
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
-import os
 
 def carregar_base():
+    credentials = st.secrets["google_service_account"]
+
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name(os.path.join(os.getcwd(), 'credentials.json'), scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    creds = ServiceAccountCredentials.from_json_keyfile_name(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
     client = gspread.authorize(creds)
     
     # Insira o ID da planilha diretamente para testar
