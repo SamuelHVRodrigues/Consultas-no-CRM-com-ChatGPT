@@ -61,6 +61,7 @@ base = base.explode('Vendedor')  # Separar os vendedores em linhas individuais
 
 # **Manter apenas Nome e Sobrenome**
 base['Vendedor'] = base['Vendedor'].apply(lambda x: ' '.join(x.split()[:2]))
+base_ganho['Vendedor'] = base_ganho['Vendedor'].apply(lambda x: ' '.join(x.split()[:2]))
 
 # Sidebar para seleção do ano
 anos_disponiveis = sorted(base_ganho['Ano'].dropna().unique(), reverse=True)
@@ -101,7 +102,7 @@ tempo_medio_fechamento = base_filtrada_ganho[
 
 def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento):
 # Criar colunas para o título e gráficos
-    col_title, col1, col2, col3 = st.columns([2, 1, 1, 1])
+    col_title, col1, col2, col3 = st.columns([2.5, 1, 1, 1])
 
     with col_title:
         st.markdown(f"# Desempenho {ano_selecionado}")
@@ -141,18 +142,13 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
         # Exibir o gráfico
         dados_metrica_vendedor = dados_metrica_vendedor.reset_index(drop=True)
         if metrica == 'Quantidade':
-            y_axis = alt.Y('Quantidade:Q', title='Quantidade')
+            x_axis = alt.X('Quantidade:Q', title='Quantidade')
         else:
-            y_axis = alt.Y('Faturamento:Q', title='Faturamento (R$)')    
+            x_axis = alt.X('Faturamento:Q', title='Faturamento (R$)')    
 
-        st.altair_chart(
-            alt.Chart(dados_metrica_vendedor).mark_bar(color='#3f9c81').encode(x='Vendedor:N', y=y_axis)
-            .properties(title=f"{metrica} por vendedor", width=400, height=400), 
-            use_container_width=True)
-
-         # Ajuste do eixo X para rótulos horizontais e evitar sobreposição
-        x_axis = alt.X(
-            f'Vendedor:N',
+        # Ajuste do eixo Y para rótulos horizontais e evitar sobreposição
+        y_axis = alt.Y(
+            'Vendedor:N',
             sort='-x',
             title='Vendedor',
             axis=alt.Axis(
@@ -161,20 +157,31 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
                 labelExpr="length(datum.label) > 15 ? substring(datum.label, 0, 15) + '\\n' + substring(datum.label, 15) : datum.label"
             )
         )
+
+         # Gráfico de barras horizontais
+        st.altair_chart(
+            alt.Chart(dados_metrica_vendedor).mark_bar(color='#3f9c81').encode(y=y_axis, x=x_axis)
+            .properties(title=f"{metrica} por vendedor", width=400, height=400), 
+            use_container_width=True)
+        
     with col5:
         # Gráfico da taxa de conversão por vendedor
         taxa_conversao_vendedores = base_filtrada.groupby('Vendedor').apply(calcular_taxa_conversao).reset_index()
         taxa_conversao_vendedores.columns = ['Vendedor', 'Taxa de Conversão']
         
+        # Filtrar os vendedores com taxa de conversão maior que 0
+        taxa_conversao_vendedores_filtrada = taxa_conversao_vendedores[taxa_conversao_vendedores['Taxa de Conversão'] > 0]
+
          # Verificar se há dados para plotar
         if not taxa_conversao_vendedores.empty:
-            st.altair_chart(alt.Chart(taxa_conversao_vendedores).mark_bar(color='#3f9c81').encode(
-                y=alt.Y('Vendedor:N', title='Vendedor', sort='-x'),
-                x=alt.X('Taxa de Conversão:Q', title='Taxa de Conversão (%)'),
+            st.altair_chart(alt.Chart(taxa_conversao_vendedores_filtrada).mark_bar(color='#3f9c81').encode(
+                x=alt.X('Vendedor:N', title='', sort='-y', axis=alt.Axis(labelAngle=0)),  # Rótulos dos vendedores na horizontal
+                y=alt.Y('Taxa de Conversão:Q', title='Taxa de Conversão (%)', scale=alt.Scale(domain=[0, 100])),  # Garantir que vá até 100%
                 tooltip=['Vendedor', 'Taxa de Conversão']
             ).properties(
                 title="Taxa de Conversão por Vendedor",
-                height=350
+                height=240,
+                width=530
             ).interactive()
             )
         else:
@@ -183,11 +190,20 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
 
          # Gráfico de pizza com a quantidade de negociações em cada fase
         if not base_filtrada.empty:
-            fig = px.pie(base_filtrada, names='Fase atual', title='Quantidade de Negociações por Fase', 
-                         color='Fase atual', color_discrete_sequence=px.colors.diverging.curl, width=400, height=400)
+            # Criar o gráfico
+            fig = px.pie(base_filtrada, names='Fase atual', title='Panorama de negociações por Fase', 
+                         color='Fase atual', color_discrete_sequence=px.colors.diverging.curl, width=400, height=320)
+            fig.update_layout(title_x=0.12,
+                             legend=dict(
+                            orientation="v",  # Coloca a legenda na vertical
+                            yanchor="bottom",  # Ancla a legenda na parte inferior
+                            xanchor="left",  # Ancla a legenda na parte esquerda
+                            y=0.3,  # Centraliza verticalmente
+                            x=0.68,  # Centraliza horizontalmente)
+                        ))
             st.plotly_chart(fig)
         else:
-            st.info("Não há dados de negociações para exibir o gráfico de pizza.")
+            st.info("Não há dados de negociações para exibir o gráfico.")
 
 
 
@@ -214,14 +230,15 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
     with col3:
         st.markdown(f"""
             <div class="metric">
-                <div class="label">Média de fechamento</div> <div class="value">{tempo_medio_fechamento:,.2f} dias</div>
+                <div class="label">Média de fechamento</div> 
+                <div class="value">{tempo_medio_fechamento:,.2f} dias</div>
             </div>
             """, unsafe_allow_html=True)
 
     # Espaçamento entre as métricas e os gráficos
     st.markdown('<hr>', unsafe_allow_html=True)
 
-    col4, col5 = st.columns([1.2,1])
+    col4, col5 = st.columns([1.25,1])
     # Filtrar a base de dados do vendedor selecionado
     base_vendedor = base_filtrada[base_filtrada['Vendedor'] == vendedor_selecionado]
     
@@ -230,7 +247,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         base_vendedor['Data de cadastro'] = pd.to_datetime(base_vendedor['Data de cadastro'], errors='coerce')
 
     with col4:
-        st.write(f"### Leads de {vendedor_selecionado}")
+        st.markdown(f"<h3 class='left-align'>Leads de {vendedor_selecionado}</h3>", unsafe_allow_html=True)
 
         # Subdividir a col4 em duas subcolunas
         subcol1, subcol2 = st.columns([1, 2])
@@ -272,6 +289,9 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                 ]
                 tempo_total_funil = lead_data[colunas_dias].fillna(0).sum().sum()
 
+            # Container com borda antao redor das colunas
+            with st.container(border=True):
+                
                 # Subcolunas para dispor as informações do lead selecionado
                 info_col1, info_col2 = st.columns(2)
                 with info_col1:
@@ -289,8 +309,8 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                             <div class="value">{lead_data['Origem'].values[0]}</div>
                         </div>
                             <div class="metric">
-                            <div class="label">Tempo Total no Funil (dias)</div>
-                            <div class="value">{int(tempo_total_funil)}</div>  
+                            <div class="label">Tempo Total no Funil</div>
+                            <div class="value">{int(tempo_total_funil)} dias</div>  
                         </div>
                         """, unsafe_allow_html=True)
                 with info_col2:
@@ -312,7 +332,8 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                             <div class="value">{lead_data['Checklist vertical'].values[0]}</div>
                         </div>
                         """, unsafe_allow_html=True)
-            else:
+
+            if lead_data.empty:
                 st.warning("Dados do lead não encontrados.")
 
     with col5:
@@ -343,8 +364,8 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
             # Ajustando o layout para definir width e height
             fig.update_layout(
                 width=390,  # Largura do gráfico
-                height=250,  # Altura do gráfico
-                margin={'t': 60},
+                height=240,  # Altura do gráfico
+                margin={'t': 55, 'b': 55, 'l': 3, 'r': 0},
             )
 
             # Plotando o gráfico
@@ -366,13 +387,13 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
             categoria_count.columns = [categoria, 'Quantidade']
 
             # Atualiza o título dinamicamente baseado na seleção do selectbox 
-            title_placeholder.markdown(f"### Análise dos leads por {categoria}")
+            title_placeholder.markdown(f"#### Análise dos leads por {categoria}")
 
         with subcol2:     
             # Criando o gráfico de pizza com base na contagem
             if not categoria_count.empty:
                 fig_categoria = px.pie(categoria_count, names=categoria, values='Quantidade',
-                                        color_discrete_sequence=px.colors.diverging.Blugrn_r, width=400, height=400)
+                                        color_discrete_sequence=px.colors.diverging.Blugrn_r, width=400, height=320)
                 st.plotly_chart(fig_categoria)
             else:
                 st.info(f"Não há dados para a categoria selecionada: {categoria}")
