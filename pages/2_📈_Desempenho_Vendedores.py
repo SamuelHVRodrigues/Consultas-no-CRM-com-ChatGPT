@@ -192,7 +192,7 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
         if not base_filtrada.empty:
             # Criar o gráfico
             fig = px.pie(base_filtrada, names='Fase atual', title='Panorama de negociações por Fase', 
-                         color='Fase atual', color_discrete_sequence=px.colors.diverging.curl, width=400, height=320)
+                         color='Fase atual', color_discrete_sequence=px.colors.sequential.Blugrn_r, width=400, height=320)
             fig.update_layout(title_x=0.12,
                              legend=dict(
                             orientation="v",  # Coloca a legenda na vertical
@@ -263,7 +263,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
             base_filtrada_situacao = base_vendedor  # Caso 'Geral', mantém todos os leads
 
         # Empresas filtradas com base na situação escolhida (em subcol2)
-        empresas_filtradas = base_filtrada_situacao['Empresa'].unique()
+        empresas_filtradas = base_filtrada_situacao['Empresa'].dropna()
 
         with subcol2:
             if len(empresas_filtradas) > 0:
@@ -298,15 +298,15 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                     st.markdown(f"""
                         <div class="metric">
                             <div class="label">Fase atual</div>
-                            <div class="value">{lead_data['Fase atual'].values[0]}</div> 
+                            <div class="value">{lead_data['Fase atual'].values[0] if pd.notnull(lead_data['Fase atual'].values[0]) else 'Não consta'}</div> 
                         </div>
                         <div class="metric">
                             <div class="label">Setor</div>
-                        <div class="value">{lead_data['Setor'].values[0]}</div>
+                        <div class="value">{lead_data['Setor'].values[0] if pd.notnull(lead_data['Setor'].values[0]) else 'Não consta'}</div>
                         </div>
                         <div class="metric">
                             <div class="label">Origem</div>
-                            <div class="value">{lead_data['Origem'].values[0]}</div>
+                            <div class="value">{lead_data['Origem'].values[0] if pd.notnull(lead_data['Origem'].values[0]) else 'Não consta'}</div>
                         </div>
                             <div class="metric">
                             <div class="label">Tempo Total no Funil</div>
@@ -321,15 +321,15 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                         </div>
                             <div class="metric">
                             <div class="label">Data de cadastro</div>
-                            <div class="value">{lead_data['Data de cadastro'].dt.strftime('%d/%m/%Y').values[0]}</div> 
+                            <div class="value">{lead_data['Data de cadastro'].dt.strftime('%d/%m/%Y').values[0] if pd.notnull(lead_data['Data de cadastro'].values[0]) else 'Não consta'}</div> 
                         </div>
                             <div class="metric">
                             <div class="label">Perfil de cliente</div>
-                            <div class="value">{lead_data['Perfil de cliente'].values[0]}</div>
+                            <div class="value">{lead_data['Perfil de cliente'].values[0] if pd.notnull(lead_data['Perfil de cliente'].values[0]) else 'Não consta'}</div>
                         </div>
                             <div class="metric">
                             <div class="label">Serviço</div>
-                            <div class="value">{lead_data['Checklist vertical'].values[0]}</div>
+                            <div class="value">{lead_data['Checklist vertical'].values[0] if pd.notnull(lead_data['Checklist vertical'].values[0]) else 'Não consta'}</div>
                         </div>
                         """, unsafe_allow_html=True)
 
@@ -393,11 +393,21 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
             # Criando o gráfico de pizza com base na contagem
             if not categoria_count.empty:
                 fig_categoria = px.pie(categoria_count, names=categoria, values='Quantidade',
-                                        color_discrete_sequence=px.colors.diverging.Blugrn_r, width=400, height=320)
-                st.plotly_chart(fig_categoria)
-            else:
-                st.info(f"Não há dados para a categoria selecionada: {categoria}")
-
+                                        color_discrete_sequence=px.colors.sequential.Blugrn_r, width=510, height=320)
+        fig_categoria.update_layout(
+        legend=dict(
+            bgcolor='rgba(0,0,0,0)',  # fundo transparente
+            y=1.1,                   # posição da legenda abaixo do gráfico
+            x=10,   
+            xanchor='right',
+            yanchor='top',
+            orientation='h',
+            font=dict(size=9),            
+            
+            ),
+            margin=dict(l=15, r=0, t=0, b=50),
+        )
+        st.plotly_chart(fig_categoria)        
 
 # Executar a função apropriada com base na seleção do vendedor
 if vendedor_selecionado == 'Todos':
