@@ -32,5 +32,9 @@ jobs:
       - name: Executar script ETL
         env:
           PIPEFY_TOKEN: ${{ secrets.PIPEFY_TOKEN }}
+          PIPE_ID: ${{ secrets.PIPE_ID }}
+          PIPE_REPORT_ID: ${{ secrets.PIPE_REPORT_ID }}
+          SHEETS_ID: ${{ secrets.SHEETS_ID }}
+          GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
         run: |
           python etl-exe.py
