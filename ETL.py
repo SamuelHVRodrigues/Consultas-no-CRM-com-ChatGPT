@@ -88,7 +88,7 @@ def get_data():
         return None
 
 def get_data_gsheet():
-    credentials = st.secrets["google_service_account"]
+    credentials = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
 
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
