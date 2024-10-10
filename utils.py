@@ -11,7 +11,7 @@ def carregar_base():
 
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
     client = gspread.authorize(creds)
     
     # Insira o ID da planilha diretamente para testar
