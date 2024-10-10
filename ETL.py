@@ -88,9 +88,11 @@ def get_data():
         return None
 
 def get_data_gsheet():
+    credentials = st.secrets["google_service_account"]
+
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
     client = gspread.authorize(creds)
     SheetsID = os.getenv('SHEETS_ID')
     # Abre a planilha
