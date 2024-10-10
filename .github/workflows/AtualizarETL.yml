@@ -19,7 +19,7 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Especifique a versão do Python que você está usando
+          python-version: '3.10'  # Especifique a versão do Python que você está usando
 
       # Passo 3: Instalar dependências
       - name: Instalar dependências
