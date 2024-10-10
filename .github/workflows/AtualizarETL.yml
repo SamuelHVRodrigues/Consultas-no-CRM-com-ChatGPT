@@ -23,5 +23,7 @@ jobs:
 
       # Passo 3: Executar o script ETL
       - name: Executar script ETL
+        env:
+          PIPEFY_TOKEN: ${{ secrets.PIPEFY_TOKEN }}
         run: |
           python etl-exe.py
