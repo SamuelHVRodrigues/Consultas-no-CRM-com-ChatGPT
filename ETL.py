@@ -13,13 +13,13 @@ load_dotenv()
 
 def get_data():
     # Acessa as variáveis de ambiente
-    mytoken = os.getenv('mytoken')
-    PipeID = os.getenv('PipeID')
-    PipeReportID = os.getenv('PipeReportID')
+    mytoken = os.getenv('PIPEFY_TOKEN')
+    PipeID = os.getenv('PIPE_ID')
+    PipeReportID = os.getenv('PIPE_REPORT_ID')
 
     url = "https://api.pipefy.com/graphql"
     headers = {
-        'Authorization': 'Bearer ' + mytoken,
+        'Authorization': mytoken,
         'Content-Type': 'application/json'
     }
 
@@ -92,7 +92,7 @@ def get_data_gsheet():
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
     client = gspread.authorize(creds)
-    SheetsID = os.getenv('SheetsID')
+    SheetsID = os.getenv('SHEETS_ID')
     # Abre a planilha
     sheet = client.open_by_key(SheetsID)
     worksheet = sheet.worksheet('Base23')
@@ -208,7 +208,7 @@ def UploadDataToGSheet(df):
         creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_dict, scope)
         client = gspread.authorize(creds)
         
-        SheetsID = os.getenv('SheetsID')
+        SheetsID = os.getenv('SHEETS_ID')
         if not SheetsID:
             print("SheetsID não foi encontrado nas variáveis de ambiente.")
             return
