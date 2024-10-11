@@ -90,6 +90,10 @@ def get_data():
 def get_data_gsheet():
     credentials = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
 
+    # Cria um arquivo temporário com as credenciais
+    with open('temp_credentials.json', 'w') as temp_file:
+        temp_file.write(credentials)
+
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
