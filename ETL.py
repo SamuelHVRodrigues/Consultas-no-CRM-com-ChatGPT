@@ -79,12 +79,22 @@ def get_data():
 
     file_url = download_response_json['data']['pipeReportExport']['fileURL']
 
+    print('----- file_url -----')
     print(file_url) # Print para debug
 
     r = requests.get(file_url, allow_redirects=True)
     data = r.content
+
+    print('----- data -----')
+    print(data) # Print para debug
+    
     try:
         relatorio = pd.read_excel(BytesIO(data), engine='openpyxl')  # Lê o arquivo Excel
+        print('----- relatorio -----')
+        print(relatorio)
+        rela = pd.read_excel(file_url, engine='openpyxl')
+        print('----- rela -----')
+        print(rela)
         return relatorio
     except Exception as e:
         print("Erro na extração:", e)
