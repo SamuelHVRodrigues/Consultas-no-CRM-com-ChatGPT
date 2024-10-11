@@ -77,12 +77,13 @@ def get_data():
         print("Resposta inesperada da API na segunda requisição:", download_response_json)
         return None
 
-    file_url = download_response_json['data']['pipeReportExport']['fileURL']
+    # file_url = download_response_json['data']['pipeReportExport']['fileURL']
 
     print('----- file_url -----')
     print(file_url) # Print para debug
 
-    r = requests.get(file_url, allow_redirects=True)
+    r = requests.get(download_response_json['data']['pipeReportExport']['fileURL'], allow_redirects=True)
+    # r = requests.get(file_url, allow_redirects=True)
     data = r.content
 
     print('----- data -----')
