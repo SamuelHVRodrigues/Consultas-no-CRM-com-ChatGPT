@@ -104,7 +104,6 @@ def get_data_gsheet():
     data = worksheet.get_all_values()
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
-    print(df) # Print para debug
     return df
     
 # a partir daqui, todas as variaveis que estão sendo usadas são do tipo DataFrame
