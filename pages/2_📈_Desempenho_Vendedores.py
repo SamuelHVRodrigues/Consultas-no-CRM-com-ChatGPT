@@ -4,7 +4,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import altair as alt
 from utils import (
-    carregar_base,
     calcular_taxa_conversao,
     preparar_dados_faturamento,
     preparar_dados_metricas_vendedores,
@@ -18,7 +17,7 @@ st.set_page_config(layout="wide",
                    initial_sidebar_state="collapsed")
 
 # Para poder ler o arquivo CSS para customizar a página
-with open("style.css") as f:
+with open("assets/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
@@ -196,6 +195,7 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
                          color='Fase atual', color_discrete_sequence=px.colors.sequential.Blugrn_r, width=400, height=320)
             fig.update_layout(title_x=0.12,
                              legend=dict(
+                             bgcolor='rgba(0,0,0,0)',
                             orientation="v",  # Coloca a legenda na vertical
                             yanchor="bottom",  # Ancla a legenda na parte inferior
                             xanchor="left",  # Ancla a legenda na parte esquerda

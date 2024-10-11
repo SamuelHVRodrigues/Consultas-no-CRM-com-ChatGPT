@@ -1,7 +1,6 @@
 import streamlit as st
 import altair as alt
 from utils import (
-    carregar_base,
     calcular_taxa_conversao,
     preparar_dados_faturamento,
     preparar_dados_analise_vendas,

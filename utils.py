@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 
-import gspread
+'''import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 
@@ -26,7 +26,20 @@ def carregar_base():
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
     return df
+'''
+@st.cache_data
+def carregar_base1():
+    """
+    Carrega a base de dados a partir de um arquivo CSV e realiza pré-processamentos iniciais.
 
+    Returns:
+        DataFrame: DataFrame contendo os dados carregados e pré-processados.
+    """
+    base = pd.read_csv("data/tabela_exemplo.csv")
+    base['Valor Final'] = pd.to_numeric(base['Valor Final'], errors='coerce')
+    base['Data de cadastro'] = pd.to_datetime(base['Data de cadastro'], errors='coerce')
+    base['Ano'] = base['Data de cadastro'].dt.year
+    return base
 
 def calcular_taxa_conversao(base):
     """
@@ -97,16 +110,3 @@ def preparar_dados_metricas_vendedores(base_filtrada, metrica):
     return base_metricas
 
 
-@st.cache_data
-def carregar_base1():
-    """
-    Carrega a base de dados a partir de um arquivo CSV e realiza pré-processamentos iniciais.
-
-    Returns:
-        DataFrame: DataFrame contendo os dados carregados e pré-processados.
-    """
-    base = pd.read_csv("tabela_exemplo.csv")
-    base['Valor Final'] = pd.to_numeric(base['Valor Final'], errors='coerce')
-    base['Data de cadastro'] = pd.to_datetime(base['Data de cadastro'], errors='coerce')
-    base['Ano'] = base['Data de cadastro'].dt.year
-    return base

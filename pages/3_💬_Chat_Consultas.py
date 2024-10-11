@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import tiktoken  # Biblioteca para calcular tokens
 import shelve
-from utils import carregar_base
+# from utils import carregar_base
 from utils import carregar_base1
 
 # Função para contar tokens de entrada
