@@ -88,7 +88,8 @@ def get_data():
         return None
 
 def get_data_gsheet():
-    credentials = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
+    credentials_str = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
+    credentials = json.loads(credentials_str)
 
     print(credentials) # Print para debug
     
