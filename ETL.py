@@ -93,7 +93,7 @@ def get_data():
         relatorio = pd.read_excel(BytesIO(data), engine='openpyxl')  # Lê o arquivo Excel
         print('----- relatorio -----')
         print(relatorio)
-        rela = pd.read_excel(file_url, engine='openpyxl')
+        # rela = pd.read_excel(file_url, engine='openpyxl')
         print('----- rela -----')
         print(rela)
         return relatorio
