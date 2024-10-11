@@ -90,8 +90,6 @@ def get_data():
 def get_data_gsheet():
     credentials_str = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
     credentials = json.loads(credentials_str)
-
-    print(credentials) # Print para debug
     
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -106,7 +104,9 @@ def get_data_gsheet():
     data = worksheet.get_all_values()
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
+    print(df) # Print para debug
     return df
+    
 # a partir daqui, todas as variaveis que estão sendo usadas são do tipo DataFrame
 def rename_columns_ENG(relatorio):
     relatorio.rename(columns={
@@ -244,6 +244,7 @@ def UploadDataToGSheet(df):
 def ETLPipefy():
     # Chama a função para obter o relatório
     relatorio = get_data()
+    print(relatorio) # Print para debug
     # Verifica se o relatório foi carregado corretamente e salva como Excel
     if relatorio is not None:
         #relatorio.to_excel('teste.xlsx', index=False) <--- Comentei para não salvar o arquivo
