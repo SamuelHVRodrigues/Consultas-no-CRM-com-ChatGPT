@@ -8,6 +8,7 @@ from utils import (
     calcular_taxa_conversao,
     preparar_dados_faturamento,
     preparar_dados_metricas_vendedores,
+    carregar_base1
 )
 
 # Configurar a página para ter layout largo
@@ -49,7 +50,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 # Carregar a base de dados
-base = carregar_base()
+base = carregar_base1()
 
 # Filtrar somente vendas ganhas
 base_ganho = base[base['Fase atual'] == 'Ganho']

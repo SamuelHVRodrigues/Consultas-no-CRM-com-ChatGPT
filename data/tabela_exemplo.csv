@@ -1,0 +1,101 @@
+Fase atual,Data de cadastro,Nome do cliente,Empresa,Vendedor,Perfil de cliente,Setor,Checklist vertical,Origem,Valor Final,Motivo da perda,Motivo da não qualificação,Tempo total na fase Base de prospects (dias),Tempo total na fase Qualificação (dias),Tempo total na fase Diagnóstico (dias),Tempo total na fase Montagem de proposta (dias),Tempo total na fase Apresentação de proposta (dias),Tempo total na fase Negociação (dias),Primeira vez que entrou na fase Ganho,Tempo total na fase Renegociação (dias)
+Diagnóstico,2023-11-11,Ana Oliveira,Tech Solutions,Lucas Martins,Empreendedor,Varejo,"Desenvolvimento de software, Auditoria",Webinar,R$ 256.000,Produto inadequado,,22,5,7,6,9,,,6
+Perda,2024-07-15,Carlos Pereira,Alpha Group,Rafael Lima,Startup,Tecnologia,"Automação, Suporte técnico, Treinamento",Referência,R$ 74.000,,,14,5,5,9,8,5,,
+Perda,2023-08-18,Guilherme Alves,ZetaCorp,Lucas Martins,Empreendedor,Saúde,"Desenvolvimento de software, Auditoria",Referência,R$ 285.000,Produto inadequado,Falta de verba,20,2,5,6,8,6,2024-01-12,
+Ganho,2023-09-23,Vitor Fonseca,Alpha Group,Maria Ferreira,Empreendedor,Indústria,"Desenvolvimento de software, Auditoria",Referência,R$ 118.000,Concorrência mais barata,Falta de verba,17,7,3,5,12,2,,7
+Renegociação,2023-04-23,Ana Oliveira,NextGen Health,Bruna Almeida,Empreendedor,Telecom,"Consultoria em TI, Automação, Suporte técnico",Cold call,R$ 108.000,,,20,2,4,5,8,6,2023-08-20,
+Negociação,2024-11-22,Eduardo Barbosa,GigaCom,Maria Ferreira,Empresa consolidada,Logística,"Consultoria em TI, Automação, Suporte técnico",LinkedIn,R$ 152.000,Concorrência mais barata,Falta de verba,29,2,6,5,5,3,,
+Apresentação de proposta,2023-05-06,Camila Rocha,NextGen Health,Maria Ferreira,Empreendedor,Logística,"Auditoria, Gestão de Projetos, Treinamento",Referência,R$ 268.000,,Falta de verba,29,7,4,6,9,6,,
+Qualificação,2023-04-15,Guilherme Alves,GigaCom,Lucas Martins,Empresa consolidada,Saúde,"Desenvolvimento de software, Auditoria",LinkedIn,R$ 184.000,,,20,9,7,9,5,3,2023-08-12,
+Diagnóstico,2023-08-25,Vitor Fonseca,Omega Tech,Julia Souza,Empreendedor,Construção,"Consultoria em TI, Automação, Suporte técnico",Feiras,R$ 203.000,,,26,8,5,,9,4,,
+Base de prospects,2023-02-18,Eduardo Barbosa,GigaCom,Felipe Costa,Empreendedor,Saúde,"Consultoria em TI, Automação, Suporte técnico",Evento,R$ 53.000,Produto inadequado,Falta de verba,18,3,4,9,,,,
+Ganho,2023-12-08,João Silva,HyperTech,Felipe Costa,Startup,Saúde,"Consultoria em TI, Automação, Suporte técnico",Feiras,R$ 88.000,,Falta de verba,14,6,4,,6,2,,8
+Perda,2023-01-15,Rafael Santana,Alpha Group,Felipe Costa,Startup,Varejo,"Consultoria em TI, Automação, Suporte técnico",Feiras,R$ 155.000,,,19,7,3,10,12,5,,6
+Renegociação,2023-03-22,Vitor Fonseca,NextGen Health,Felipe Costa,Empreendedor,Logística,"Desenvolvimento de software, Auditoria",Marketing,R$ 127.000,Produto inadequado,Falta de verba,30,8,5,,,,,
+Apresentação de proposta,2023-07-28,João Silva,ZetaCorp,Rafael Lima,Empresa consolidada,Saúde,"Automação, Suporte técnico, Treinamento",Marketing,R$ 277.000,Concorrência mais barata,,11,5,6,6,11,5,,
+Ganho,2023-07-02,Letícia Duarte,Omega Tech,Rafael Lima,Empreendedor,Construção,"Desenvolvimento de software, Auditoria",Evento,R$ 207.000,Concorrência mais barata,,13,8,4,,10,4,2023-09-18,
+Renegociação,2023-10-27,Letícia Duarte,GigaCom,Pedro Santos,Startup,Saúde,"Desenvolvimento de software, Auditoria",Webinar,R$ 239.000,,,17,8,3,6,5,,2023-03-25,
+Perda,2023-08-28,Fernanda Gomes,GigaCom,Rafael Lima,Empreendedor,Tecnologia,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 180.000,,Falta de verba,11,8,2,5,5,,,
+Perda,2023-09-16,Guilherme Alves,ABC Corp,Pedro Santos,Startup,Construção,"Auditoria, Gestão de Projetos, Treinamento",Indicação,R$ 138.000,,,26,3,3,9,11,,,
+Perda,2024-08-31,João Silva,ABC Corp,Felipe Costa,Startup,Telecom,"Auditoria, Gestão de Projetos, Treinamento",LinkedIn,R$ 216.000,,Falta de verba,29,5,7,5,12,2,,
+Diagnóstico,2023-04-01,Eduardo Barbosa,ABC Corp,Rafael Lima,Empresa consolidada,Logística,"Auditoria, Gestão de Projetos, Treinamento",LinkedIn,R$ 62.000,Produto inadequado,Falta de verba,10,9,7,10,5,2,,
+Apresentação de proposta,2023-03-25,Guilherme Alves,Omega Tech,Lucas Martins,Empreendedor,Logística,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 91.000,Concorrência mais barata,,6,5,6,5,4,3,,
+Diagnóstico,2023-06-20,Vitor Fonseca,Alpha Logistics,Rafael Lima,Empresa consolidada,Serviços,"Desenvolvimento de software, Auditoria",Referência,R$ 186.000,Produto inadequado,Falta de verba,26,2,5,8,,4,,
+Qualificação,2024-01-26,Rafael Santana,Omega Tech,Bruna Almeida,Startup,Saúde,"Automação, Suporte técnico, Treinamento",Webinar,R$ 137.000,,,16,7,7,8,11,4,,
+Diagnóstico,2023-04-18,Eduardo Barbosa,Alpha Group,Rafael Lima,Startup,Logística,"Automação, Suporte técnico, Treinamento",Indicação,R$ 96.000,Concorrência mais barata,,17,2,3,10,8,4,,
+Base de prospects,2024-05-30,Eduardo Barbosa,ZetaCorp,Maria Ferreira,Empresa consolidada,Logística,"Auditoria, Gestão de Projetos, Treinamento",Referência,R$ 266.000,Produto inadequado,,14,5,4,9,,2,,8
+Apresentação de proposta,2023-07-28,Vitor Fonseca,HyperTech,Bruna Almeida,Empreendedor,Logística,"Auditoria, Gestão de Projetos, Treinamento",Webinar,R$ 168.000,Concorrência mais barata,Falta de verba,8,9,2,8,12,4,2024-11-30,5
+Qualificação,2023-05-20,Mariana Lima,HyperTech,Rafael Lima,Empresa consolidada,Saúde,"Auditoria, Gestão de Projetos, Treinamento",Feiras,R$ 105.000,Concorrência mais barata,,23,8,4,5,7,,2023-10-02,
+Apresentação de proposta,2023-12-22,Mariana Lima,Tech Solutions,Lucas Martins,Empreendedor,Construção,"Consultoria em TI, Automação, Suporte técnico",Evento,R$ 69.000,Produto inadequado,,22,8,6,10,6,4,2023-12-15,
+Ganho,2024-08-01,Rafael Santana,HyperTech,Lucas Martins,Startup,Serviços,"Consultoria em TI, Automação, Suporte técnico",Marketing,R$ 194.000,Produto inadequado,Falta de verba,30,8,3,6,6,4,,8
+Base de prospects,2023-02-09,Carlos Pereira,Beta Innovations,Lucas Martins,Empresa consolidada,Indústria,"Desenvolvimento de software, Auditoria",Indicação,R$ 231.000,Produto inadequado,Falta de verba,13,7,6,8,11,,,
+Qualificação,2023-01-13,Ana Oliveira,Gamma Health,Bruna Almeida,Empreendedor,Saúde,"Desenvolvimento de software, Auditoria",Feiras,R$ 207.000,Produto inadequado,Falta de verba,6,7,5,7,12,6,,
+Renegociação,2024-10-22,Mariana Lima,Beta Innovations,Lucas Martins,Startup,Serviços,"Automação, Suporte técnico, Treinamento",Feiras,R$ 217.000,Concorrência mais barata,,24,8,4,9,12,,2024-03-26,
+Perda,2023-01-11,Camila Rocha,NextGen Health,Maria Ferreira,Empresa consolidada,Tecnologia,"Desenvolvimento de software, Auditoria",LinkedIn,R$ 288.000,,Falta de verba,18,5,7,10,,,,
+Qualificação,2024-10-09,Mariana Lima,Gamma Health,Pedro Santos,Empreendedor,Telecom,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 182.000,,,21,10,5,9,10,6,2023-06-03,
+Apresentação de proposta,2023-05-09,Eduardo Barbosa,NextGen Health,Maria Ferreira,Empreendedor,Indústria,"Desenvolvimento de software, Auditoria",Evento,R$ 91.000,Concorrência mais barata,Falta de verba,27,6,7,,7,6,2023-01-27,
+Renegociação,2024-06-21,Carlos Pereira,Beta Innovations,Julia Souza,Startup,Saúde,"Desenvolvimento de software, Auditoria",Indicação,R$ 120.000,Produto inadequado,Falta de verba,18,8,7,,12,3,2024-03-31,
+Diagnóstico,2024-07-22,Carlos Pereira,NextGen Health,Rafael Lima,Empresa consolidada,Serviços,"Auditoria, Gestão de Projetos, Treinamento",Referência,R$ 282.000,Produto inadequado,,22,3,7,5,5,5,,
+Diagnóstico,2024-09-10,Rafael Santana,Beta Innovations,Julia Souza,Empresa consolidada,Saúde,"Automação, Suporte técnico, Treinamento",Marketing,R$ 148.000,Concorrência mais barata,Falta de verba,13,2,4,9,12,,,
+Base de prospects,2024-06-14,Vitor Fonseca,GigaCom,Maria Ferreira,Empresa consolidada,Varejo,"Auditoria, Gestão de Projetos, Treinamento",Feiras,R$ 163.000,,,13,2,6,,11,2,,
+Renegociação,2024-11-22,Letícia Duarte,Delta Logística,Julia Souza,Empresa consolidada,Telecom,"Auditoria, Gestão de Projetos, Treinamento",Webinar,R$ 158.000,,Falta de verba,25,9,2,10,5,3,,
+Diagnóstico,2023-06-02,Vitor Fonseca,Tech Solutions,Maria Ferreira,Empresa consolidada,Varejo,"Auditoria, Gestão de Projetos, Treinamento",Webinar,R$ 118.000,Produto inadequado,Falta de verba,22,5,7,6,,5,,
+Perda,2023-01-26,Rafael Santana,ZetaCorp,Lucas Martins,Empresa consolidada,Telecom,"Auditoria, Gestão de Projetos, Treinamento",Referência,R$ 241.000,Concorrência mais barata,Falta de verba,14,7,6,9,6,2,,
+Apresentação de proposta,2023-01-02,João Silva,ABC Corp,Pedro Santos,Startup,Saúde,"Desenvolvimento de software, Auditoria",Marketing,R$ 183.000,,,18,7,6,7,6,,,
+Diagnóstico,2023-12-29,Guilherme Alves,Omega Tech,Bruna Almeida,Empresa consolidada,Saúde,"Auditoria, Gestão de Projetos, Treinamento",Evento,R$ 126.000,Produto inadequado,Falta de verba,29,8,7,8,12,4,,
+Renegociação,2024-10-10,Vitor Fonseca,XYZ Ind.,Pedro Santos,Empreendedor,Serviços,"Auditoria, Gestão de Projetos, Treinamento",Feiras,R$ 189.000,Produto inadequado,,23,6,4,10,8,,,
+Base de prospects,2023-02-01,Marcelo Reis,Delta Logística,Felipe Costa,Startup,Varejo,"Desenvolvimento de software, Auditoria",Evento,R$ 258.000,,,27,4,4,9,,2,,5
+Renegociação,2023-10-02,Camila Rocha,ABC Corp,Rafael Lima,Startup,Tecnologia,"Auditoria, Gestão de Projetos, Treinamento",Indicação,R$ 145.000,Concorrência mais barata,Falta de verba,6,10,5,6,4,3,2024-07-13,3
+Base de prospects,2023-09-20,Vitor Fonseca,Alpha Logistics,Felipe Costa,Empreendedor,Serviços,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 122.000,Produto inadequado,Falta de verba,22,10,7,6,7,5,,
+Negociação,2024-02-13,Ana Oliveira,Beta Innovations,Lucas Martins,Startup,Telecom,"Automação, Suporte técnico, Treinamento",Marketing,R$ 220.000,Produto inadequado,,18,2,4,5,8,3,2024-05-02,4
+Qualificação,2023-12-06,Letícia Duarte,Tech Solutions,Rafael Lima,Empreendedor,Indústria,"Desenvolvimento de software, Auditoria",LinkedIn,R$ 128.000,Produto inadequado,,28,2,3,9,6,,2023-04-16,
+Ganho,2024-09-07,Vitor Fonseca,Alpha Group,Felipe Costa,Empresa consolidada,Tecnologia,"Automação, Suporte técnico, Treinamento",Referência,R$ 280.000,Concorrência mais barata,Falta de verba,26,5,2,7,,4,,
+Ganho,2023-08-11,Camila Rocha,HyperTech,Bruna Almeida,Empresa consolidada,Saúde,"Desenvolvimento de software, Auditoria",Marketing,R$ 253.000,Produto inadequado,Falta de verba,19,7,5,9,11,5,,3
+Diagnóstico,2024-10-07,Eduardo Barbosa,Beta Innovations,Maria Ferreira,Startup,Logística,"Auditoria, Gestão de Projetos, Treinamento",Indicação,R$ 93.000,Concorrência mais barata,Falta de verba,8,5,7,9,4,2,,6
+Diagnóstico,2024-07-20,Marcelo Reis,GigaCom,Pedro Santos,Empreendedor,Varejo,"Automação, Suporte técnico, Treinamento",Evento,R$ 171.000,Produto inadequado,,25,9,7,5,11,2,,
+Diagnóstico,2023-04-29,João Silva,GigaCom,Lucas Martins,Startup,Logística,"Auditoria, Gestão de Projetos, Treinamento",Cold call,R$ 59.000,Produto inadequado,,5,7,7,,7,4,,
+Perda,2023-02-14,Letícia Duarte,ZetaCorp,Pedro Santos,Empreendedor,Logística,"Consultoria em TI, Automação, Suporte técnico",Indicação,R$ 100.000,,Falta de verba,16,3,7,,7,6,,
+Diagnóstico,2023-01-03,Camila Rocha,GigaCom,Rafael Lima,Startup,Logística,"Desenvolvimento de software, Auditoria",Marketing,R$ 265.000,Produto inadequado,,5,10,6,7,8,2,2024-11-06,
+Diagnóstico,2023-10-20,Rafael Santana,Omega Tech,Lucas Martins,Empreendedor,Saúde,"Consultoria em TI, Automação, Suporte técnico",Indicação,R$ 272.000,,,17,10,3,10,9,3,,
+Qualificação,2024-05-07,Marcelo Reis,NextGen Health,Felipe Costa,Empresa consolidada,Logística,"Desenvolvimento de software, Auditoria",Referência,R$ 180.000,Concorrência mais barata,,7,6,3,10,12,5,2023-10-16,
+Qualificação,2024-11-04,Carlos Pereira,Alpha Logistics,Bruna Almeida,Empreendedor,Saúde,"Automação, Suporte técnico, Treinamento",Webinar,R$ 117.000,,,24,8,5,9,8,,,
+Diagnóstico,2023-08-10,Paula Andrade,GigaCom,Bruna Almeida,Empreendedor,Indústria,"Consultoria em TI, Automação, Suporte técnico",Indicação,R$ 292.000,Concorrência mais barata,,6,4,6,10,9,,2024-12-06,
+Ganho,2024-02-29,João Silva,XYZ Ind.,Pedro Santos,Empresa consolidada,Tecnologia,"Auditoria, Gestão de Projetos, Treinamento",Cold call,R$ 70.000,Concorrência mais barata,Falta de verba,11,9,6,8,,5,,
+Ganho,2024-05-16,Carlos Pereira,Alpha Logistics,Bruna Almeida,Empreendedor,Tecnologia,"Automação, Suporte técnico, Treinamento",Cold call,R$ 156.000,,,18,10,6,9,,5,,6
+Renegociação,2023-11-17,Rafael Santana,ABC Corp,Lucas Martins,Startup,Telecom,"Desenvolvimento de software, Auditoria",Marketing,R$ 132.000,,Falta de verba,25,8,6,7,10,4,,5
+Apresentação de proposta,2024-02-13,João Silva,Delta Logística,Pedro Santos,Empreendedor,Varejo,"Auditoria, Gestão de Projetos, Treinamento",Referência,R$ 243.000,,Falta de verba,26,5,4,5,9,5,,
+Diagnóstico,2023-04-05,Letícia Duarte,ZetaCorp,Julia Souza,Empreendedor,Logística,"Consultoria em TI, Automação, Suporte técnico",LinkedIn,R$ 198.000,Produto inadequado,Falta de verba,27,8,2,6,5,5,,
+Renegociação,2024-01-28,Mariana Lima,Alpha Logistics,Felipe Costa,Startup,Saúde,"Desenvolvimento de software, Auditoria",Evento,R$ 219.000,Produto inadequado,Falta de verba,7,4,7,7,11,4,2023-06-23,8
+Ganho,2024-12-12,Marcelo Reis,Alpha Logistics,Felipe Costa,Empresa consolidada,Logística,"Desenvolvimento de software, Auditoria",Referência,R$ 288.000,Concorrência mais barata,,9,4,3,8,10,5,,8
+Renegociação,2023-11-27,Camila Rocha,ABC Corp,Felipe Costa,Empreendedor,Telecom,"Automação, Suporte técnico, Treinamento",Indicação,R$ 132.000,Concorrência mais barata,,8,10,5,10,,3,2024-03-21,
+Ganho,2023-07-29,Mariana Lima,Tech Solutions,Rafael Lima,Empreendedor,Telecom,"Desenvolvimento de software, Auditoria",Cold call,R$ 253.000,,Falta de verba,16,8,7,9,10,5,,
+Negociação,2024-10-01,Fernanda Gomes,XYZ Ind.,Bruna Almeida,Empresa consolidada,Saúde,"Automação, Suporte técnico, Treinamento",Referência,R$ 165.000,Produto inadequado,Falta de verba,15,6,4,5,12,5,2023-10-26,
+Apresentação de proposta,2024-02-16,Carlos Pereira,GigaCom,Felipe Costa,Startup,Indústria,"Auditoria, Gestão de Projetos, Treinamento",Feiras,R$ 209.000,Concorrência mais barata,,14,4,5,10,,5,,
+Perda,2023-07-22,Rafael Santana,Gamma Health,Julia Souza,Empreendedor,Construção,"Consultoria em TI, Automação, Suporte técnico",Webinar,R$ 185.000,,,12,7,2,10,5,5,,
+Diagnóstico,2024-03-06,Paula Andrade,Beta Innovations,Maria Ferreira,Empresa consolidada,Serviços,"Desenvolvimento de software, Auditoria",Indicação,R$ 83.000,Concorrência mais barata,,18,8,5,9,12,5,2023-03-07,8
+Renegociação,2023-11-19,João Silva,GigaCom,Lucas Martins,Empreendedor,Serviços,"Desenvolvimento de software, Auditoria",Marketing,R$ 207.000,Produto inadequado,Falta de verba,16,7,6,7,10,5,2023-08-28,
+Renegociação,2024-09-06,Guilherme Alves,GigaCom,Rafael Lima,Empresa consolidada,Varejo,"Consultoria em TI, Automação, Suporte técnico",Cold call,R$ 285.000,,,10,5,7,9,5,6,2024-11-27,
+Base de prospects,2023-11-14,Letícia Duarte,Alpha Logistics,Lucas Martins,Empresa consolidada,Construção,"Automação, Suporte técnico, Treinamento",Evento,R$ 282.000,,,26,10,2,,10,,2023-05-04,4
+Apresentação de proposta,2024-11-22,Camila Rocha,Delta Logística,Bruna Almeida,Startup,Serviços,"Desenvolvimento de software, Auditoria",Marketing,R$ 131.000,Produto inadequado,Falta de verba,22,3,4,10,5,6,,
+Perda,2024-09-18,Camila Rocha,XYZ Ind.,Maria Ferreira,Empresa consolidada,Construção,"Consultoria em TI, Automação, Suporte técnico",Indicação,R$ 89.000,Produto inadequado,Falta de verba,17,5,2,5,11,4,2024-03-21,
+Diagnóstico,2023-07-26,Rafael Santana,Alpha Group,Rafael Lima,Startup,Logística,"Consultoria em TI, Automação, Suporte técnico",LinkedIn,R$ 166.000,Concorrência mais barata,Falta de verba,19,4,3,10,11,2,,
+Renegociação,2023-08-05,Vitor Fonseca,Omega Tech,Julia Souza,Empreendedor,Saúde,"Auditoria, Gestão de Projetos, Treinamento",Marketing,R$ 60.000,Produto inadequado,,21,8,7,,8,,2023-11-18,
+Apresentação de proposta,2023-03-05,Eduardo Barbosa,NextGen Health,Bruna Almeida,Empresa consolidada,Tecnologia,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 78.000,Produto inadequado,,21,10,4,8,,,,
+Renegociação,2024-09-28,João Silva,HyperTech,Felipe Costa,Empresa consolidada,Telecom,"Desenvolvimento de software, Auditoria",LinkedIn,R$ 145.000,Produto inadequado,,16,8,3,6,,5,,
+Base de prospects,2024-11-14,Marcelo Reis,Gamma Health,Felipe Costa,Empreendedor,Varejo,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 255.000,Produto inadequado,Falta de verba,23,4,7,6,12,5,,
+Base de prospects,2023-02-03,Eduardo Barbosa,XYZ Ind.,Maria Ferreira,Startup,Telecom,"Desenvolvimento de software, Auditoria",Webinar,R$ 186.000,,,29,10,6,6,11,6,,
+Qualificação,2023-07-13,João Silva,NextGen Health,Bruna Almeida,Empreendedor,Serviços,"Desenvolvimento de software, Auditoria",Referência,R$ 276.000,Produto inadequado,,11,5,5,5,11,2,2024-09-16,
+Diagnóstico,2023-10-17,Fernanda Gomes,ABC Corp,Maria Ferreira,Empreendedor,Logística,"Consultoria em TI, Automação, Suporte técnico",Marketing,R$ 57.000,,,30,4,7,,,5,2024-11-04,4
+Diagnóstico,2023-03-28,Fernanda Gomes,Tech Solutions,Julia Souza,Empreendedor,Logística,"Desenvolvimento de software, Auditoria",LinkedIn,R$ 132.000,Produto inadequado,,11,6,3,10,,5,,
+Perda,2024-03-28,Guilherme Alves,Alpha Logistics,Julia Souza,Startup,Serviços,"Desenvolvimento de software, Auditoria",Cold call,R$ 184.000,Concorrência mais barata,,22,3,5,7,5,2,,
+Base de prospects,2023-04-22,Guilherme Alves,Alpha Group,Pedro Santos,Startup,Logística,"Desenvolvimento de software, Auditoria",Feiras,R$ 271.000,,,10,7,6,6,12,3,,
+Ganho,2023-06-27,Marcelo Reis,Tech Solutions,Pedro Santos,Startup,Varejo,"Auditoria, Gestão de Projetos, Treinamento",Indicação,R$ 96.000,Concorrência mais barata,Falta de verba,18,3,4,7,11,4,,
+Base de prospects,2024-10-18,Vitor Fonseca,Beta Innovations,Maria Ferreira,Empreendedor,Serviços,"Auditoria, Gestão de Projetos, Treinamento",Webinar,R$ 246.000,Concorrência mais barata,Falta de verba,9,3,3,,10,3,2023-02-06,
+Qualificação,2023-10-11,Guilherme Alves,Alpha Logistics,Pedro Santos,Startup,Construção,"Consultoria em TI, Automação, Suporte técnico",Referência,R$ 170.000,Concorrência mais barata,Falta de verba,16,8,7,9,5,,,8
+Qualificação,2024-02-23,Paula Andrade,Gamma Health,Bruna Almeida,Startup,Saúde,"Automação, Suporte técnico, Treinamento",LinkedIn,R$ 169.000,,Falta de verba,29,3,5,9,10,3,,
+Ganho,2024-02-19,Paula Andrade,Omega Tech,Pedro Santos,Empresa consolidada,Telecom,"Consultoria em TI, Automação, Suporte técnico",Marketing,R$ 165.000,,Falta de verba,18,10,3,10,9,6,2023-06-15,
+Base de prospects,2024-10-06,Ana Oliveira,Alpha Logistics,Bruna Almeida,Empreendedor,Tecnologia,"Desenvolvimento de software, Auditoria",Cold call,R$ 119.000,,,10,9,2,,12,3,,
+Diagnóstico,2023-08-16,Paula Andrade,XYZ Ind.,Maria Ferreira,Empresa consolidada,Logística,"Consultoria em TI, Automação, Suporte técnico",Cold call,R$ 296.000,Concorrência mais barata,,10,7,2,7,11,,,
+Renegociação,2024-02-17,Letícia Duarte,Alpha Logistics,Julia Souza,Startup,Serviços,"Automação, Suporte técnico, Treinamento",Marketing,R$ 290.000,Produto inadequado,Falta de verba,14,3,7,5,10,3,,5
+Renegociação,2024-10-07,Guilherme Alves,ZetaCorp,Maria Ferreira,Empresa consolidada,Saúde,"Consultoria em TI, Automação, Suporte técnico",LinkedIn,R$ 251.000,Concorrência mais barata,,7,3,5,9,,3,,
+Apresentação de proposta,2023-12-01,Rafael Santana,Alpha Group,Felipe Costa,Startup,Telecom,"Auditoria, Gestão de Projetos, Treinamento",Marketing,R$ 187.000,Produto inadequado,,17,9,2,6,5,3,2023-06-05,

@@ -95,3 +95,18 @@ def preparar_dados_metricas_vendedores(base_filtrada, metrica):
         base_metricas.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
         base_metricas = base_metricas.sort_values('Faturamento', ascending=False)
     return base_metricas
+
+
+@st.cache_data
+def carregar_base1():
+    """
+    Carrega a base de dados a partir de um arquivo CSV e realiza pré-processamentos iniciais.
+
+    Returns:
+        DataFrame: DataFrame contendo os dados carregados e pré-processados.
+    """
+    base = pd.read_csv("tabela_exemplo.csv")
+    base['Valor Final'] = pd.to_numeric(base['Valor Final'], errors='coerce')
+    base['Data de cadastro'] = pd.to_datetime(base['Data de cadastro'], errors='coerce')
+    base['Ano'] = base['Data de cadastro'].dt.year
+    return base
