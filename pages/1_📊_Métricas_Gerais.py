@@ -187,3 +187,4 @@ with col7:
         height=350
     ).interactive()
     st.altair_chart(chart_analise, use_container_width=True)
+

@@ -83,11 +83,17 @@ def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
     Returns:
         DataFrame: DataFrame preparado para o gráfico.
     """
+    # Ajustar a categoria 'Serviço' para 'Checklist vertical'
+    if categoria == 'Serviço':
+        categoria = 'Checklist vertical'
+    
+    # Preparar os dados conforme a métrica selecionada
     if metrica == 'Quantidade':
         base_agrupado = base_filtrada.groupby(categoria).size().reset_index(name='Quantidade')
     else:
         base_agrupado = base_filtrada.groupby(categoria)['Valor Final'].sum().reset_index()
         base_agrupado.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
+    
     return base_agrupado
 
 
