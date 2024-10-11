@@ -78,6 +78,9 @@ def get_data():
         return None
 
     file_url = download_response_json['data']['pipeReportExport']['fileURL']
+
+    print(file_url) # Print para debug
+
     r = requests.get(file_url, allow_redirects=True)
     data = r.content
     try:
