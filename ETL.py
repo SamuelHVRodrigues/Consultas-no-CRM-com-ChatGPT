@@ -100,7 +100,7 @@ def get_data():
         print(relatorio)
         # rela = pd.read_excel(file_url, engine='openpyxl')
         print('----- rela -----')
-        print(rela)
+        # print(rela)
         return relatorio
     except Exception as e:
         print("Erro na extração:", e)
