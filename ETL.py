@@ -7,6 +7,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from dotenv import load_dotenv
 import os
+import time
 
 # Carrega as variáveis do arquivo .env
 load_dotenv()
@@ -63,7 +64,11 @@ def get_data():
     }}
     """
 
+    time.sleep(15)
+
     download_response = requests.post(url, json={'query': query}, headers=headers)
+
+    time.sleep(15)
 
     # Verifica se a segunda requisição foi bem-sucedida
     if download_response.status_code != 200:
