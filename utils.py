@@ -26,10 +26,10 @@ def carregar_base():
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
 
-    df['Valor Final'] = pd.to_numeric(df['Valor Final'], errors='coerce')
-    df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], errors='coerce')
+    # df['Valor Final'] = pd.to_numeric(df['Valor Final'], errors='coerce')
+    # df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], errors='coerce')
     df['Ano'] = df['Data de cadastro'].dt.year
-    df = df.dropna(subset=['Valor Final', 'Data de cadastro'])
+    # df = df.dropna(subset=['Valor Final', 'Data de cadastro'])
 
     return df
 
