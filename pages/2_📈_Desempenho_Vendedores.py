@@ -338,7 +338,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                         </div>
                             <div class="metric">
                             <div class="label">Serviço</div>
-                            <div class="value">{lead_data['Checklist vertical'].values[0] if pd.notnull(lead_data['Checklist vertical'].values[0]) else 'Não consta'}</div>
+                            <div class="value">{lead_data['Serviço'].values[0] if pd.notnull(lead_data['Serviço'].values[0]) else 'Não consta'}</div>
                         </div>
                         """, unsafe_allow_html=True)
 
@@ -394,7 +394,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         subcol1, subcol2 = st.columns([0.95,2])
 
         with subcol1:
-            categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Checklist vertical', 'Perfil de cliente'], key='categoria')
+            categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Serviço', 'Perfil de cliente'], key='categoria')
                 # Contando quantas vezes cada valor da categoria aparece
             categoria_count = base_filtrada[categoria].value_counts().reset_index()
             categoria_count.columns = [categoria, 'Quantidade']
