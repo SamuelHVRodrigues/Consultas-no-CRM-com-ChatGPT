@@ -15,6 +15,7 @@ def carregar_base():
     base['Data de cadastro'] = pd.to_datetime(base['Data de cadastro'], errors='coerce')
     base['Ano'] = base['Data de cadastro'].dt.year
     base = base.dropna(subset=['Valor Final', 'Data de cadastro'])
+    base.rename(columns={'Checklist vertical': 'Serviço'}, inplace=True)
     return base
 
 def calcular_taxa_conversao(base):
@@ -59,9 +60,22 @@ def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
     Returns:
         DataFrame: DataFrame preparado para o gráfico.
     """
+    # Usamos uma cópia do DataFrame original para evitar alterações indesejadas
+    df_analise_vendas = base_filtrada.copy()
+
+    # Aplicamos a lógica de dividir e explodir apenas se a categoria for 'Serviço'
+    # e se estivermos calculando a 'Quantidade', para não afetar o 'Faturamento' ou outros cálculos
+    if categoria == 'Serviço' and metrica == 'Quantidade':
+        # Dividir os serviços separados por vírgula em listas
+        df_analise_vendas['Serviço'] = df_analise_vendas['Serviço'].str.split(', ')
+        # Explodir a coluna 'Serviço' para que cada serviço tenha sua própria linha
+        df_analise_vendas = df_analise_vendas.explode('Serviço')
+
+    # Agrupamos e agregamos os dados de acordo com a métrica selecionada
     if metrica == 'Quantidade':
-        base_agrupado = base_filtrada.groupby(categoria).size().reset_index(name='Quantidade')
+        base_agrupado = df_analise_vendas.groupby(categoria).size().reset_index(name='Quantidade')
     else:
-        base_agrupado = base_filtrada.groupby(categoria)['Valor Final'].sum().reset_index()
+        base_agrupado = df_analise_vendas.groupby(categoria)['Valor Final'].sum().reset_index()
         base_agrupado.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
+
     return base_agrupado
