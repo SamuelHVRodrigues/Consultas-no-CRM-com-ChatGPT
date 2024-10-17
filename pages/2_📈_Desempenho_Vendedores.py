@@ -123,7 +123,7 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
     with col3:
         st.markdown(f"""
             <div class="metric">
-                <div class="label">Média de fechamento</div> <div class="value">{tempo_medio_fechamento:,.2f} dias</div>
+                <div class="label">Média de fechamento</div> <div class="value">{int(tempo_medio_fechamento)} dias</div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -180,8 +180,8 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
                 tooltip=['Vendedor', 'Taxa de Conversão']
             ).properties(
                 title="Taxa de Conversão por Vendedor",
-                height=240,
-                width=530
+                height=245,
+                width=565
             ).interactive()
             )
         else:
@@ -228,12 +228,21 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
             """, unsafe_allow_html=True)
 
     with col3:
-        st.markdown(f"""
-            <div class="metric">
-                <div class="label">Média de fechamento</div> 
-                <div class="value">{tempo_medio_fechamento:,.2f} dias</div>
-            </div>
-            """, unsafe_allow_html=True)
+        if pd.isna(tempo_medio_fechamento):
+            tempo_medio_fechamento = "Não consta"
+            st.markdown(f"""
+                <div class="metric">
+                    <div class="label">Tempo médio de fechamento</div> 
+                    <div class="value">{tempo_medio_fechamento} dias</div>
+                </div>
+                """, unsafe_allow_html=True)
+        else:
+            st.markdown(f"""
+                <div class="metric">
+                    <div class="label">Tempo médio de fechamento</div> 
+                    <div class="value">{int(tempo_medio_fechamento)} dias</div>
+                </div>
+                """, unsafe_allow_html=True)
 
     # Espaçamento entre as métricas e os gráficos
     st.markdown('<hr>', unsafe_allow_html=True)
@@ -341,44 +350,48 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         taxa_conversao_vendedor = base_filtrada.groupby('Vendedor').apply(calcular_taxa_conversao).reset_index()
         taxa_conversao_vendedor.columns = ['Vendedor', 'Taxa de Conversão']
 
+        # Criando subcolunas para garantir a disposição correta do gráfico
+        subcol1, subcol2, subcol3 = st.columns([1,2.5,1])
+        with subcol2:
         # Verificar se há dados para plotar o indicador
-        if not taxa_conversao_vendedor.empty:
-            # Extrair a taxa de conversão do vendedor selecionado
-            taxa_vendedor = taxa_conversao_vendedor[taxa_conversao_vendedor['Vendedor'] == vendedor_selecionado]['Taxa de Conversão'].values
-            taxa_vendedor = taxa_vendedor[0] if len(taxa_vendedor) > 0 else 0
+            if not taxa_conversao_vendedor.empty:
+                # Extrair a taxa de conversão do vendedor selecionado
+                taxa_vendedor = taxa_conversao_vendedor[taxa_conversao_vendedor['Vendedor'] == vendedor_selecionado]['Taxa de Conversão'].values
+                taxa_vendedor = taxa_vendedor[0] if len(taxa_vendedor) > 0 else 0
 
-            fig = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=taxa_vendedor,
-                title={'text': f"Taxa de Conversão de {vendedor_selecionado}",
-                       'font': {'size': 24, 'weight': 'bold'},
-                        'align': 'center'},
-                gauge={
-                    'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "rgba(0, 0, 0, 0)", 'showticklabels': False},
-                    'bar': {'color': "#36877a",  'thickness': 1},
-                    'bgcolor': "white",
-                    'borderwidth': 0,    
-                }
-            ))
+                fig = go.Figure(go.Indicator(
+                    mode="gauge+number",
+                    value=taxa_vendedor,
+                    title={'text': "Taxa de Conversão",
+                        'font': {'size': 24, 'weight': 'bold'},
+                            'align': 'center'},
+                    number={'suffix': "%", 'font': {'size': 40, 'weight': 'bold'}},
+                    gauge={
+                        'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "rgba(0, 0, 0, 0)", 'showticklabels': False},
+                        'bar': {'color': "#36877a",  'thickness': 1},
+                        'bgcolor': "white",
+                        'borderwidth': 0,    
+                    }
+                ))
 
-            # Ajustando o layout para definir width e height
-            fig.update_layout(
-                width=390,  # Largura do gráfico
-                height=240,  # Altura do gráfico
-                margin={'t': 55, 'b': 55, 'l': 3, 'r': 0},
-            )
+                # Ajustando o layout para definir width e height
+                fig.update_layout(
+                    width=250,  # Largura do gráfico
+                    height=200,  # Altura do gráfico
+                    margin={'t': 0, 'b': 0, 'l': 0, 'r': 0},
+                )
 
-            # Plotando o gráfico
-            st.plotly_chart(fig, use_container_width=True)
+                # Plotando o gráfico
+                st.plotly_chart(fig)
             
-        else:
-            st.info("Não há dados de taxa de conversão disponíveis para o vendedor selecionado.")
+            else:
+                st.info("Não há dados de taxa de conversão disponíveis para o vendedor selecionado.")
 
         # Placeholder para o título dinâmico 
         title_placeholder = st.empty()  
 
        # Colunas para o gráfico e o selectbox
-        subcol1, subcol2 = st.columns([1.3,2])
+        subcol1, subcol2 = st.columns([0.95,2])
 
         with subcol1:
             categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Checklist vertical', 'Perfil de cliente'], key='categoria')
