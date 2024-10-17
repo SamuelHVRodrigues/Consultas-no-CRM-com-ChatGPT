@@ -16,6 +16,21 @@ def carregar_base():
     base['Ano'] = base['Data de cadastro'].dt.year
     base = base.dropna(subset=['Valor Final', 'Data de cadastro'])
     base.rename(columns={'Checklist vertical': 'Serviço'}, inplace=True)
+
+    # Lista das colunas de tempo
+    colunas_tempo = [
+        'Tempo total na fase Base de prospects (dias)',
+        'Tempo total na fase Qualificação (dias)',
+        'Tempo total na fase Diagnóstico (dias)',
+        'Tempo total na fase Montagem de proposta (dias)',
+        'Tempo total na fase Apresentação de proposta (dias)',
+        'Tempo total na fase Negociação (dias)',
+        'Tempo total na fase Renegociação (dias)'
+    ]
+
+    # Converter as colunas de tempo para float
+    base[colunas_tempo] = base[colunas_tempo].apply(pd.to_numeric, errors='coerce')
+
     return base
 
 def calcular_taxa_conversao(base):
@@ -79,3 +94,21 @@ def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
         base_agrupado.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
 
     return base_agrupado
+
+def preparar_dados_metricas_vendedores(base_filtrada, metrica):
+    """
+    Prepara os dados para o gráfico de metricas de vendedores.
+
+    Args:
+        base_filtrada (DataFrame): DataFrame com os dados filtrados.
+
+    Returns:
+        DataFrame: DataFrame com 'Vendedor' e 'Faturamento'.
+    """
+    if metrica == 'Quantidade':
+        base_metricas = base_filtrada.groupby('Vendedor').size().reset_index(name='Quantidade')
+    else:
+        base_metricas = base_filtrada.groupby('Vendedor')['Valor Final'].sum().reset_index()
+        base_metricas.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
+        base_metricas = base_metricas.sort_values('Faturamento', ascending=False)
+    return base_metricas
