@@ -3,14 +3,15 @@ import openai
 from dotenv import load_dotenv, find_dotenv
 import pandas as pd
 import time
+from utils import carregar_base, calcular_taxa_conversao
 
 app = Flask(__name__)
 
 # Definir limite de tokens de saída
-MAX_TOKENS_OUTPUT = 500  # Exemplo: limite de 500 tokens de resposta
+MAX_TOKENS_OUTPUT = 50000  # Exemplo: limite de 500 tokens de resposta
 
 # Carregar a base de dados que foi tratada em outro arquivo
-df = pd.read_csv(r'data/df_CRM.csv')
+df = carregar_base()
 
 # Converter para datetime
 df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
@@ -24,7 +25,7 @@ client = openai.Client()
 
 # Passa o arquivo para a openai
 file = client.files.create(
-    file = open(r'data/df_CRM.csv', 'rb'),
+    file = open(r'data/base_mockada.csv', 'rb'),
     purpose='assistants'
 )
 file_id = file.id # Salva o ID do arquivo
