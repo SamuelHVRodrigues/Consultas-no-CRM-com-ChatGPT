@@ -28,7 +28,7 @@ def carregar_base():
 
     # df['Valor Final'] = pd.to_numeric(df['Valor Final'], errors='coerce')
     # df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], errors='coerce')
-    df['Ano'] = df['Data de cadastro'].dt.year
+    # df['Ano'] = df['Data de cadastro'].dt.year
     # df = df.dropna(subset=['Valor Final', 'Data de cadastro'])
 
     return df
