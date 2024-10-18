@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 # jobs -> Cada job define um conjunto de ações que o workflow vai realizar
 jobs:
