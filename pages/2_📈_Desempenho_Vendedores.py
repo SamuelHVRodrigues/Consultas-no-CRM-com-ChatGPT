@@ -17,7 +17,7 @@ st.set_page_config(layout="wide",
                    initial_sidebar_state="collapsed")
 
 # Para poder ler o arquivo CSS para customizar a página
-with open("style.css") as f:
+with open("assets\style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
@@ -251,9 +251,9 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
     # Filtrar a base de dados do vendedor selecionado
     base_vendedor = base_filtrada[base_filtrada['Vendedor'] == vendedor_selecionado]
     
-    # Converter 'Data de cadastro' para datetime, se ainda não estiver
-    if not pd.api.types.is_datetime64_any_dtype(base_vendedor['Data de cadastro']):
-        base_vendedor['Data de cadastro'] = pd.to_datetime(base_vendedor['Data de cadastro'], errors='coerce')
+    # Converter 'Criado em' para datetime, se ainda não estiver
+    if not pd.api.types.is_datetime64_any_dtype(base_vendedor['Criado em']):
+        base_vendedor['Criado em'] = pd.to_datetime(base_vendedor['Criado em'], errors='coerce')
 
     with col4:
         st.markdown(f"<h3 class='left-align'>Leads de {vendedor_selecionado}</h3>", unsafe_allow_html=True)
@@ -267,16 +267,30 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         # Filtrar com base na situação selecionada
         base_filtrada_situacao = base_vendedor.copy()
         if situacao == 'Ativo':
-            base_filtrada_situacao = base_vendedor[~base_vendedor['Fase atual'].isin(['Ganho', 'Perdido', 'Não qualificado'])]
+            base_filtrada_situacao = base_vendedor[~base_vendedor['Fase atual'].isin(['Ganho', 'Perdido', 'Leads não-qualificados'])]
         else:
             base_filtrada_situacao = base_vendedor  # Caso 'Geral', mantém todos os leads
 
         # Empresas filtradas com base na situação escolhida (em subcol2)
-        empresas_filtradas = base_filtrada_situacao['Empresa'].dropna()
+        # Definir a função para obter o nome da empresa ou do cliente
+        def obter_nome_empresa_ou_cliente(row):
+            if pd.notnull(row['Empresa']) and row['Empresa'].strip() != '':
+                return row['Empresa']
+            elif pd.notnull(row['Nome do cliente']) and row['Nome do cliente'].strip() != '':
+                return row['Nome do cliente']
+            else:
+                return 'Nome não disponível'
 
+        # Aplicar a função a cada linha para obter a lista de empresas ou clientes
+        empresas_filtradas = base_filtrada_situacao.apply(obter_nome_empresa_ou_cliente, axis=1)
+
+        # Remover valores nulos e duplicados
+        empresas_filtradas = empresas_filtradas.dropna().unique()
+
+        # Verificar se há empresas ou clientes disponíveis para seleção
         with subcol2:
             if len(empresas_filtradas) > 0:
-                lead_selecionado = st.selectbox("Selecione o Lead", empresas_filtradas, key='lead')
+                lead_selecionado = st.selectbox("Selecione o Lead", empresas_filtradas, key='Nome do cliente')
             else:
                 st.warning("Nenhuma empresa disponível para a situação selecionada.")
                 lead_selecionado = None  # Definir como None para evitar erros posteriores
@@ -329,8 +343,8 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                             <div class="value">R$ {lead_data['Valor Final'].sum():,.2f}</div>
                         </div>
                             <div class="metric">
-                            <div class="label">Data de cadastro</div>
-                            <div class="value">{lead_data['Data de cadastro'].dt.strftime('%d/%m/%Y').values[0] if pd.notnull(lead_data['Data de cadastro'].values[0]) else 'Não consta'}</div> 
+                            <div class="label">Criado em</div>
+                            <div class="value">{lead_data['Criado em'].dt.strftime('%d/%m/%Y').values[0] if pd.notnull(lead_data['Criado em'].values[0]) else 'Não consta'}</div> 
                         </div>
                             <div class="metric">
                             <div class="label">Perfil de cliente</div>
@@ -338,7 +352,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                         </div>
                             <div class="metric">
                             <div class="label">Serviço</div>
-                            <div class="value">{lead_data['Checklist vertical'].values[0] if pd.notnull(lead_data['Checklist vertical'].values[0]) else 'Não consta'}</div>
+                            <div class="value">{lead_data['Serviço'].values[0] if pd.notnull(lead_data['Serviço'].values[0]) else 'Não consta'}</div>
                         </div>
                         """, unsafe_allow_html=True)
 
@@ -358,14 +372,14 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                 # Extrair a taxa de conversão do vendedor selecionado
                 taxa_vendedor = taxa_conversao_vendedor[taxa_conversao_vendedor['Vendedor'] == vendedor_selecionado]['Taxa de Conversão'].values
                 taxa_vendedor = taxa_vendedor[0] if len(taxa_vendedor) > 0 else 0
-
+                
                 fig = go.Figure(go.Indicator(
                     mode="gauge+number",
                     value=taxa_vendedor,
                     title={'text': "Taxa de Conversão",
-                        'font': {'size': 24, 'weight': 'bold'},
+                        'font': {'size': 24},
                             'align': 'center'},
-                    number={'suffix': "%", 'font': {'size': 40, 'weight': 'bold'}},
+                    number={'suffix': "%", 'font': {'size': 40}},
                     gauge={
                         'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "rgba(0, 0, 0, 0)", 'showticklabels': False},
                         'bar': {'color': "#36877a",  'thickness': 1},
@@ -394,7 +408,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         subcol1, subcol2 = st.columns([0.95,2])
 
         with subcol1:
-            categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Checklist vertical', 'Perfil de cliente'], key='categoria')
+            categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Serviço', 'Perfil de cliente'], key='categoria')
                 # Contando quantas vezes cada valor da categoria aparece
             categoria_count = base_filtrada[categoria].value_counts().reset_index()
             categoria_count.columns = [categoria, 'Quantidade']
