@@ -7,11 +7,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 
 def carregar_base():
-    credentials = st.secrets["google_service_account"]
+    #credentials = st.secrets["google_service_account"]
 
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    creds = ServiceAccountCredentials.from_json_keyfile_name('credentials (1).json', scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
     client = gspread.authorize(creds)
     
     # Insira o ID da planilha diretamente para testar
@@ -26,13 +26,35 @@ def carregar_base():
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
 
-    # df['Valor Final'] = pd.to_numeric(df['Valor Final'], errors='coerce')
-    # df['Data de cadastro'] = pd.to_datetime(df['Data de cadastro'], errors='coerce')
-    # df['Ano'] = df['Criado em'].dt.year
-    # df = df.dropna(subset=['Valor Final', 'Data de cadastro'])
-
+    df['Valor Final'] = pd.to_numeric(df['Valor Final'], errors='coerce')
+    df['Criado em'] = pd.to_datetime(df['Criado em'], errors='coerce')
+    df['Primeira vez que entrou na fase Ganho'] = pd.to_datetime(df['Primeira vez que entrou na fase Ganho'], errors='coerce')
+    df['Ano'] = df['Criado em'].dt.year
+    df.rename(columns={'Responsável': 'Vendedor'}, inplace=True)
+    df.rename(columns={'Checklist vertical': 'Serviço'}, inplace=True)
+    # Remover colunas sem nome ou colunas com nomes vazios
+    df = df.loc[:, ~df.columns.str.match('^Unnamed')]
+    df = df.loc[:, df.columns != '']
+    
+    colunas_tempo = definir_colunas_tempo()
+    
+    # Converter as colunas de tempo para float
+    df[colunas_tempo] = df[colunas_tempo].apply(pd.to_numeric, errors='coerce')
     return df
 
+# Lista das colunas de tempo
+def definir_colunas_tempo():
+    colunas_tempo = [
+        'Tempo total na fase Base de prospects (dias)',
+        'Tempo total na fase Qualificação (dias)',
+        'Tempo total na fase Diagnóstico (dias)',
+        'Tempo total na fase Montagem de proposta (dias)',
+        'Tempo total na fase Apresentação de proposta (dias)',
+        'Tempo total na fase Negociação (dias)',
+        'Tempo total na fase Renegociação (dias)'
+    ]
+    
+    return colunas_tempo
 
 def calcular_taxa_conversao(base):
     """
@@ -57,12 +79,12 @@ def preparar_dados_faturamento(base_filtrada):
         base_filtrada (DataFrame): DataFrame com os dados filtrados.
 
     Returns:
-        DataFrame: DataFrame com 'Data de cadastro' e 'Faturamento Acumulado'.
+        DataFrame: DataFrame com 'Criado em' e 'Faturamento Acumulado'.
     """
-    base_faturamento = base_filtrada.groupby('Data de cadastro')['Valor Final'].sum().reset_index()
-    base_faturamento = base_faturamento.sort_values('Data de cadastro')
+    base_faturamento = base_filtrada.groupby('Criado em')['Valor Final'].sum().reset_index()
+    base_faturamento = base_faturamento.sort_values('Criado em')
     base_faturamento['Faturamento Acumulado'] = base_faturamento['Valor Final'].cumsum()
-    return base_faturamento[['Data de cadastro', 'Faturamento Acumulado']]
+    return base_faturamento[['Criado em', 'Faturamento Acumulado']]
 
 def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
     """
@@ -76,11 +98,24 @@ def preparar_dados_analise_vendas(base_filtrada, metrica, categoria):
     Returns:
         DataFrame: DataFrame preparado para o gráfico.
     """
+    # Usamos uma cópia do DataFrame original para evitar alterações indesejadas
+    df = base_filtrada.copy()
+
+    # Aplicamos a lógica de dividir e explodir apenas se a categoria for 'Serviço'
+    # e se estivermos calculando a 'Quantidade', para não afetar o 'Faturamento' ou outros cálculos
+    if categoria == 'Serviço' and metrica == 'Quantidade':
+        # Dividir os serviços separados por vírgula em listas
+        df['Serviço'] = df['Serviço'].str.split(', ')
+        # Explodir a coluna 'Serviço' para que cada serviço tenha sua própria linha
+        df = df.explode('Serviço')
+
+    # Agrupamos e agregamos os dados de acordo com a métrica selecionada
     if metrica == 'Quantidade':
-        base_agrupado = base_filtrada.groupby(categoria).size().reset_index(name='Quantidade')
+        base_agrupado = df.groupby(categoria).size().reset_index(name='Quantidade')
     else:
-        base_agrupado = base_filtrada.groupby(categoria)['Valor Final'].sum().reset_index()
+        base_agrupado = df.groupby(categoria)['Valor Final'].sum().reset_index()
         base_agrupado.rename(columns={'Valor Final': 'Faturamento'}, inplace=True)
+
     return base_agrupado
 
 
