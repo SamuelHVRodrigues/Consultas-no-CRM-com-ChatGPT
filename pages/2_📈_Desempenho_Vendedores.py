@@ -297,7 +297,10 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         
         if lead_selecionado:
             # Selecionar dados do lead escolhido
-            lead_data = base_filtrada_situacao[base_filtrada_situacao['Empresa'] == lead_selecionado]
+            lead_data = base_filtrada_situacao[
+            (base_filtrada_situacao['Empresa'] == lead_selecionado) | 
+            (base_filtrada_situacao['Nome do cliente'] == lead_selecionado)
+        ]
             
             if not lead_data.empty:
                 # Calcular o tempo total no funil somando as colunas de dias
