@@ -66,7 +66,7 @@ if prompt := st.chat_input("Mensagem CITiAssistant:"):
         st.warning(f"A pergunta excede o limite máximo de {MAX_TOKENS_INPUT} tokens.")
     else:
         # Fazer a requisição para a API
-        response = requests.post("http://18.231.215.95:3344/ask", json={"question": prompt})
+        response = requests.post("http://18.231.215.94:3344/ask", json={"question": prompt})
         if response.status_code == 200:
             data = response.json()
             resposta = data.get('answer')
