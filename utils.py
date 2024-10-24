@@ -7,11 +7,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 
 def carregar_base():
-    credentials = st.secrets["google_service_account"]
+    # credentials = st.secrets["google_service_account"]
 
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
     client = gspread.authorize(creds)
     
     # Insira o ID da planilha diretamente para testar
@@ -40,6 +40,7 @@ def carregar_base():
     
     # Converter as colunas de tempo para float
     df[colunas_tempo] = df[colunas_tempo].apply(pd.to_numeric, errors='coerce')
+    
     return df
 
 # Lista das colunas de tempo
