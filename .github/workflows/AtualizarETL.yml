@@ -1,17 +1,26 @@
 name: Executar ETL Periodicamente
 
-# Define quando o workflow será executado
+# on -> Define quando o workflow será executado (neste caso, no horário agendado ou manualmente)
 on:
-  schedule:
-    - cron: '50 19 * * *'  # Executa diariamente à meia-noite UTC
-  workflow_dispatch:    # Permite execução manual
+  # Define um horário para a execução automática do workflow
+  schedule: 
+    # 0 -> Define o minuto como 0
+    # 3 -> Define a hora como 3 da manhã no horário UTC+0 e meia noite no UTC-3 (horário de Brasília)
+    # * -> Todos os dias do mês
+    # * -> Todos os meses
+    # 1-5 -> De segunda (1) a sexta (5)
+    - cron: '0 3 * * 1-5' 
+  # Permite que o workflow seja executado manualmente
+  workflow_dispatch:
 
+# jobs - Cada job define um conjunto de ações que o workflow vai realizar
 jobs:
   executar_etl:
+    # Define o ambiente que o job será executado (neste caso, a versão mais recente do ubuntu)
     runs-on: ubuntu-latest
 
     steps:
-      # Passo 1: Checkout do repositório
+      # Passo 1: Checkout do repositório (permite que o workflow acesse os arquivos do projeto)
       - name: Checkout do código
         uses: actions/checkout@v3
 
@@ -19,22 +28,25 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # Especifique a versão do Python que você está usando
+          python-version: '3.10' # Especifica a versão do Python a ser usada 
 
       # Passo 3: Instalar dependências
       - name: Instalar dependências
-        
+        # python -m pip install --upgrade pip -> Instala a versão mais atualizadado pip
+        # pip install -r requirements.txt -> Instala os pacotes listados no arquivo 'requirements.txt'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       # Passo 4: Executar o script ETL
       - name: Executar script ETL
+        # Passa as variáveis de ambiente necessárias para a execução. As variáveis estão armazenadas nas secrets do GitHub
         env:
           PIPEFY_TOKEN: ${{ secrets.PIPEFY_TOKEN }}
           PIPE_ID: ${{ secrets.PIPE_ID }}
           PIPE_REPORT_ID: ${{ secrets.PIPE_REPORT_ID }}
           SHEETS_ID: ${{ secrets.SHEETS_ID }}
           GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+        # Executa o script 'etl-exe.py'
         run: |
           python etl-exe.py
