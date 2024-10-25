@@ -3,7 +3,12 @@ import requests
 import pandas as pd
 import tiktoken  # Biblioteca para calcular tokens
 import shelve
+import os
+from dotenv import load_dotenv
 from utils import carregar_base, calcular_taxa_conversao
+
+# Carrega as variáveis do arquivo .env
+load_dotenv()
 
 # Função para contar tokens de entrada
 def contar_tokens(texto):
@@ -66,7 +71,7 @@ if prompt := st.chat_input("Mensagem CITiAssistant:"):
         st.warning(f"A pergunta excede o limite máximo de {MAX_TOKENS_INPUT} tokens.")
     else:
         # Fazer a requisição para a API
-        response = requests.post("http://18.231.215.94:3344/ask", json={"question": prompt})
+        response = requests.post(os.getenv('ROUTE'), json={"question": prompt})
         if response.status_code == 200:
             data = response.json()
             resposta = data.get('answer')
