@@ -58,6 +58,8 @@ BOT_AVATAR = "🤖"
 with st.expander("Visualizar Tabela Completa", expanded=False):
     st.dataframe(df)
 
+route = st.secrets["ROUTE"]
+
 # Interface de chat
 if prompt := st.chat_input("Mensagem CITiAssistant:"):
     tokens_usados_pergunta = contar_tokens(prompt)
@@ -66,7 +68,7 @@ if prompt := st.chat_input("Mensagem CITiAssistant:"):
         st.warning(f"A pergunta excede o limite máximo de {MAX_TOKENS_INPUT} tokens.")
     else:
         # Fazer a requisição para a API
-        response = requests.post("http://146.190.147.250:3334/ask", json={"question": prompt})
+        response = requests.post(route, json={"question": prompt})
         if response.status_code == 200:
             data = response.json()
             resposta = data.get('answer')
