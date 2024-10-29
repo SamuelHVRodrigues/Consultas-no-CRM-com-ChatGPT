@@ -50,7 +50,7 @@ with st.container():
         
         with st.expander("Quem pode acessar esses dados?"):
             st.write("""
-            A Interface de Consultas do CRM foi desenvolvida principalmente para uso pelo time de Comercial e Direx, mas qualquer membro do CITi pode acessá-la.
+            A Interface de Consultas do CRM foi desenvolvida exclusivamente para uso pelo time de Negócios e pela Direx.
                      
                      Pedimos que não compartilhem essas informações.
             """)

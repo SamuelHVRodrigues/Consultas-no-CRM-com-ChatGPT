@@ -11,7 +11,7 @@ def carregar_base():
 
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
     client = gspread.authorize(creds)
     
     # Insira o ID da planilha diretamente para testar
@@ -40,6 +40,7 @@ def carregar_base():
     
     # Converter as colunas de tempo para float
     df[colunas_tempo] = df[colunas_tempo].apply(pd.to_numeric, errors='coerce')
+    
     return df
 
 # Lista das colunas de tempo
