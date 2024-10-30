@@ -7,11 +7,14 @@ from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 
 def carregar_base():
-    credentials = st.secrets["google_service_account"]
-
-    # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
+
+    try:
+        credentials = st.secrets["google_service_account"]
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
+    except:
+        creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+
     client = gspread.authorize(creds)
     
     # Insira o ID da planilha diretamente para testar
