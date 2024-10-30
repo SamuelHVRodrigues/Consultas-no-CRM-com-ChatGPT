@@ -2,10 +2,9 @@
 \dados
 \__pycache__
 \.venv
-Teste.py
-base_CRM
 Consulta_CRM_assistant.py
 dados_tratados.csv
 \venv-crm
 req.txt
 gunicorn.log
+credentials.json

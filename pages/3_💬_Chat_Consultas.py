@@ -3,6 +3,11 @@ import requests
 import pandas as pd
 import tiktoken  # Biblioteca para calcular tokens
 import shelve
+from dotenv import load_dotenv
+from utils import carregar_base
+
+# Carrega as variáveis do arquivo .env
+load_dotenv()
 
 # Função para contar tokens de entrada
 def contar_tokens(texto):
@@ -16,8 +21,8 @@ with open("assets/style.css") as f:
 # Definir limites de tokens
 MAX_TOKENS_INPUT = 100  # Exemplo: limite de 100 tokens de entrada
 
-# Carregar a base de dados que foi tratada em outro arquivo
-df = pd.read_csv(r'data/df_CRM.csv')
+# Carregar a base de dados diretamente do sheets
+df = carregar_base()
 
 # Inicializar o estado da sessão para armazenar o histórico
 if 'historico' not in st.session_state:
@@ -57,6 +62,8 @@ BOT_AVATAR = "🤖"
 with st.expander("Visualizar Tabela Completa", expanded=False):
     st.dataframe(df)
 
+route = st.secrets["ROUTE"]
+
 # Interface de chat
 if prompt := st.chat_input("Mensagem CITiAssistant:"):
     tokens_usados_pergunta = contar_tokens(prompt)
@@ -65,7 +72,7 @@ if prompt := st.chat_input("Mensagem CITiAssistant:"):
         st.warning(f"A pergunta excede o limite máximo de {MAX_TOKENS_INPUT} tokens.")
     else:
         # Fazer a requisição para a API
-        response = requests.post("http://15.228.13.32:3333/ask", json={"question": prompt})
+        response = requests.post(route, json={"question": prompt})
         if response.status_code == 200:
             data = response.json()
             resposta = data.get('answer')
