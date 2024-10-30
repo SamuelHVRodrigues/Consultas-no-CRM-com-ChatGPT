@@ -91,14 +91,14 @@ if vendedor_selecionado != 'Todos':
 faturamento_total = base_filtrada_ganho['Valor Final'].sum()
 total_vendas_ganhas = len(base_filtrada_ganho)
 taxa_conversao = calcular_taxa_conversao(base_filtrada)
+base_filtrada_ganho['Primeira vez que entrou na fase Ganho'] = pd.to_datetime(base_filtrada_ganho['Primeira vez que entrou na fase Ganho'])
 
 # Cálculo do tempo médio de fechamento 
-tempo_medio_fechamento = base_filtrada_ganho[
-    ['Tempo total na fase Base de prospects (dias)', 'Tempo total na fase Qualificação (dias)',
-     'Tempo total na fase Diagnóstico (dias)', 'Tempo total na fase Montagem de proposta (dias)',
-     'Tempo total na fase Apresentação de proposta (dias)', 'Tempo total na fase Negociação (dias)',
-     'Tempo total na fase Renegociação (dias)']
-].sum(axis=1).mean()
+base_filtrada_ganho['Quantidade de dias'] = (base_filtrada_ganho['Primeira vez que entrou na fase Ganho'] - base_filtrada_ganho['Data de cadastro']).dt.days
+tempo_medio_fechamento = base_filtrada_ganho['Quantidade de dias'].mean()
+
+tempo_medio_fechamento = tempo_medio_fechamento if tempo_medio_fechamento > 0 else 'Não consta'
+
 
 def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento):
 # Criar colunas para o título e gráficos
@@ -177,7 +177,7 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
             st.altair_chart(alt.Chart(taxa_conversao_vendedores_filtrada).mark_bar(color='#3f9c81').encode(
                 x=alt.X('Vendedor:N', title='', sort='-y', axis=alt.Axis(labelAngle=0)),  # Rótulos dos vendedores na horizontal
                 y=alt.Y('Taxa de Conversão:Q', title='Taxa de Conversão (%)', scale=alt.Scale(domain=[0, 100])),  # Garantir que vá até 100%
-                tooltip=['Vendedor', 'Taxa de Conversão']
+                tooltip=[alt.Tooltip('Vendedor:N'), alt.Tooltip('Taxa de Conversão:Q', format='.2f')]
             ).properties(
                 title="Taxa de Conversão por Vendedor",
                 height=245,
@@ -287,16 +287,8 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
             
             if not lead_data.empty:
                 # Calcular o tempo total no funil somando as colunas de dias
-                colunas_dias = [
-                    'Tempo total na fase Base de prospects (dias)', 
-                    'Tempo total na fase Qualificação (dias)',
-                    'Tempo total na fase Diagnóstico (dias)', 
-                    'Tempo total na fase Montagem de proposta (dias)',
-                    'Tempo total na fase Apresentação de proposta (dias)', 
-                    'Tempo total na fase Negociação (dias)',
-                    'Tempo total na fase Renegociação (dias)'
-                ]
-                tempo_total_funil = lead_data[colunas_dias].fillna(0).sum().sum()
+                lead_data['Criado em'] = pd.to_datetime(lead_data['Data de cadastro'], errors='coerce')
+                lead_data['Quantidade de dias no Funil'] =(pd.Timestamp('now') - lead_data['Criado em']).dt.days
 
             # Container com borda antao redor das colunas
             with st.container(border=True):
@@ -319,7 +311,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                         </div>
                             <div class="metric">
                             <div class="label">Tempo Total no Funil</div>
-                            <div class="value">{int(tempo_total_funil)} dias</div>  
+                            <div class="value">{lead_data['Quantidade de dias no Funil'].values[0]} dias</div>  
                         </div>
                         """, unsafe_allow_html=True)
                 with info_col2:
