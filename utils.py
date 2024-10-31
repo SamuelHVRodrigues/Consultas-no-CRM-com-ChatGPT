@@ -17,8 +17,8 @@ def carregar_base():
 
     client = gspread.authorize(creds)
     
-    # Insira o ID da planilha diretamente para testar
-    SheetsID = '18Ub6-90lW3CXIpezs2Sjrtx5tlnRhMBaUEY_Jz30hHg' # Verificar para substituir o código bruto
+    # ID da planilha
+    SheetsID = st.secrets['SHEETS_ID']
     
     # Abre a planilha
     sheet = client.open_by_key(SheetsID)
