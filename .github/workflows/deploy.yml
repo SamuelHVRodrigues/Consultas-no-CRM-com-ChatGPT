@@ -47,7 +47,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/droplet-do-key.pem ${{ secrets.DROPLET_IP_AND_USER }} << EOF
           cd ~/app
-          source venv-crm/bin/activate
+          source venv/bin/activate
           git pull origin main
           killall gunicorn || echo "No gunicorn process found."
           nohup gunicorn --bind 0.0.0.0:3333 back:app > gunicorn.log 2>&1 &
