@@ -1,12 +1,11 @@
-name: Deploy Consultas no CRM to EC2
+name: Deploy Consultas no CRM to Digital Ocean
 
 # on -> Define quando o workflow será acionado (neste caso, a cada push na branch main ou manualmente)
 on:
-  # Define 
+  # Define
   push:
     branches:
       - main
-      - develop
   # Permite que o workflow seja executado manualmente
   workflow_dispatch:
 
@@ -21,17 +20,17 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
 
-      # Passo 2: Adiciona a chave privada da instância EC2 da AWS
+      # Passo 2: Adiciona a chave privada do droplet da Digital Ocean
       - name: Add SSH Key
         # A primeira linha cria um arquivo .pem a partir da Secret do GitHub
-        # chmod 600 ~/ec2-key.pem -> Dá permissão de leitura e escrita ao proprietário do arquivo (quem gerou a chave)
+        # chmod 600 ~/droplet-do-key.pem -> Dá permissão de leitura e escrita ao proprietário do arquivo (quem gerou a chave)
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > ~/ec2-key.pem
-          chmod 600 ~/ec2-key.pem
+          echo "${{ secrets.DROPLET_DO_SSH_KEY }}" > ~/droplet-do-key.pem
+          chmod 600 ~/droplet-do-key.pem
 
-      # Passo 3: Faz o deploy na instância EC2 da AWS
-      - name: Deploy to EC2
-        # A primeira linha é para conectar à instância EC2 da AWS
+      # Passo 3: Faz o deploy no droplet da Digital Ocean
+      - name: Deploy to Digital Ocean Droplet
+        # A primeira linha é para conectar ao droplet da Digital Ocean
         # << EOF -> (End of File) Indica que os comandos que foram passados até o momento do '<< EOF' são um bloco
         # cd ~/app -> Navega para o diretório do projeto
         # source venv-crm/bin/activate -> Ativar o ambiente virtual
@@ -46,13 +45,10 @@ jobs:
         #   & -> Libera o terminal de ficar 'preso' esperando o gunicorn terminar, permitindo que outros comandos sejam executados e/ou que o GitHub Actions seja encerrado
         # EOF -> (End of File) Finaliza o bloco de comandos, indicando que não há mais comandos para serem lidos
         run: |
-          ssh -o StrictHostKeyChecking=no -i ~/ec2-key.pem ubuntu@ec2-15-228-13-32.sa-east-1.compute.amazonaws.com << EOF
+          ssh ${{ secrets.DROPLET_IP_AND_USER }} << EOF
           cd ~/app
-          source venv-crm/bin/activate
+          source venv/bin/activate
           git pull origin main
           killall gunicorn || echo "No gunicorn process found."
           nohup gunicorn --bind 0.0.0.0:3333 back:app > gunicorn.log 2>&1 &
           EOF
-        env:
-          # Passa a variável de ambiente necessária para a execução. A variável está armazenada nas secrets do GitHub
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
