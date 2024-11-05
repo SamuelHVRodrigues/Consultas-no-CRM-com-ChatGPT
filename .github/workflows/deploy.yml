@@ -45,7 +45,7 @@ jobs:
         #   & -> Libera o terminal de ficar 'preso' esperando o gunicorn terminar, permitindo que outros comandos sejam executados e/ou que o GitHub Actions seja encerrado
         # EOF -> (End of File) Finaliza o bloco de comandos, indicando que não há mais comandos para serem lidos
         run: |
-          ssh -o StrictHostKeyChecking=no -i ~/droplet-do-key.pem ${{ secrets.DROPLET_IP_AND_USER }} << EOF
+          ssh ${{ secrets.DROPLET_IP_AND_USER }} << EOF
           cd ~/app
           source venv/bin/activate
           git pull origin main
