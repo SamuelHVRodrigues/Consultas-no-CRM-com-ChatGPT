@@ -1,0 +1,396 @@
+Fase atual,Criado em,Nome do cliente,Empresa,Vendedor,Perfil de cliente,Setor,Serviço,Origem,Valor Final,Motivo da perda,Motivo da não qualificação,Tempo total na fase Base de prospects (dias),Tempo total na fase Qualificação (dias),Tempo total na fase Diagnóstico (dias),Tempo total na fase Montagem de proposta (dias),Tempo total na fase Apresentação de proposta (dias),Tempo total na fase Negociação (dias),Primeira vez que entrou na fase Ganho,Tempo total na fase Renegociação (dias),Tempo total do negócio (dias),Ano
+Perdido,2023-01-10 16:39:31,André Borges,SolarGrid,Pedro de Lima Fernandes Costa,Empresa consolidada,Energia e Sustentabilidade,"Desenvolvimento Web, Site institucional",Marketing,,,,,,,,,,,,"66,292605",2023
+Perdido,2023-01-10 16:39:39,Neura Fatima Oliveira,,Geraldo Durães de Carvalho Filho,,Saúde e Cuidados Médicos,Desenvolvimento Web,Marketing,,,,,,,,,,,,"2,108935",2023
+Perdido,2023-01-10 16:43:33,Thiago Perini,,Igor Corrêa,,,,Marketing,,,,,,,,,,,,"21,039074",2023
+Perdido,2023-01-10 16:46:44,Ana Júlia,Futuras Cientistas,Igor Corrêa,Empresa consolidada,Ciências e Inovação,Desenvolvimento Web,Marketing,,,,,,,,,,,,"2,108194",2023
+Perdido,2023-01-10 16:47:56,Arthur,,Geraldo Durães de Carvalho Filho,Startup,,,Marketing,,Sem Orçamento,,,,,,,,,,"2,183924",2023
+Perdido,2023-01-10 16:50:33,Caio Borges,,Igor Corrêa,Empreendedor,,,Marketing,,,,,,,,,,,,"2,105081",2023
+Perdido,2023-01-10 16:53:25,Pedro,IMEX,Igor Corrêa,Empresa consolidada,Saúde e Cuidados Médicos,,Indicação de Ej,,,,,,,,,,,,"10,064572",2023
+Perdido,2023-01-10 16:53:32,William,Pretti Cargas,Geraldo Durães de Carvalho Filho,Empresa consolidada,Transporte e Logística,"Concepção, Desenvolvimento Web",,,,,,,,,,,,,"16,092025",2023
+Perdido,2023-01-10 16:56:01,Celso,,Igor Corrêa,,,,UFPE,,,,,,,,,,,,"22,266806",2023
+Perdido,2023-01-10 16:58:11,Valeria Barreto,,Igor Corrêa,Empreendedor,,,Marketing,,,,,,,,,,,,"19,974931",2023
+Perdido,2023-01-10 16:58:57,Carolina pacheco,Carolina Pacheco,Geraldo Durães de Carvalho Filho,,,Concepção,,,Não gostou da qualidade,,,,,,,,,,"2,096863",2023
+Perdido,2023-01-10 16:59:54,Bruno Rafael,,Igor Corrêa,Empresa consolidada,,,Marketing,,,,,,,,,,,,"21,027801",2023
+Perdido,2023-01-10 17:01:55,Fábio Alexandre de Oliveira,,Igor Corrêa,Empreendedor,,,Marketing,,,,,,,,,,,,"15,077801",2023
+Perdido,2023-01-10 17:03:33,Cassiano Nunes,,Igor Corrêa,Empresa consolidada,,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,"15,079259",2023
+Perdido,2023-01-10 17:05:37,Ighor Bastos,Startup encubada pela Cocriagro,Geraldo Durães de Carvalho Filho,Startup,Tecnologia da Informação (TI),Concepção,Marketing,,Sem Orçamento,,,,,,,,,,"9,150949",2023
+Renegociação,2023-01-10 17:06:59,Eduardo Rocha,Matriculadores,Igor Corrêa,Empreendedor,Educação e Ensino,Desenvolvimento Web,Marketing,,,,,,,,,,,,"15,060544",2023
+Perdido,2023-01-10 17:09:43,Roberto,EJ unicap,Geraldo Durães de Carvalho Filho,Empreendedor,Consultoria e Serviçoes Profissionais,Concepção,Indicação MEJ,,Não é o momento para a empresa,,,,,,,,,,"2,090926",2023
+Perdido,2023-01-10 17:14:52,Fernando Lobo Schettini Figueiredo,Vertrio,Geraldo Durães de Carvalho Filho,Empreendedor,Construção e Engenharia,,Marketing,,,,,,,,,,,,"9,136308",2023
+Perdido,2023-01-10 17:18:06,Fábio Baptista,,Geraldo Durães de Carvalho Filho,Empreendedor,,,Marketing,,,,,,,,,,,,"16,073843",2023
+Perdido,2023-01-10 17:20:13,Conceição,,Geraldo Durães de Carvalho Filho,Empreendedor,,,Marketing,,,,,,,,,,,,"16,071609",2023
+Perdido,2023-01-10 17:22:33,Camila Belmiro,,Geraldo Durães de Carvalho Filho,Empreendedor,,Concepção,Marketing,,,,,,,,,,,,"16,071053",2023
+Perdido,2023-01-10 17:25:02,Ana Laura,Domani Consultoria,Geraldo Durães de Carvalho Filho,Empresas Juniores,Relacões Internacionais,,,,Não é o momento para a empresa,,,,,,,,,,"2,080683",2023
+Perdido,2023-01-12 14:41:08,Diego Godina,Cromo Consultoria,João Gabriel Carneiro de Oliveira,Empresas Juniores,Consultoria e Serviços Profissionais,Desenvolvimento Web,Indicação MEJ,,Sem Orçamento,,,,,,,,,,"25,064606",2023
+Perdido,2023-01-12 15:10:38,Ellen Maia,Andrade Maia Advogados,Igor Corrêa,Empresa consolidada,Advocacia,,Indicação de Ej,,,,,,,,,,,,"61,480254",2023
+Ganho,2023-01-18 16:51:26,João Pedro,Agrovare,João Gabriel Carneiro de Oliveira,Startup,Agricultura e Agroindústria,"Concepção, Desenvolvimento Web",Parcerias,49000.0,,,,,,,,,2023-03-03 15:11:08,,"43,929341",2023
+Perdido,2023-01-18 17:47:57,João Gárcia,Monferrari,João Gabriel Carneiro de Oliveira,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Parcerias,,Sem Orçamento,,,,,,,,,,"37,008471",2023
+Perdido,2023-01-23 13:51:22,Gabriela Pereira Sotéro,EsagJR,Geraldo Durães de Carvalho Filho,Empresas Juniores,Consultoria e Serviços Profissionais,Concepção,Indicação MEJ,10000.0,,,,,,,,,,,"50,157211",2023
+Renegociação,2023-01-23 13:56:39,Ananias,,João Gabriel Carneiro de Oliveira,Empreendedor,,Concepção,Ex cliente,,,,,,,,,,,,"43,181701",2023
+Renegociação,2023-01-23 14:04:51,Marcos André,MLA Digital,Pedro de Lima Fernandes Costa,Startup,Varejo e Comércio Eletrônico,Concepção,Comunidade CITi,,,,,,,,,,,,"24,116759",2023
+Ganho,2023-01-24 19:38:32,Terceirização PoliJR - Bruno Trigueiros,Mídia 7,João Gabriel Carneiro de Oliveira,Empresa consolidada,Varejo e Comércio Eletrônico,"Concepção, Desenvolvimento Web",Indicação de Ej,90000.0,,,,,,,,,2023-05-08 11:42:57,,"103,669571",2023
+Perdido,2023-01-25 22:57:50,Shirley Cruz,Hospital das clinicas,Igor Corrêa,Empresa consolidada,Saúde e Cuidados Médicos,,UFPE,,,,,,,,,,,,"34,758287",2023
+Perdido,2023-01-25 22:59:53,Gleybson,Data Priority,João Gabriel Carneiro de Oliveira,Empresa consolidada,Tecnologia da Informação (TI),Desenvolvimento Web,Ex cliente,,Perda para Concorrência,,,,,,,,,,"8,525417",2023
+Perdido,2023-01-30 22:03:18,Keli,BRquality,João Gabriel Carneiro de Oliveira,Empresa consolidada,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Web",Ex cliente,60000.0,Perda para Concorrência,,,,,,,,,,"30,664827",2023
+Ganho,2023-01-30 22:09:02,Heverton Oliveira,Supra7,João Gabriel Carneiro de Oliveira,Empreendedor,Tecnologia da Informação (TI),"Concepção, Desenvolvimento Mobile",Comunidade CITi,160000.0,,,,,,,,,2023-02-03 14:37:46,,"3,686598",2023
+Perdido,2023-01-31 17:23:24,Cléber,Terceirização com CPE.,Geraldo Durães de Carvalho Filho,Empresa consolidada,,Desenvolvimento Web,Indicação de Ej,,,,,,,,,,,,"52,135543",2023
+Leads não-qualificados,2023-01-31 17:35:15,Renê Mariz,,Igor Corrêa,Empresa consolidada,Advocacia,,Marketing,,,"cliente queria que fizessemos alterações em uma plataforma da microsoft(sharepoint), quase um intranet. Não fazemos esse tipo de serviço.
+",,,,,,,,,"2,000833",2023
+Leads não-qualificados,2023-01-31 17:35:39,Marly Queiroz,artesanbrasil,João Gabriel Carneiro de Oliveira,Startup,Imóveis e Decorações,"Concepção, Desenvolvimento Web",Parcerias,,,"Lead gostaria de implementar um serviço de Inteligência artificial, um serviço que não tocamos.",,,,,,,,,"0,104595",2023
+Perdido,2023-02-06 16:19:08,Renan Gabriel,,Igor Corrêa,Empresas Juniores,,,Marketing,,,,,,,,,,,,"3,108715",2023
+Perdido,2023-02-06 19:42:10,Jairo Macedo,,Igor Corrêa,,,,Parcerias,,,,,,,,,,,,"20,92713",2023
+Perdido,2023-02-08 17:33:34,Janna,FEJESC,Geraldo Durães de Carvalho Filho,Empresas Juniores,Consultoria e Serviços Profissionais,,Indicação MEJ,,,"queria fazer um site institucional, não está dentro do escopo do citi.",,,,,,,,,"29,054005",2023
+Perdido,2023-02-09 19:02:06,Rodrigo,,Igor Corrêa,Empreendedor,,"Concepção, Desenvolvimento Web",,,,,,,,,,,,,"25,949745",2023
+Perdido,2023-02-09 21:39:07,PREFEITURA DE CAMPINA GRANDE,PREFEITURA DE CAMPINA GRANDE,Geraldo Durães de Carvalho Filho,Empresa consolidada,Órgão Público,"Desenvolvimento Mobile, Desenvolvimento Web",Indicação MEJ,,,,,,,,,,,,"17,713669",2023
+Ganho,2023-02-10 12:29:58,EJUDI,EJUDI,João Gabriel Carneiro de Oliveira,Empresas Juniores,Advocacia,Desenvolvimento Web,Ex cliente,7500.0,,,,,,,,,2023-03-27 16:48:41,,"45,179456",2023
+Renegociação,2023-02-14 12:57:33,Daniel,,Pedro Armando Correia Rondón,Startup,,Marketplace,,,,,,,,,,,,,"51,147013",2023
+Perdido,2023-02-14 14:49:38,Wagner,,Geraldo Durães de Carvalho Filho,Empresa consolidada,Meio Ambiente e Sustentabilidade,,Marketing,,,,,,,,,,,,"27,184016",2023
+Perdido,2023-02-17 16:49:51,Raphael D'Emery,Estatagro,João Gabriel Carneiro de Oliveira,Startup,Agricultura e Agroindústria,Concepção,Parcerias,14400.0,Sem Orçamento,,,,,,,,,,"37,999166",2023
+Perdido,2023-02-23 21:01:48,Produz Energia,Produz Energia,João Gabriel Carneiro de Oliveira,Empresa consolidada,Energia e Sustentabilidade,,Parcerias,,Não é o momento para a empresa,,,,,,,,,,"19,912419",2023
+Perdido,2023-02-24 20:18:04,Eduarda kakimoto,Integra,Geraldo Durães de Carvalho Filho,Empresas Juniores,Construção e Engenharia,"Desenvolvimento Web, Site institucional",Marketing,,,Queria fazer um redesigner do site institucional e isso não está dentro do escopo do Citi.,,,,,,,,,"12,940798",2023
+Perdido,2023-02-27 18:00:28,Miguel,,Igor Corrêa,Empreendedor,,Concepção,Marketing,30000.0,,,,,,,,,,,"31,126413",2023
+Perdido,2023-02-27 18:02:13,Lucas,Nautilus Consultoria,Igor Corrêa,Empresas Juniores,Construção e Engenharia,Site institucional,Marketing,,,,,,,,,,,,"21,098148",2023
+Leads não-qualificados,2023-03-03 12:06:44,Tadeu,APS informática,João Gabriel Carneiro de Oliveira,Startup,,,Indicação MEJ,,,Lead não tem dinheiro atualmente,,,,,,,,,"6,240347",2023
+Perdido,2023-03-03 16:00:23,Aubércio,Perbas,João Gabriel Carneiro de Oliveira,Empresa consolidada,,"Concepção, Desenvolvimento Web",Indicação de Ej,,Não é o momento para a empresa,,,,,,,,,,"24,316493",2023
+Ganho,2023-03-07 17:27:09,Sebastião,Green Innove,Igor Corrêa,Startup,Meio Ambiente e Sustentabilidade,Desenvolvimento Web,Indicação de Ej,56600.0,,,,,,,,,2023-04-25 15:01:07,,"48,898542",2023
+Perdido,2023-03-07 19:10:38,Joelson,CEFET JR,Igor Corrêa,Empresas Juniores,Consultoria e Serviços Profissionais,Site institucional,Parcerias,,,,,,,,,,,,"7,703298",2023
+Perdido,2023-03-09 18:57:26,Marina,,Geraldo Durães de Carvalho Filho,,,"Concepção, Desenvolvimento Web",Comunidade CITi,,,,,,,,,,,,"10,197304",2023
+Perdido,2023-03-09 19:02:28,Edson Sadao lizuka,Angrad,Geraldo Durães de Carvalho Filho,Empresa consolidada,Educação e Ensino,"Concepção, Desenvolvimento Web",,,,,,,,,,,,,"129,903401",2023
+Perdido,2023-03-13 19:05:30,´Jorge,,Geraldo Durães de Carvalho Filho,Empreendedor,,Desenvolvimento Web,Indicação MEJ,,,,,,,,,,,,"20,813114",2023
+Perdido,2023-03-13 19:10:03,Daniel,Setta,Pedro Armando Correia Rondón,Empresa consolidada,Energia e Sustentabilidade,"Desenvolvimento Mobile, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"2,898206",2023
+Perdido,2023-03-13 19:13:25,Ivan,,Igor Corrêa,Empreendedor,,Desenvolvimento Web,Marketing,,,,,,,,,,,,"4,13831",2023
+Perdido,2023-03-13 19:15:09,Veri Santana,,Pedro de Lima Fernandes Costa,Startup,,Ecommerce,Marketing,9000.0,,,,,,,,,,,"142,097177",2023
+Perdido,2023-03-14 16:28:09,Paola Lescura,Lab Culture,Igor Corrêa,Startup,Tecnogia da Informação (TI),,Parcerias,,,,,,,,,,,,"15,158044",2023
+Perdido,2023-03-14 17:16:23,Rita,,Geraldo Durães de Carvalho Filho,Empresas Juniores,,,Marketing,,,,,,,,,,,,"14,006608",2023
+Perdido,2023-03-14 18:53:22,Deyvson Herculano,FOLK RH,Geraldo Durães de Carvalho Filho,Startup,Consultoria e Serviços Profissionais,,Indicação de Ej,,,,,,,,,,,,"37,073866",2023
+Perdido,2023-03-15 12:17:35,Matheus,,Igor Corrêa,Startup,,Site institucional,Parcerias,,,,,,,,,,,,"0,000162",2023
+Perdido,2023-03-20 17:27:16,Iasmin Melo,Arqueatec,Geraldo Durães de Carvalho Filho,Startup,Construção e Engenharia,Site institucional,Marketing,,,,,,,,,,,,"7,096112",2023
+Perdido,2023-03-20 20:14:09,Flávio Gonzaga,Searchonmath,Geraldo Durães de Carvalho Filho,Startup,Educação e Ensino,,Prospecção Ativa,,,,,,,,,,,,"15,791459",2023
+Perdido,2023-03-21 15:27:29,Misma.com.br,Misma,Igor Corrêa,Empresa consolidada,Tecnologia da Informação (TI),,Marketing,,,,,,,,,,,,"7,058692",2023
+Perdido,2023-03-22 17:02:14,Rodrigo Novaes,,João Gabriel Carneiro de Oliveira,Empreendedor,,Desenvolvimento Mobile,Ex cliente,10000.0,,,,,,,,,,,"26,045509",2023
+Renegociação,2023-03-23 20:17:33,Charles,Consulmed,Geraldo Durães de Carvalho Filho,Empreendedor,Saúde e Cuidados Médicos,Desenvolvimento Web,Ex cliente,40000.0,,,,,,,,,,,"96,642268",2023
+Perdido,2023-03-23 20:37:15,Professor Cleber | NXBoats,CIn | NXBoats,Sophia Latache,Empresa consolidada,Serviços automobilísticos,"Concepção, Desenvolvimento Mobile",CIn,,Sem Orçamento,,,,,,,,,,"3,886031",2023
+Renegociação,2023-03-29 18:59:20,Ericka Domingos Pereira,instituto floravyda,Pedro de Lima Fernandes Costa,Empresa consolidada,Ciências e Inovação,Desenvolvimento Web,Parcerias,10000.0,,,,,,,,,,,"35,867385",2023
+Perdido,2023-04-03 16:59:22,Eric idv,Idv,Geraldo Durães de Carvalho Filho,Startup,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"2,082917",2023
+Renegociação,2023-04-03 17:58:58,Jimmy Torres,,Igor Corrêa,Empreendedor,,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web, Marketplace",Indicação MEJ,,,,,,,,,,,,"39,117071",2023
+Perdido,2023-04-03 18:01:46,Márcio,,Geraldo Durães de Carvalho Filho,Empreendedor,,,Indicação MEJ,,,,,,,,,,,,"2,039664",2023
+Perdido,2023-04-03 18:35:01,Colaborativa - CITi e Produtiva JR <> Detran,Detran - RN,Igor Corrêa,Empresa consolidada,Setor Público e Governo,Concepção,Parcerias,16500.0,,,,,,,,,,,"48,973368",2023
+Perdido,2023-04-05 19:04:25,Conceição,Empresa Imóveis,Geraldo Durães de Carvalho Filho,Empresa consolidada,Imóveis e Decorações,"Concepção, Desenvolvimento Web",Comunidade CITi,,,,,,,,,,,,"14,798762",2023
+Leads não-qualificados,2023-04-10 18:55:38,Sarah,Musashi,João Gabriel Carneiro de Oliveira,Empresa consolidada,Varejo e Comércio Eletrônico,,CIn,,,"Lead quer um serviço de software que integre com um hardware numa internet interna, mas nós não tocamos esse serviço.",,,,,,,,,"3,820197",2023
+Perdido,2023-04-11 17:08:09,Diego,SELL SURF,Geraldo Durães de Carvalho Filho,Startup,Esportes,,Comunidade CITi,,,,,,,,,,,,"26,821817",2023
+Renegociação,2023-04-14 15:04:39,Italo Oliveira,Ambev,João Gabriel Carneiro de Oliveira,Empresa consolidada,Alimentos e Bebidas,Concepção,Parcerias,22000.0,,,,,,,,,,,"55,995555",2023
+Perdido,2023-04-18 16:37:44,Bruno Moura,Compesa,"Geraldo Durães de Carvalho Filho, João Gabriel Carneiro de Oliveira",Empresa consolidada,,,CIn,,,,,,,,,,,,"1,896076",2023
+Perdido,2023-04-20 13:20:53,colaborativa com tgr,unigelo,Geraldo Durães de Carvalho Filho,Empresa consolidada,Alimentos e Bebidas,"Concepção, Desenvolvimento Web",Indicação de Ej,,,,,,,,,,,,"21,291586",2023
+Perdido,2023-04-20 14:12:34,Sarah Leila,,Geraldo Durães de Carvalho Filho,Startup,,Desenvolvimento Web,Comunidade CITi,,,,,,,,,,,,"29,039456",2023
+Ganho,2023-04-25 17:45:06,inspire meire,INSPIRE,Geraldo Durães de Carvalho Filho,Startup,Construção e Engenharia,Marketplace,Comunidade CITi,30500.0,,,,,,,,,2023-05-30 17:09:59,,"34,975568",2023
+Leads não-qualificados,2023-04-27 14:48:59,Roseane,,Igor Corrêa,Empreendedor,,Construção de API,Parcerias,,,,,,,,,,,,"11,95596",2023
+Renegociação,2023-04-28 16:28:12,Bartolomeu,Malu Market,João Gabriel Carneiro de Oliveira,Startup,,Concepção,Parcerias,,,,,,,,,,,,"20,001018",2023
+Renegociação,2023-04-28 21:11:44,Startup do porto,emprese de receptivo,Geraldo Durães de Carvalho Filho,Startup,,"Concepção, Desenvolvimento Web",Porto Digital,165000.0,,,,,,,,,,,"74,022037",2023
+Perdido,2023-04-28 21:13:37,Weitton,Fazagilizar,Geraldo Durães de Carvalho Filho,Startup,Varejo e Comércio Eletrônico,,Parcerias,,,,,,,,,,,,"34,90691",2023
+Perdido,2023-05-02 14:57:36,Carlos Santos,CS Elétrica e Automação,João Gabriel Carneiro de Oliveira,Startup,,"Concepção, Desenvolvimento Web",Parcerias,,Sem Orçamento,,,,,,,,,,"6,092535",2023
+Perdido,2023-05-08 13:40:08,Fidel,Discoovera,Geraldo Durães de Carvalho Filho,Startup,Educação e Ensino,Concepção,Parcerias,,,,,,,,,,,,"37,107721",2023
+Renegociação,2023-05-09 13:48:58,Osíris,MechaLimb,Igor Corrêa,Empresa consolidada,,"Concepção, Desenvolvimento Mobile",Marketing,,,,,,,,,,,,"27,233322",2023
+Perdido,2023-05-09 15:00:34,Paulo,UFPE,Geraldo Durães de Carvalho Filho,Empreendedor,Educação e Ensino,Site institucional,UFPE,,,,,,,,,,,,"16,012651",2023
+Ganho,2023-05-10 14:55:15,Pammela,Move's,Igor Corrêa,Startup,Turismo e Hospitalidade,Desenvolvimento Mobile,Parcerias,21000.0,,,,,,,,,2023-06-06 17:57:54,,"27,126817",2023
+Leads não-qualificados,2023-05-10 17:53:40,Rafael,,Igor Corrêa,Empresa consolidada,,"Concepção, Desenvolvimento Web",Marketing,,,,,,,,,,,,"6,030741",2023
+Renegociação,2023-05-10 17:55:36,Cláudia Siqueira,,Igor Corrêa,Empresa consolidada,,Site institucional,Marketing,,,,,,,,,,,,"6,029317",2023
+Ganho,2023-05-11 19:00:58,Vital,Novocred,João Gabriel Carneiro de Oliveira,Empresa consolidada,Consultoria e Serviços Profissionais,Desenvolvimento Mobile,Ex cliente,5000.0,,,,,,,,,2023-06-09 14:57:11,,"28,830659",2023
+Ganho,2023-05-15 13:57:40,João Henrique,Agrovare,João Gabriel Carneiro de Oliveira,Startup,Agricultura e Agroindústria,"Concepção, Desenvolvimento Mobile",Ex cliente,8000.0,,,,,,,,,2023-05-25 12:57:40,,"9,958299",2023
+Perdido,2023-05-17 15:20:40,Alicia Santader,,Geraldo Durães de Carvalho Filho,Empresa consolidada,,Site institucional,Comunidade CITi,,,,,,,,,,,,"28,037708",2023
+Perdido,2023-06-05 19:30:37,Mharlon,Petrobrás,Geraldo Durães de Carvalho Filho,Empresa consolidada,Órção Público,"Concepção, Desenvolvimento Web",Parcerias,15000.0,,,,,,,,,,,"47,118263",2023
+Renegociação,2023-06-06 19:52:19,Guilherme Bastos,Ray Consulting,João Gabriel Carneiro de Oliveira,Empreendedor,Consultoria e Serviços Profissionais,Desenvolvimento Web,Ex cliente,18200.0,,,,,,,,,,,"40,727314",2023
+Renegociação,2023-06-12 17:39:41,Daniel Porto,ETECH JR,Igor Corrêa,Empresas Juniores,Tecnologia da Informação (TI),Desenvolvimento Web,Parcerias,,,,,,,,,,,,"6,802003",2023
+Ganho,2023-06-12 19:04:03,Enrico,,Igor Corrêa,Startup,Educação e Ensino,Desenvolvimento Web,CIn,1000.0,,,,,,,,,2023-07-11 12:05:37,,"28,709376",2023
+Renegociação,2023-06-14 16:09:09,Cláudio Botelho,,Geraldo Durães de Carvalho Filho,Empresa consolidada,Agricultura e Agroindústria,,CIn,20000.0,,,,,,,,,,,"71,05103",2023
+Perdido,2023-06-14 16:12:11,Sanderson,NaPorta,Pedro Armando Correia Rondón,Startup,Transporte e Logística,,Parcerias,,,,,,,,,,,,"15,0361",2023
+Renegociação,2023-06-16 14:25:13,Rodrigo Fracari,,Geraldo Durães de Carvalho Filho,Empreendedor,,Site institucional,Comunidade CITi,,,,,,,,,,,,"3,113299",2023
+Ganho,2023-06-19 13:13:43,Sérgio Medeiros,SGMV consultoria,Igor Corrêa,Startup,Consultoria e Serviços Profissionais,Landing/One page,Comunidade CITi,750.0,,,,,,,,,2023-07-07 18:12:22,,"18,207373",2023
+Ganho,2023-06-19 13:15:05,Murilo Ferreira,Murillo Ferreira & Francisco Targino Advogados,Igor Corrêa,Startup,Consultoria e Serviços Profissionais,Desenvolvimento Web,Marketing,45500.0,,,,,,,,,2023-09-22 19:54:19,,"95,27721",2023
+Perdido,2023-06-19 13:23:30,Manso,,Igor Corrêa,Startup,,Desenvolvimento Web,Parcerias,,,,,,,,,,,,"18,199919",2023
+Perdido,2023-06-19 13:24:49,André Melo,,Igor Corrêa,,,,Marketing,,,,,,,,,,,,"16,166632",2023
+Perdido,2023-06-19 17:03:45,Josimar Lucena,Rural,Geraldo Durães de Carvalho Filho,Empresa consolidada,Agricultura e Agroindústria,"Concepção, Desenvolvimento Mobile",CIn,,,,,,,,,,,,"35,96162",2023
+Perdido,2023-06-19 17:07:49,Smith,,Geraldo Durães de Carvalho Filho,Empreendedor,,Concepção,Marketing,,,,,,,,,,,,"13,987512",2023
+Renegociação,2023-06-21 19:23:56,Vânia,,Geraldo Durães de Carvalho Filho,Startup,,"Concepção, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"33,863542",2023
+Renegociação,2023-06-21 19:31:04,Rafael Sales,Holding Referência,Geraldo Durães de Carvalho Filho,Empresa consolidada,Saúde e Cuidados Médicos,,Comunidade CITi,,,,,,,,,,,,"19,021007",2023
+Perdido,2023-06-21 19:38:45,Smith,,Geraldo Durães de Carvalho Filho,Empreendedor,,Concepção,Marketing,,,,,,,,,,,,"11,882407",2023
+Perdido,2023-07-03 18:39:08,Giovanni,COOMEB,Geraldo Durães de Carvalho Filho,Empresa consolidada,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Web",Membre do CITi,,Não é o momento para a empresa,,,,,,,,,,"59,049236",2023
+Ganho,2023-07-04 11:00:38,Colaborativa - Seed a Bit,Senac,Igor Corrêa,Empresa consolidada,Educação e Ensino,Desenvolvimento Web,Parcerias,47000.0,,,,,,,,,2023-11-03 19:29:39,,"122,353426",2023
+Perdido,2023-07-04 11:03:44,Renan Gustavo,,Igor Corrêa,Empreendedor,,"Concepção, Desenvolvimento Mobile",Parcerias,40000.0,Sem Orçamento,,,,,,,,,,"21,057917",2023
+Leads não-qualificados,2023-07-05 20:21:37,Vinícius,A.C.E,Geraldo Durães de Carvalho Filho,Empresas Juniores,Consultoria e Serviços Profissionais,Desenvolvimento Web,Membre do CITi,,,,,,,,,,,,"22,958334",2023
+Leads não-qualificados,2023-07-06 18:27:49,Jaqueline Amorim,,Pedro de Lima Fernandes Costa,Empreendedor,,,Marketing,,,,,,,,,,,,"0,843356",2023
+Perdido,2023-07-06 18:40:47,Helcio Vitor Pandini Siqueira,Projeto junto com alguns colegas,Pedro Armando Correia Rondón,Empreendedor,,"Concepção, Construção de API, Desenvolvimento Web",Marketing,11400.0,,,,,,,,,,,"41,874756",2023
+Renegociação,2023-07-07 14:51:00,Victor Souza Soares,Paurá Advocacia,Pedro de Lima Fernandes Costa,Empresa consolidada,Advocacia,"Concepção, Desenvolvimento Web",Marketing,,,,,,,,,,,,"66,085139",2023
+Perdido,2023-07-07 21:35:55,Lucas,PRETEL,Geraldo Durães de Carvalho Filho,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Mobile",UFPE,60000.0,,,,,,,,,,,"114,787396",2023
+Leads não-qualificados,2023-07-11 17:51:01,Yuri Maranhão,,Pedro de Lima Fernandes Costa,Empreendedor,Ciências e Inovação,Ecommerce,Marketing,,,,,,,,,,,,"5,855231",2023
+Perdido,2023-07-11 18:15:53,David,wserviço,Pedro Armando Correia Rondón,Startup,,"Concepção, Marketplace",Marketing,,,,,,,,,,,,"14,017025",2023
+Leads não-qualificados,2023-07-13 12:36:30,Antônio Conceição da Silva,,Pedro de Lima Fernandes Costa,Empreendedor,,,Marketing,,,,,,,,,,,,"12,239977",2023
+Ganho,2023-07-13 17:34:27,Welson,CAS tecnologia,Igor Corrêa,Empresa consolidada,Tecnologia da Informação (TI),"Concepção, Desenvolvimento Web",Indicação MEJ,72000.0,,,,,,,,,2023-08-22 11:24:20,,"39,742928",2023
+Renegociação,2023-07-14 12:14:15,Thiago Cardoso,Instituto Ipê,Igor Corrêa,Startup,Meio Ambiente e Sustentabilidade,"Concepção, Desenvolvimento Web, Ecommerce",Parcerias,12800.0,,,,,,,,,,,"25,270533",2023
+Leads não-qualificados,2023-07-17 14:04:43,Alissa Garutti Cruz,,Pedro de Lima Fernandes Costa,Empreendedor,,"Concepção, Ecommerce",Marketing,,,,,,,,,,,,"8,006632",2023
+Perdido,2023-07-17 15:14:40,Bernardo Henrique,,Pedro Armando Correia Rondón,Empreendedor,,"Concepção, Desenvolvimento Mobile",Marketing,,,,,,,,,,,,"8,142234",2023
+Renegociação,2023-07-25 13:57:00,Antônio Leal,GPC,Igor Corrêa,Startup,Consultoria e Serviços Profissionais,Desenvolvimento Web,Membre do CITi,3500.0,,,,,,,,,,,"108,111342",2023
+Leads não-qualificados,2023-07-25 18:24:11,Jordano Bruno Bulhões Campos,,Pedro de Lima Fernandes Costa,Empreendedor,,Desenvolvimento Mobile,CIn,,,,,,,,,,,,"12,836123",2023
+Perdido,2023-07-25 18:43:00,Maria Eduarda,,Pedro Armando Correia Rondón,Empreendedor,,"Concepção, Desenvolvimento Web",Marketing,,,,,,,,,,,,"7,780579",2023
+Perdido,2023-07-25 18:45:19,Maikel,,Pedro Armando Correia Rondón,Empreendedor,,"Concepção, Desenvolvimento Mobile",Marketing,,,,,,,,,,,,"10,076319",2023
+Perdido,2023-07-25 20:28:43,Maria theresa,Teraquiz,Geraldo Durães de Carvalho Filho,Startup,Educação e Ensino,Concepção,Membre do CITi,40000.0,,,,,,,,,,,"21,958646",2023
+Perdido,2023-07-26 13:13:18,Delbao,,Pedro Armando Correia Rondón,Empreendedor,,"Concepção, Desenvolvimento Mobile",Marketing,,,,,,,,,,,,"7,009884",2023
+Perdido,2023-07-26 14:11:14,Belmiro Chimbinde,,Pedro de Lima Fernandes Costa,Empreendedor,,,Marketing,,,,,,,,,,,,"1,456458",2023
+Renegociação,2023-07-28 19:29:17,Erika,Neoenergia,Geraldo Durães de Carvalho Filho,Empresa consolidada,Energia e Sustentabilidade,"Concepção, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"4,9261",2023
+Perdido,2023-07-28 19:34:17,Colaborativa com a UFABC JR.,THM estatística,Igor Corrêa,Startup,Tecnologia da Informação (TI),Concepção,Parcerias,,,,,,,,,,,,"10,963959",2023
+Leads não-qualificados,2023-07-31 17:02:08,Mayara Domenica,,Pedro de Lima Fernandes Costa,Empreendedor,,Desenvolvimento Mobile,Marketing,,Sem Orçamento,,,,,,,,,,"20,838819",2023
+Renegociação,2023-07-31 17:04:56,Ju Dolores,CENDHEC,Pedro de Lima Fernandes Costa,Empresa consolidada,ONG,Desenvolvimento Web,Marketing,,,,,,,,,,,,"43,982779",2023
+Perdido,2023-08-03 16:37:59,Camilla - Sónovo,Sónovo,"Geraldo Durães de Carvalho Filho, Pedro de Lima Fernandes Costa",Empresa consolidada,Agricultura e Agroindústria,"Concepção, Desenvolvimento Web",Membre do CITi,,,,,,,,,,,,"29,140555",2023
+Leads não-qualificados,2023-08-07 12:26:20,Alexandre Rego,empresa de engenharia,Pedro Armando Correia Rondón,Empresa consolidada,Construção e Engenharia,"Concepção, Construção de API, Desenvolvimento Web",Marketing,,,,,,,,,,,,"10,133356",2023
+Perdido,2023-08-07 12:54:07,Mateus,,Pedro Armando Correia Rondón,Empreendedor,,,Marketing,,,,,,,,,,,,"10,114537",2023
+Leads não-qualificados,2023-08-07 14:27:53,Erika Silva,,Pedro de Lima Fernandes Costa,Empreendedor,,Concepção,Marketing,,,,,,,,,,,,"3,115093",2023
+Ganho,2023-08-07 17:08:53,Laura,pharmapele,Geraldo Durães de Carvalho Filho,Empresa consolidada,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Web",Comunidade CITi,20000.0,,,,,,,,,2023-08-24 17:21:58,,"17,009039",2023
+Perdido,2023-08-08 17:12:52,Henrique Leite,Henrique Leite Advocacia,Pedro de Lima Fernandes Costa,Empreendedor,Advocacia,Site institucional,Membre do CITi,,,,,,,,,,,,"35,971285",2023
+Renegociação,2023-08-09 17:47:10,Colaborativa com a Seed (2) - Senac,Senac,Igor Corrêa,Empresa consolidada,Educação e Ensino,Desenvolvimento Web,Indicação MEJ,,,,,,,,,,,,"89,160799",2023
+Perdido,2023-08-09 20:16:24,Geovanne,,Geraldo Durães de Carvalho Filho,Empresa consolidada,Construção e Engenharia,,Marketing,,,,,,,,,,,,"22,962616",2023
+Perdido,2023-08-10 16:49:23,Prof. Antõnio Acácio,,Pedro de Lima Fernandes Costa,Empreendedor,Educação e Ensino,Desenvolvimento Web,Parcerias,,,,,,,,,,,,"6,120568",2023
+Perdido,2023-08-18 21:32:21,Fredy,TUPI,Geraldo Durães de Carvalho Filho,Startup,Transporte e Logística,"Concepção, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"5,822801",2023
+Renegociação,2023-08-21 13:17:08,Júlio César,System W Technology Ltda,Pedro de Lima Fernandes Costa,Startup,Energia e Sustentabilidade,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"30,184362",2023
+Leads não-qualificados,2023-08-21 20:21:20,Francisco Quixaba,,Pedro Armando Correia Rondón,Empreendedor,,,Marketing,,,,,,,,,,,,"3,976678",2023
+Leads não-qualificados,2023-08-23 12:53:31,Luísa,,Geraldo Durães de Carvalho Filho,Empresa consolidada,Educação e Ensino,,CIn,,,,,,,,,,,,"1,278958",2023
+Renegociação,2023-08-23 21:19:36,Conceição,,Igor Corrêa,Empresa consolidada,,Construção de API,Marketing,,,,,,,,,,,,"67,798681",2023
+Renegociação,2023-08-24 13:27:25,Arnóbio Linhares Mendonça,Santa Clara,Pedro de Lima Fernandes Costa,Empreendedor,Alimentos e Bebidas,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,"27,167014",2023
+Perdido,2023-08-25 19:51:51,Colaborativa - Fluxo Soluções,Fluxo Nutrição,Pedro de Lima Fernandes Costa,Empresa consolidada,Saúde e Cuidados Médicos,"Desenvolvimento Mobile, Desenvolvimento Web, Site institucional",Indicação MEJ,,,,,,,,,,,,"26,856401",2023
+Negociação,2023-09-01 17:52:58,?,Senac,Geraldo Durães de Carvalho Filho,Empresa consolidada,Educação e Ensino,,Membre do CITi,40000.0,,,,,,,,,,,"150,090625",2023
+Ganho,2023-09-04 14:32:55,Pammela pt.2,Move's,Igor Corrêa,Startup,Turismo e Hospitalidade,Desenvolvimento Mobile,Ex cliente,15000.0,,,,,,,,,2023-10-23 16:47:32,,"49,093438",2023
+Perdido,2023-09-11 12:40:53,Ana Cecília Cavalcante de Oliveira,,Pedro de Lima Fernandes Costa,Empreendedor,Educação e Ensino,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,"14,05772",2023
+Perdido,2023-09-11 12:42:27,Karol,Espaço 46,Geraldo Durães de Carvalho Filho,Startup,Varejo e Comércio Eletrônico,,,,,,,,,,,,,,"7,090417",2023
+Perdido,2023-09-11 20:14:15,Victor,Pharmapele,Geraldo Durães de Carvalho Filho,Empresa consolidada,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Ex cliente,90000.0,,,,,,,,,,,"76,853251",2023
+Negociação,2023-09-12 21:00:51,Eugênio,Grupo referencial,Igor Corrêa,Empresa consolidada,Construção e Engenharia,"Concepção, Desenvolvimento Web",Comunidade CITi,100000.0,,,,,,,,,,,"166,885081",2023
+Renegociação,2023-09-13 13:11:50,Victor Maristane,,Pedro de Lima Fernandes Costa,Empreendedor,Entretenimento e Mídia,Concepção,Comunidade CITi,,,,,,,,,,,,"34,982118",2023
+Leads não-qualificados,2023-09-14 12:50:04,Lucas Barbosa,,Pedro de Lima Fernandes Costa,Empreendedor,,,Marketing,,,,,,,,,,,,"4,166447",2023
+Perdido,2023-09-18 21:05:25,Lucas Fernando,,Geraldo Durães de Carvalho Filho,Empreendedor,Educação e Ensino,,Marketing,,,,,,,,,,,,"13,993333",2023
+Perdido,2023-09-20 17:15:23,Gabriela Morais da Costa,BioEdTech,Pedro de Lima Fernandes Costa,Empresa consolidada,Biotecnologia e Farmacêutica,,Marketing,,,,,,,,,,,,"46,802823",2023
+Perdido,2023-09-21 16:40:44,Colaborativa - Fluxo,Fluxo,Pedro de Lima Fernandes Costa,Empresas Juniores,Turismo e Hospitalidade,Desenvolvimento Mobile,Parcerias,50000.0,,,,,,,,,,,"25,907003",2023
+Perdido,2023-09-25 14:02:26,Daniel Bayma,Vitalbly,Pedro de Lima Fernandes Costa,Empreendedor,Saúde e Cuidados Médicos,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,"24,163496",2023
+Renegociação,2023-09-25 14:08:07,Rafael Sales,Holding Referência,Pedro de Lima Fernandes Costa,Empresa consolidada,Saúde e Cuidados Médicos,,Eventos,,,,,,,,,,,,"6,93934",2023
+Perdido,2023-09-26 17:52:19,Ana,,Geraldo Durães de Carvalho Filho,,,"Concepção, Desenvolvimento Web",Marketing,,,,,,,,,,,,"6,959098",2023
+Renegociação,2023-09-27 17:22:00,Milena,A.C.E.,Igor Corrêa,Empresas Juniores,Consultoria e Serviços Profissionais,Site institucional,Parcerias,2950.0,,,,,,,,,,,"35,007129",2023
+Perdido,2023-09-28 18:20:07,Pedro,Fcap Jr,Igor Corrêa,Empresas Juniores,Consultoria e Serviços Profissionais,Desenvolvimento Web,Parcerias,,Sem Orçamento,,,,,,,,,,"46,061655",2023
+Renegociação,2023-09-29 16:56:54,Museu Compesa,Compesa,"Geraldo Durães de Carvalho Filho, Pedro de Lima Fernandes Costa",Empresa consolidada,Setor Público e Governo,"Concepção, Desenvolvimento Web",Ex cliente,87500.0,,,,,,,,,,,"37,817164",2023
+Leads não-qualificados,2023-10-04 19:17:48,Lead UFABC jr,UFABC jr,Geraldo Durães de Carvalho Filho,Empresas Juniores,Consultoria e Serviços Profissionais,,Membre do CITi,,,,,,,,,,,,"27,80066",2023
+Renegociação,2023-10-09 18:25:06,Fernando Canevari,A Sua Vaga,Pedro de Lima Fernandes Costa,Startup,Consultoria e Serviços Profissionais,Desenvolvimento Web,Marketing,,,,,,,,,,,,"48,996818",2023
+Perdido,2023-10-13 21:04:02,Maria Helena,Pegasus Ambiental,Pedro de Lima Fernandes Costa,Startup,Meio Ambiente e Sustentabilidade,Desenvolvimento Mobile,Comunidade CITi,,Perda para Concorrência,,,,,,,,,,"54,670394",2023
+Ganho,2023-10-16 17:59:44,Jeniffer Marie,Ayza Digital,Pedro de Lima Fernandes Costa,Startup,Tecnologia da Informação (TI),Site institucional,Parcerias,8000.0,,,,,,,,,2023-10-19 22:25:42,,"3,184642",2023
+Perdido,2023-10-16 18:01:14,Falconi,,Pedro de Lima Fernandes Costa,Empreendedor,Alimentos e Bebidas,Site institucional,Indicação MEJ,,,,,,,,,,,,"22,935487",2023
+Renegociação,2023-10-16 18:13:39,Taylan Mafra,Aika Empresarial,João Gabriel Carneiro de Oliveira,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Indicação de Ej,,,,,,,,,,,,"35,966887",2023
+Ganho,2023-10-19 22:38:49,Alexandre Möller,Zênite Soluções,Hillary Costa,Empresa consolidada,Tecnologia da Informação (TI),Squad as a Service,Comunidade CITi,14400.0,,,,,,,,,2023-10-27 20:31:48,,"7,911759",2023
+Ganho,2023-10-20 14:38:36,Giovanni,Autonomo,Geraldo Durães de Carvalho Filho,Empreendedor,Varejo e Comércio Eletrônico,"Concepção, Marketplace",Parcerias,13600.0,,,,,,,,,2023-12-21 14:47:18,,"62,006007",2023
+Negociação,2023-10-20 14:44:32,Julio Andrade,Neoenergia,Geraldo Durães de Carvalho Filho,Empresa consolidada,Energia e Sustentabilidade,"Concepção, Desenvolvimento Web",Parcerias,,,,,,,,,,,,"171,051852",2023
+Perdido,2023-10-21 00:34:58,CPE Jr,CPE JR,Pedro de Lima Fernandes Costa,Empresas Juniores,Construção e Engenharia,Desenvolvimento Web,Indicação de Ej,,,,,,,,,,,,"9,790151",2023
+Leads não-qualificados,2023-10-21 00:38:28,João,Capital Consultoria JR,Pedro de Lima Fernandes Costa,Empresas Juniores,Consultoria e Serviços Profissionais,Desenvolvimento Mobile,Indicação MEJ,,,,,,,,,,,,"4,723727",2023
+Renegociação,2023-10-24 22:52:47,Jordano,,Hillary Costa,Empreendedor,,Desenvolvimento Mobile,Marketing,13800.0,,,,,,,,,,,"35,824943",2023
+Leads não-qualificados,2023-10-24 22:56:28,Tiago Oliveira,Hostoo.io,João Gabriel Carneiro de Oliveira,Startup,Tecnologia da Informação (TI),,Indicação de Ej,,,,,,,,,,,,"15,750613",2023
+Renegociação,2023-10-24 23:00:42,Miguel,,Hillary Costa,Empreendedor,Esportes,Consultoria estratégica,Renegociação,,,,,,,,,,,,"40,853368",2023
+Negociação,2023-10-24 23:09:20,Eberth,,Hillary Costa,Empreendedor,Transporte e Logística,Desenvolvimento Mobile,,4500.0,,,,,,,,,,,"155,714443",2023
+Renegociação,2023-10-25 17:38:31,Jean Baptiste Joseph,SIM Engenharia,Pedro de Lima Fernandes Costa,Startup,Agricultura e Agroindústria,"Concepção, Desenvolvimento Mobile",UFPE,,,,,,,,,,,,"41,008889",2023
+Renegociação,2023-10-26 22:46:07,Renato Samico,,João Gabriel Carneiro de Oliveira,Empreendedor,,,Indicação MEJ,,,,,,,,,,,,"10,778832",2023
+Perdido,2023-10-30 12:44:30,Pedro Alves,IMEX,Hillary Costa,Empresa consolidada,Saúde e Cuidados Médicos,,Prospecção Ativa,,,,,,,,,,,,"58,07758",2023
+Renegociação,2023-10-30 13:12:36,Thiago,Instituto Ipê,Hillary Costa,Startup,Meio Ambiente e Sustentabilidade,,Parcerias,,,,,,,,,,,,"14,163484",2023
+Renegociação,2023-10-30 19:03:35,Mateus Texeira,,Igor Corrêa,Empreendedor,Varejo e Comércio Eletrônico,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,"4,039607",2023
+Negociação,2023-11-01 12:34:48,Vinícius Lino,BrazilLabs,"Pedro de Lima Fernandes Costa, Sophia Latache",Empresa consolidada,Tecnologia da Informação (TI),Desenvolvimento Web,Indicação MEJ,,,,,,,,,,,,"132,21529",2023
+Ganho,2023-11-01 14:16:34,Lead Terceirizado da Info Jr,,João Gabriel Carneiro de Oliveira,Empresa consolidada,Saúde e Cuidados Médicos,Desenvolvimento Web,Indicação MEJ,13500.0,,,,,,,,,2023-11-29 17:00:14,,"28,113623",2023
+Ganho,2023-11-01 15:49:57,Yure Gonçalves,Associação Brasileira de Pesquisadores/as Negros/as (ABPN),Hillary Costa,Empresa consolidada,Setor Público e Governo,Site institucional,CIn,4000.0,,,,,,,,,2023-12-04 19:29:19,,"33,152315",2023
+Renegociação,2023-11-01 17:18:37,Victor Rodrigues,Zeal,Igor Corrêa,Empreendedor,Saúde e Cuidados Médicos,Concepção,Marketing,14900.0,,,,,,,,,,,"57,530019",2023
+Montagem de proposta,2023-11-07 20:15:36,Bernardo Acioli,emagrecer nos 15,João Gabriel Carneiro de Oliveira,Empreendedor,Saúde e Cuidados Médicos,Desenvolvimento Web,Comunidade CITi,,,,,,,,,,,,"151,916527",2023
+Renegociação,2023-11-08 18:37:25,Igor Correia,Casa dos Frios,Pedro de Lima Fernandes Costa,Empresa consolidada,Alimentos e Bebidas,,Renegociação,,,,,,,,,,,,"0,000266",2023
+Leads não-qualificados,2023-11-09 20:34:50,Bárbara Vilar,TPF engenharia,João Gabriel Carneiro de Oliveira,Empresa consolidada,Construção e Engenharia,,Prospecção Ativa,,,"Lead não tem necessidade nas demandas, mas foi importante para conhecer! ",,,,,,,,,"3,957813",2023
+Leads não-qualificados,2023-11-10 11:18:57,Fernando Bezerra,Plataforma MarcaÊ,Pedro de Lima Fernandes Costa,Startup,Entretenimento e Mídia,,Prospecção Ativa,,,,,,,,,,,,"7,323287",2023
+Renegociação,2023-11-10 11:21:19,Renata Gaudêncio,ConcrEpoxi,Pedro de Lima Fernandes Costa,Empresa consolidada,Construção e Engenharia,,Prospecção Ativa,,,,,,,,,,,,"25,272048",2023
+Leads não-qualificados,2023-11-10 17:12:07,Milena,A.C.E.,Igor Corrêa,Empresas Juniores,Consultoria e Serviços Profissionais,Construção de API,Parcerias,1250.0,,,,,,,,,,,"14,004154",2023
+Renegociação,2023-11-13 16:23:38,Eduardo Lacerda,BBlist,Geraldo Durães de Carvalho Filho,Empreendedor,Saúde e Cuidados Médicos,,Prospecção Ativa,,,,,,,,,,,,"9,005718",2023
+Renegociação,2023-11-13 16:31:52,Natanael Marques,,Hillary Costa,Startup,,,Renegociação,,,,,,,,,,,,"14,00559",2023
+Leads não-qualificados,2023-11-13 18:05:39,Daniel Loricchio,Integralmedica,Pedro de Lima Fernandes Costa,Empresa consolidada,Saúde e Cuidados Médicos,Desenvolvimento Web,Prospecção Ativa,,,,,,,,,,,,"21,991088",2023
+Negociação,2023-11-13 18:15:33,André Hermano,Qulture.Rocks Brasil,Sophia Latache,Empreendedor,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Mobile",Indicação MEJ,42000.0,,,,,,,,,,,"104,999896",2023
+Renegociação,2023-11-14 14:04:52,Neemias Brito,,João Gabriel Carneiro de Oliveira,Empreendedor,Alimentos e Bebidas,Concepção,Marketing,,,,,,,,,,,,"28,259075",2023
+Renegociação,2023-11-16 17:10:41,Mateus Campos Falcão,AgrConecta https://www.agrconecta.com.br/,Igor Corrêa,Empresa consolidada,Agricultura e Agroindústria,Desenvolvimento Mobile,Parcerias,,,,,,,,,,,,"27,979607",2023
+Renegociação,2023-11-21 18:16:16,Rômulo,Best Clima,Igor Corrêa,Empresas Juniores,Construção e Engenharia,"Concepção, Desenvolvimento Web",Indicação MEJ,22500.0,,,,,,,,,,,"56,709341",2023
+Renegociação,2023-11-27 16:39:48,Rogério PTA,,João Gabriel Carneiro de Oliveira,Empreendedor,,,Ex cliente,,,,,,,,,,,,"4,063368",2023
+Perdido,2023-11-27 16:41:43,Igor nascimento,Grupo referencial,Geraldo Durães de Carvalho Filho,Empresa consolidada,Construção e Engenharia,Site institucional,Ex cliente,,,,,,,,,,,,"14,818911",2023
+Renegociação,2023-11-29 17:40:38,Conceição,GAJA construtura,Igor Corrêa,Empresa consolidada,Construção e Engenharia,"Concepção, Desenvolvimento Web",Indicação MEJ,,,,,,,,,,,,"14,959109",2023
+Perdido,2023-12-01 13:28:08,Lia Juns,EESC Jr,Hillary Costa,Empresas Juniores,Construção e Engenharia,,Indicação MEJ,5000.0,,,,,,,,,,,"26,047592",2023
+Leads não-qualificados,2023-12-05 23:06:49,Ivan,IBC viagens,"Igor Corrêa, Pedro de Lima Fernandes Costa",Empresa consolidada,Turismo e Hospitalidade,Concepção,Ex cliente,,,,,,,,,,,,"8,729884",2023
+Leads não-qualificados,2023-12-07 13:12:49,José Ferreira,Tá Seguro aí,Pedro de Lima Fernandes Costa,Empresa consolidada,Finanças e Serviços Financeiros,Landing/One page,Parcerias,,,,,,,,,,,,"9,118565",2023
+Negociação,2023-12-15 19:33:59,Arthur Lira,Fatto Inteligência Política,Pedro de Lima Fernandes Costa,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Mobile",Membre do CITi,,,,,,,,,,,,"95,921576",2023
+Montagem de proposta,2023-12-21 14:27:34,Isabella Freire,Celler Digital,Pedro de Lima Fernandes Costa,Startup,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web, Site institucional",Eventos,,,,,,,,,,,,"109,14139",2023
+Perdido,2024-01-15 18:36:47,Arthur Lira,Fatto Inteligência Política,Pedro de Lima Fernandes Costa,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Mobile",Membre do CITi,30000.0,Perda para Concorrência,,,,,,,,,,,2024
+Leads não-qualificados,2024-01-15 18:45:02,Bernardo Acioli,emagrecer nos 15,Nayara VIthória Araújo de Sena,Empreendedor,Saúde e Cuidados Médicos,Desenvolvimento Web,Comunidade CITi,,,,,,,,,,,,,2024
+Perdido,2024-01-15 18:47:37,Isabella Freire,Celler Digital,"Pedro de Lima Fernandes Costa, Vinicius Zorrilla",Startup,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web, Site institucional",Eventos,,Perda para Concorrência,,,,,,,,,,,2024
+Renegociação,2024-01-15 20:41:21,Peggy  Côrte Real Leão,SENAC,Pedro de Lima Fernandes Costa,Empresa consolidada,Educação e Ensino,,Membre do CITi,40000.0,,,,,,,,,,,,2024
+Ganho,2024-01-15 20:46:09,Eugênio,Grupo Referencial,Igor Corrêa,Empresa consolidada,Construção e Engenharia,"Concepção, Desenvolvimento Web",Comunidade CITi,150000.0,,,,,,,,,2024-01-25 15:11:43,,,2024
+Perdido,2024-01-15 20:50:07,Eberth,,Pedro de Lima Fernandes Costa,Empreendedor,Transporte e Logística,Desenvolvimento Mobile,,,,,,,,,,,,,,2024
+Renegociação,2024-01-15 20:55:12,Julio Andrade,Neoenergia,Pedro de Lima Fernandes Costa,Empresa consolidada,Energia e Sustentabilidade,"Concepção, Desenvolvimento Web",Parcerias,,,,,,,,,,,,,2024
+Renegociação,2024-01-15 20:58:23,Vinícius Lino,BrazilLab,Pedro de Lima Fernandes Costa,Empresa consolidada,Tecnologia da Informação (TI),Desenvolvimento Web,Indicação MEJ,,,,,,,,,,,,,2024
+Perdido,2024-01-15 21:08:31,Victor Rodrigues,Zeal,Pedro de Lima Fernandes Costa,Empreendedor,Saúde e Cuidados Médicos,Concepção,Marketing,,,,,,,,,,,,,2024
+Renegociação,2024-01-15 21:12:30,Rômulo,Best Clima,Igor Corrêa,Empresa consolidada,Construção e Engenharia,"Concepção, Desenvolvimento Web",Indicação de Ej,20800.0,,,,,,,,,,,,2024
+Renegociação,2024-01-15 21:16:15,Gabriel Oliveira,Mais Education,"Gabriel Ayres, Pedro de Lima Fernandes Costa",Startup,Educação e Ensino,"Concepção, Desenvolvimento Mobile",Eventos,10500.0,,,,,,,,,,,,2024
+Ganho,2024-01-15 21:20:42,Paulo Miranda,MyRoofs,Pedro de Lima Fernandes Costa,Startup,Tecnologia da Informação (TI),"Concepção, Desenvolvimento Web",CIn,12650.0,,,,,,,,,2024-01-29 18:00:43,,,2024
+Perdido,2024-01-16 17:20:47,Diego,Gerdau AçoNorte,Camila Chagas,Empresa consolidada,Construção e Engenharia,Desenvolvimento Mobile,Indicação MEJ,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-01-16 17:47:48,Jordahn,,Camila Chagas,Startup,Educação e Ensino,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-01-16 17:52:39,Fernando,Xcar,Vinicius Zorrilla,Startup,Transporte e Logística,"Squad as a Service, Synergy",Prospecção Ativa,,,Fiz diversos fups e ele não deu um retorno,,,,,,,,,,2024
+Leads não-qualificados,2024-01-22 16:58:28,Ivan Torres,IBC Viagens,Pedro de Lima Fernandes Costa,Empresa consolidada,Turismo e Hospitalidade,Concepção,Comunidade CITi,,,"não tem ideia do que quer e nem tem urgência
+",,,,,,,,,,2024
+Ganho,2024-01-22 17:03:26,Enrico Bernard,Sociedade Brasileira para o Estudo de Quirópteros,Camila Chagas,Grupo de pesquisa,Educação e Ensino,Site institucional,Ex cliente,2900.0,,,,,,,,,2024-02-22 20:58:39,,,2024
+Leads não-qualificados,2024-01-22 19:47:49,Daniel Almeida,Stepps,Igor Corrêa,Startup,Tecnologia da Informação (TI),Desenvolvimento Web,Comunidade CITi,,,,,,,,,,,,,2024
+Ganho,2024-01-22 20:05:40,Marcos Sobral,FADURPE,Igor Corrêa,Empresa consolidada,Educação e Ensino,Desenvolvimento Web,Indicação MEJ,71500.0,,,,,,,,,2024-02-07 11:42:38,,,2024
+Leads não-qualificados,2024-01-23 14:19:20,Igor Jordão,Urbantech,Vinicius Zorrilla,Empreendedor,Imobiliário e Propriedades,"Concepção, Construção de API, Desenvolvimento Mobile, Desenvolvimento Web, Site institucional",UFPE,,,"O diagnóstico com ele não foi assertivo, então os devs e designs pediram para marcar um novo diagnóstico com a presença deles para tirar as dúvidas que tinham e entender melhor da ideia. O LEAD disse que topava na semana seguinte, mas nunca mais respondeu a nenhuma mensagem e sumiu.",,,,,,,,,,2024
+Ganho,2024-01-23 19:13:21,André Saldanha,,Vinicius Zorrilla,Startup,Transporte e Logística,Concepção,Marketing,14000.0,,,,,,,,,2024-02-29 19:39:36,,,2024
+Ganho,2024-01-23 20:12:37,Jairson Vitorino,Buzzmonitor,Camila Chagas,Empresa consolidada,Marketing e Publicidade,Synergy,Comunidade CITi,57000.0,,,,,,,,,2024-02-29 19:41:15,,,2024
+Leads não-qualificados,2024-01-23 20:14:19,Gustavo Vasconcelos,,Camila Chagas,Empreendedor,Esportes,"Concepção, Desenvolvimento Web, Ecommerce",Marketing,,,,,,,,,,,,,2024
+Ganho,2024-01-23 21:21:34,Leandro Fragoso Lins,Symbio Plus,Camila Chagas,Startup,Biotecnologia e Farmacêutica,Site institucional,Prospecção Ativa,2400.0,,,,,,,,,2024-06-03 15:49:45,,,2024
+Renegociação,2024-01-24 13:20:47,Victor Maristane,,Vinicius Zorrilla,Empreendedor,Entretenimento e Mídia,Concepção,Comunidade CITi,,,,,,,,,,,,,2024
+Diagnóstico,2024-01-24 13:23:14,Museu Compesa,Compesa,"Igor Corrêa, Vinicius Zorrilla",Empresa consolidada,Setor Público e Governo,"Concepção, Desenvolvimento Web",Ex cliente,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-01-24 17:50:50,Dae Sung Robson,,Vinicius Zorrilla,Empreendedor,,,Marketing,,,Chegou por marketing e nunca respondeu a nenhuma mensagem.,,,,,,,,,,2024
+Leads não-qualificados,2024-01-25 20:58:15,Obionor de Oliveira,SmartRural,Vinicius Zorrilla,Startup,Agricultura e Agroindústria,,Prospecção Ativa,,,"Fizemos o diagnóstico, ele possuía uma demanda em flutter (linguagem que não trabalhamos), pediu para enviarmos o nosso portifólio, e não respondeu mais. ",,,,,,,,,,2024
+Ganho,2024-01-26 19:59:18,Eduardo Barradas Mendonça,DELICASA ,Camila Chagas,Startup,Tecnologia da Informação (TI),Construção de API,Prospecção Ativa,15300.0,,,,,,,,,2024-03-04 17:02:09,,,2024
+Renegociação,2024-02-01 12:04:28,Murilo Ferreira,Cohab-SP,Pedro de Lima Fernandes Costa,Empresa consolidada,Setor Público e Governo,"Concepção, Desenvolvimento Web",Ex cliente,,,,,,,,,,,,,2024
+Perdido,2024-02-01 18:16:04,Victor Souza Soares,Paurá Advocacia,Camila Chagas,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Renegociação,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-05 11:59:13,Ismael Prado,,Pedro de Lima Fernandes Costa,Empreendedor,Biotecnologia e Farmacêutica,"Concepção, Desenvolvimento Mobile",CIn,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-05 19:07:42,Giovanna Paula Oliveira de Lima,Monstack,Vinicius Zorrilla,Startup,Tecnologia da Informação (TI),,Prospecção Ativa,,,"Foi LEAD de prospecção e na reunião de diagnóstico Giovanna não foi e mandou funcionários, que fizeram um pitch para nós e não tinham nenhuma demanda conosco",,,,,,,,,,2024
+Renegociação,2024-02-07 16:46:16,João Hermans,Insight Blink,Camila Chagas,Startup,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Marketing,,,,,,,,,,,,,2024
+Perdido,2024-02-07 21:03:04,Fabricio Xavier Alves ,Intelus,Nayara VIthória Araújo de Sena,Startup,Telefonia e Telecomunicações,"Concepção, Desenvolvimento Web",Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-08 16:51:19,Nathanael Motta,GoTour,Hugo Guedes,Startup,Turismo e Hospitalidade,"Desenvolvimento Mobile, Desenvolvimento Web",Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-02-08 20:15:09,Elvis Vanderclei,,Pedro de Lima Fernandes Costa,Startup,Transporte e Logística,"Concepção, Desenvolvimento Mobile, Synergy",Marketing,,Não gostou da qualidade,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-08 20:16:33,Augusto Dantas,,Nayara VIthória Araújo de Sena,Startup,Tecnologia da Informação (TI),Synergy,Comunidade CITi,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-08 20:18:47,Matheus Lima,Monai,Hugo Guedes,Empreendedor,Alimentos e Bebidas,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Comunidade CITi,,,,,,,,,,,,,2024
+Perdido,2024-02-09 13:48:32,Alexandre La Espina,Licitei,Nayara VIthória Araújo de Sena,Startup,Setor Público e Governo,"Desenvolvimento Mobile, Desenvolvimento Web",Prospecção Ativa,,Prazo incompatível,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-16 19:59:40,Rafael Rocha,,Hugo Guedes,Empreendedor,Tecnologia da Informação (TI),Marketplace,Membre do CITi,,,"Após uma conversa com o lead e outra com Da Matta, cheguei à conclusão que não realizamos o que ele deseja: um app que está inserido no ramo de Livecommerce, mas que faz sobreposição em redes sociais e coleta informações dessas redes.
+",,,,,,,,,,2024
+Perdido,2024-02-16 21:02:30,Lúcio Telles,Plano Amigo,Nayara VIthória Araújo de Sena,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Mobile",Marketing,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-16 21:07:53,Alexander La Espina,Startup Licitei.,Nayara VIthória Araújo de Sena,Startup,Setor Público e Governo,"Desenvolvimento Mobile, Desenvolvimento Web",Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-19 18:09:13,Maria Angélica,Inoprev,Nayara VIthória Araújo de Sena,Startup,Biotecnologia e Farmacêutica,,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-02-19 19:10:26,João Vitor,P&R Proteção Industrial,Hugo Guedes,Startup,Saúde e Cuidados Médicos,"Concepção, Construção de API",Prospecção Ativa,,Não é o momento para a empresa,,,,,,,,,,,2024
+Renegociação,2024-02-26 18:15:24,Uilton de Sousa,LUMUS,Vinicius Zorrilla,Empresas Juniores,Energia e Sustentabilidade,Site institucional,Marketing,5000.0,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-26 18:19:03,Laura Ferraz,Anjos do poço,Vinicius Zorrilla,Empreendedor,Setor Pet,"Concepção, Desenvolvimento Web",CIn,,,,,,,,,,,,,2024
+Perdido,2024-02-29 18:11:00,Juliana Cordeiro Cardoso,3D Pharma,Hugo Guedes,Startup,Biotecnologia e Farmacêutica,,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-29 18:12:17,Guilherme Sanches,eNe,Hugo Guedes,Startup,Agricultura e Agroindústria,,Prospecção Ativa,,,"O lead informou que já tem uma equipe trabalhando na solução deles.
+",,,,,,,,,,2024
+Leads não-qualificados,2024-02-29 18:26:36,Allef Soares Fante ,M3DPET,Nayara VIthória Araújo de Sena,Startup,Setor Pet,Concepção,Prospecção Ativa,,,,,,,,,,,,,2024
+Ganho,2024-02-29 19:32:51,Fernando Augusto,Game Gift,Pedro de Lima Fernandes Costa,Startup,Entretenimento e Mídia,"Concepção, Desenvolvimento Web, Synergy",Prospecção Ativa,33150.0,,,,,,,,,2024-03-25 15:57:52,,,2024
+Leads não-qualificados,2024-02-29 19:41:00,Fábio Caixeta,Agrofave,Camila Chagas,Startup,Agricultura e Agroindústria,,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-29 19:42:56,Felipe Pereira de Almeida Cohen,URBANSEA,Nayara VIthória Araújo de Sena,Startup,Biotecnologia e Farmacêutica,Concepção,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-02-29 19:42:58,Maicon Brande,AQUi9,Camila Chagas,Startup,Agricultura e Agroindústria,,Prospecção Ativa,,,,,,,,,,,,,2024
+Ganho,2024-03-04 18:34:37,Marcilio Santos,Grupo de pesquisa Random,Hugo Guedes,Grupo de pesquisa,Construção e Engenharia,Site institucional,UFPE,1080.0,,,,,,,,,2024-04-01 18:13:55,,,2024
+Perdido,2024-03-07 18:05:30,Diandra Achre,Integra Soluções,Hugo Guedes,Startup,Biotecnologia e Farmacêutica,"Concepção, Desenvolvimento Web, Landing/One page, Site institucional",Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-03-07 18:57:41,Bruno Moraes Leão,Agrictech,Camila Chagas,Startup,Agricultura e Agroindústria,Site institucional,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-03-07 19:00:36,Jaqueline Maria,RV Saúde,Vinicius Zorrilla,Startup,Tecnologia da Informação (TI),,Prospecção Ativa,,,"Lead de prospecção, pediu para enviar cases e redes sociais no wpp, mas nuna mais respondeu nenhum fup",,,,,,,,,,2024
+Perdido,2024-03-07 19:26:06,Caroline Monteiro,AlphaD,Nayara VIthória Araújo de Sena,Startup,Educação e Ensino,Desenvolvimento Web,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-03-11 14:23:09,Juliana Helena A.C.E,A.C.E,Nayara VIthória Araújo de Sena,Empresas Juniores,Consultoria e Serviços Profissionais,Construção de API,Indicação MEJ,,,,,,,,,,,,,2024
+Perdido,2024-03-11 16:31:10,Laura Rocha,Produtiva JR,Camila Chagas,Empresas Juniores,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Indicação MEJ,,Sem Orçamento,,,,,,,,,,,2024
+Renegociação,2024-03-11 17:04:33,Antônio Albério,Phi Criativo,Vinicius Zorrilla,Startup,Tecnologia da Informação (TI),Concepção,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-03-11 17:21:32,Michelle Flores (Product Owner ),Fiquem Sabendo,Nayara VIthória Araújo de Sena,Empresa consolidada,Setor Público e Governo,"Desenvolvimento Web, Site institucional",Indicação MEJ,,,,,,,,,,,,,2024
+Ganho,2024-03-12 21:22:24,Rafael Chiarella,FCAP JR,Hugo Guedes,Empresas Juniores,Consultoria e Serviços Profissionais,"Desenvolvimento Web, Site institucional",Comunidade CITi,2400.0,,,,,,,,,2024-05-20 19:34:18,,,2024
+Perdido,2024-03-15 15:58:38,Severino Ayres,SindConferentesPE,Camila Chagas,Empresa consolidada,Transporte e Logística,Desenvolvimento Mobile,Comunidade CITi,26000.0,,,,,,,,,,,,2024
+Ganho,2024-03-15 16:01:47,Alessio Sandro de Oliveira Silva,Busca Por Emprego,Camila Chagas,Startup,Educação e Ensino,Desenvolvimento Web,Prospecção Ativa,28000.0,,,,,,,,,2024-07-23 19:43:19,,,2024
+Perdido,2024-03-18 17:48:04,Taylan Melo,AIka EMpresarial,Nayara VIthória Araújo de Sena,Empresa consolidada,Educação e Ensino,Construção de API,Marketing,19000.0,Não é o momento para a empresa,,,,,,,,,,,2024
+Renegociação,2024-03-21 16:24:43,Luciene,Reatto Ambiental ,Camila Chagas,Startup,Meio Ambiente e Sustentabilidade,"Concepção, Desenvolvimento Mobile",Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-03-22 19:36:23,João Hider,Epro Consultoria ,Hugo Guedes,Startup,Consultoria e Serviços Profissionais,Site institucional,Marketing,,,"O lead não informou com exatidão, mas eu suponho que tenha sido por questões financeiras.",,,,,,,,,,2024
+Leads não-qualificados,2024-03-25 12:47:27,Julianne Melo,Prospect JR,Camila Chagas,Empresas Juniores,Consultoria e Serviços Profissionais,Desenvolvimento Web,Indicação MEJ,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-03-25 16:06:08,Dalva ,Cuidar de si,Vinicius Zorrilla,Grupo de pesquisa,Educação e Ensino,"Concepção, Consultoria estratégica",UFPE,,,,,,,,,,,,,2024
+Perdido,2024-03-25 20:07:25,Maria Clara Jacobina Jorge,,Nayara VIthória Araújo de Sena,Empreendedor,Finanças e Serviços Financeiros,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Marketing,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-03-28 19:42:19,Estefania Monteiro,Afeto Natural ,Camila Chagas,Startup,Biotecnologia e Farmacêutica,"Concepção, Desenvolvimento Mobile, Ecommerce",Prospecção Ativa,,,,,,,,,,,,,2024
+Renegociação,2024-04-01 19:05:01,Numa,Computadores Fazem Arte,Nayara VIthória Araújo de Sena,Empreendedor,Moda e Design,Desenvolvimento Web,UFPE,,,,,,,,,,,,,2024
+Perdido,2024-04-01 20:02:02,Ellen Maia,,Nayara VIthória Araújo de Sena,Empresa consolidada,Consultoria e Serviços Profissionais,Desenvolvimento Web,Indicação de Ej,,,,,,,,,,,,,2024
+Perdido,2024-04-03 12:52:56,Ana Julia Karine,VegRosas,Hugo Guedes,Empreendedor,Alimentos e Bebidas,"Desenvolvimento Web, Ecommerce, Site institucional",Marketing,,Não é o momento para a empresa,,,,,,,,,,,2024
+Perdido,2024-04-03 14:01:02,Laura,Escritório Bevilaqua,Hugo Guedes,Empresas Juniores,Consultoria e Serviços Profissionais,Landing/One page,Indicação de Ej,1300.0,Perda para Concorrência,,,,,,,,,,,2024
+Perdido,2024-04-05 19:14:47,Pedro Leite,,Gabriel Ayres,Empreendedor,Esportes,Desenvolvimento Mobile,Marketing,,,,,,,,,,,,,2024
+Renegociação,2024-04-08 19:22:06,Ivan Coelho,Prainha ZN,"Mateus Guerra, Vinicius Zorrilla",Empresa consolidada,Esportes,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Porto Digital,,,,,,,,,,,,,2024
+Perdido,2024-04-15 17:45:42,Sophia Rocha,,Nayara VIthória Araújo de Sena,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Marketing,,Não é o momento para a empresa,,,,,,,,,,,2024
+Renegociação,2024-04-15 18:46:16,Paulo Lima,,Hugo Guedes,Empreendedor,Turismo e Hospitalidade,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Membre do CITi,,,,,,,,,,,,,2024
+Ganho,2024-04-22 16:35:44,Paulo Miranda (A volta dos que não foram),MyRoofs,Pedro de Lima Fernandes Costa,Empreendedor,Tecnologia da Informação (TI),"Desenvolvimento Mobile, Desenvolvimento Web",Ex cliente,50000.0,,,,,,,,,2024-05-10 13:33:55,,,2024
+Leads não-qualificados,2024-04-24 19:11:20,Antonio ,Arquitetura faz bem ,Vinicius Zorrilla,Empreendedor,Construção e Engenharia,Site institucional,Indicação MEJ,,,,,,,,,,,,,2024
+Perdido,2024-04-24 19:20:50,Bruno Viana,Professor de Direito da UPE,Vinicius Zorrilla,Grupo de pesquisa,Educação e Ensino,Site institucional,Indicação MEJ,,Perda para Concorrência,,,,,,,,,,,2024
+Leads não-qualificados,2024-04-29 18:54:32,Dyane Bruno,Gramaprint,Gabriel Ayres,Empresa consolidada,Varejo e Comércio Eletrônico,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",CIn,,,,,,,,,,,,,2024
+Perdido,2024-04-29 19:28:48,Felipe,Cultive-se ,Nayara VIthória Araújo de Sena,Empresa consolidada,Agricultura e Agroindústria,,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-04-29 19:52:20,Eduardo Inácio Alves,Bocaiuva Moda Inclusiva,Hugo Guedes,Startup,Moda e Design,"Concepção, Construção de API, Desenvolvimento Mobile, Desenvolvimento Web",Prospecção Ativa,,Não é o momento para a empresa,,,,,,,,,,,2024
+Diagnóstico,2024-04-29 20:24:05,Ivan Coelho,,Gabriel Ayres,Empreendedor,Turismo e Hospitalidade,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Ex cliente,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-05-02 17:20:34,Luiz Lima,SmartVet,Hugo Guedes,Startup,Saúde e Cuidados Médicos,,Prospecção Ativa,,,Falta de resposta do lead,,,,,,,,,,2024
+Perdido,2024-05-02 18:35:39,Fábio Abel,TAAS Consulting,Hugo Guedes,Empresa consolidada,Finanças e Serviços Financeiros,,Marketing,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-05-06 19:00:02,Fabrício,Kerow,Camila Chagas,Startup,Agricultura e Agroindústria,,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-05-06 19:00:50,Cid e Antero,,"Pedro de Lima Fernandes Costa, Vinicius Zorrilla",Empreendedor,Consultoria e Serviços Profissionais,Concepção,CIn,,Perda para Concorrência,,,,,,,,,,,2024
+Perdido,2024-05-07 12:04:29,Tiago Jubran,Ex diretor de projetos da Locus Luris,Nayara VIthória Araújo de Sena,Empreendedor,,,Indicação MEJ,,,,,,,,,,,,,2024
+Renegociação,2024-05-09 17:27:10,Gustavo Rocha,Nutricandies,Nayara VIthória Araújo de Sena,Startup,Alimentos e Bebidas,"Concepção, Construção de API, Desenvolvimento Web",Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-05-09 17:33:52,Dilson Tadashi Iamamoto,Amazon Rhiira,Nayara VIthória Araújo de Sena,Startup,Transporte e Logística,,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-05-13 12:55:46,Florence César,Cardume Propriedade Intelectual,Hugo Guedes,Empreendedor,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Ex cliente,,Sem Orçamento,A lead queria um projeto pro bono.,,,,,,,,,,2024
+Leads não-qualificados,2024-05-13 18:19:05,Samuel,Anakainosis,Camila Chagas,Startup,Meio Ambiente e Sustentabilidade,,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-05-13 18:20:09,Vandelma Couto,,Camila Chagas,Empreendedor,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Mobile",Prospecção Ativa,,Sem Orçamento,,,,,,,,,,,2024
+Perdido,2024-05-14 18:24:53,Luiz Felippe Lima,IT Solar,Vinicius Zorrilla,Empresa consolidada,Energia e Sustentabilidade,"Desenvolvimento Mobile, Desenvolvimento Web",Parcerias,,Prazo incompatível,,,,,,,,,,,2024
+Leads não-qualificados,2024-05-14 18:54:18,Weiky carniello,Creio LAB,Vinicius Zorrilla,Startup,Biotecnologia e Farmacêutica,,Prospecção Ativa,,,Nunca respondeu no wpp,,,,,,,,,,2024
+Renegociação,2024-05-20 15:16:14,Eduardo Ferreira,,Gabriel Ayres,Empresa consolidada,Saúde e Cuidados Médicos,Desenvolvimento Mobile,Indicação MEJ,,,,,,,,,,,,,2024
+Renegociação,2024-05-21 17:28:00,Orlando Chiarelli,Hair Service,Hugo Guedes,Startup,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Web",Prospecção Ativa,124400.0,,,,,,,,,,,,2024
+Leads não-qualificados,2024-05-27 12:47:39,Pedro Leite,Hospital de Ávila,Camila Chagas,Empresa consolidada,Saúde e Cuidados Médicos,Desenvolvimento Web,Marketing,,,,,,,,,,,,,2024
+Perdido,2024-05-27 15:09:16,Paulo M.,Try,Nayara VIthória Araújo de Sena,Empresa consolidada,Moda e Design,Desenvolvimento Mobile,Parcerias,,Perda para Concorrência,,,,,,,,,,,2024
+Leads não-qualificados,2024-05-27 15:17:35,Helder Razif (Alumni do CITI),,Nayara VIthória Araújo de Sena,Startup,Construção e Engenharia,"Concepção, Desenvolvimento Web",Comunidade CITi,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-05-28 19:10:37,Daniel Galdino,,Hugo Guedes,,,Desenvolvimento Mobile,Marketing,,,Ele não respondeu nem atendeu,,,,,,,,,,2024
+Perdido,2024-06-03 16:51:46,João Batista,CDC Tecnologia,Vinicius Zorrilla,Empreendedor,Educação e Ensino,Concepção,Eventos,,Sem Orçamento,,,,,,,,,,,2024
+Renegociação,2024-06-18 13:05:41,Paulo Bettega,Effix - Psiquiatria Integrada,Hugo Guedes,Empreendedor,Saúde e Cuidados Médicos,Desenvolvimento Web,Indicação de Ej,,,,,,,,,,,,,2024
+Ganho,2024-07-01 20:41:06,Hélio Batista,"Medeiros Batista, by Advocatus",Hugo Guedes,Empresa consolidada,Consultoria e Serviços Profissionais,Site institucional,CIn,2400.0,,,,,,,,,2024-08-06 17:39:53,,,2024
+Perdido,2024-07-02 12:59:00,Flavio,Kaspper,Igor Corrêa,Empresa consolidada,Tecnologia da Informação (TI),Synergy,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-07-02 16:34:35,Leonardo Bicalho,,Nayara VIthória Araújo de Sena,Empreendedor,,Desenvolvimento Web,Marketing,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-07-02 16:42:31,Médico de Gabriel,,Igor Corrêa,Empreendedor,Consultoria e Serviços Profissionais,Concepção,Parcerias,,,,,,,,,,,,,2024
+Renegociação,2024-07-09 19:22:21,Pierre Lucena e Gabi Alencar,Porto Digital,Igor Corrêa,Empresa consolidada,Tecnologia da Informação (TI),Concepção,Parcerias,40000.0,,,,,,,,,,,,2024
+Perdido,2024-07-10 19:18:54,Emanuel Estibado,Tunefans,Vinicius Zorrilla,Startup,Entretenimento e Mídia,Concepção,Marketing,,Perda para Concorrência,,,,,,,,,,,2024
+Negociação,2024-07-16 12:55:45,Jesus,Inova HC,Igor Corrêa,Empresa consolidada,Saúde e Cuidados Médicos,Desenvolvimento Mobile,CIn,,,,,,,,,,,,,2024
+Renegociação,2024-07-16 19:42:00,Júlia Belarmino,,Hugo Guedes,Empreendedor,Moda e Design,"Ecommerce, Site institucional",Membre do CITi,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-07-22 15:45:37,Adriana ,,Nayara VIthória Araújo de Sena,Empreendedor,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Web",,,,,,,,,,,,,,2024
+Ganho,2024-07-22 19:47:43,Eduardo Vasconcelos,,Nayara VIthória Araújo de Sena,Empreendedor,Educação e Ensino,Concepção,CIn,9000.0,,,,,,,,,2024-08-08 23:28:10,,,2024
+Leads não-qualificados,2024-07-23 18:53:25,Diego Mendonça,Rode Mais: Pneus e Rodas,Hugo Guedes,Empreendedor,Transporte e Logística,"Concepção, Desenvolvimento Mobile",Indicação MEJ,,,,,,,,,,,,,2024
+Ganho,2024-07-23 19:00:33,Lucas Franceschini,Global Cidadania Estrangeira,Camila Chagas,Empresa consolidada,Turismo e Hospitalidade,Concepção,Marketing,17500.0,,,,,,,,,2024-08-12 15:38:30,,,2024
+Leads não-qualificados,2024-07-23 19:02:55,Matteo Croccia,Jr Eng,Camila Chagas,Empresa consolidada,Turismo e Hospitalidade,"Construção de API, Desenvolvimento Web, Ecommerce",Indicação MEJ,,,,,,,,,,,,,2024
+Renegociação,2024-07-29 17:45:33,José Neto,Queiroz Cavalcante Advocacia,Mateus Guerra,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Comunidade CITi,36360.0,,,,,,,,,,,,2024
+Leads não-qualificados,2024-07-31 17:58:29,Leticia Costa,Com Afeto Mocinha ,Mateus Guerra,Empreendedor,Alimentos e Bebidas,,,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-07 18:06:48,Sidney Feijó,Prottus,Camila Chagas,Startup,Tecnologia da Informação (TI),,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-08 17:17:33,Júlia Cabral,,Nayara VIthória Araújo de Sena,,,,Marketing,,,,,,,,,,,,,2024
+Ganho,2024-08-08 19:35:47,Ana Paula,Financeiro Pro,Igor Corrêa,Startup,Finanças e Serviços Financeiros,"Squad as a Service, Synergy",CIn,14240.0,,,,,,,,,2024-09-04 19:43:04,,,2024
+Ganho,2024-08-08 19:56:08,Bruno,Mídia7,Igor Corrêa,Empresa consolidada,Setor Público e Governo,"Concepção, Desenvolvimento Web",Ex cliente,71500.0,,,,,,,,,2024-09-04 19:44:39,,,2024
+Renegociação,2024-08-09 20:36:44,Eric Franklin,Key Costumer ,Mateus Guerra,Empresa consolidada,Tecnologia da Informação (TI),,Prospecção Ativa,,,,,,,,,,,,,2024
+Negociação,2024-08-12 12:30:17,Allan Damasceno,Construção,Clara Tenório,Empresa consolidada,Construção e Engenharia,Ecommerce,Marketing,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-12 12:32:47,Rodrigo,go.orb,Clara Tenório,Empresa consolidada,Tecnologia da Informação (TI),,Prospecção Ativa,,,,,,,,,,,,,2024
+Diagnóstico,2024-08-12 15:48:16,Heverton,Supra7,Mateus Guerra,Empresa consolidada,Saúde e Cuidados Médicos,Desenvolvimento Mobile,Comunidade CITi,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-13 17:57:13,Rafael Ribeiro Talarico,Não temos essa informação,Hugo Guedes,Empreendedor,Moda e Design,Concepção,Marketing,,,"O lead informou que tem um prazo máximo de 1 ano, bem como um orçamento de até 50 mil reais. Tudo isso torna ele desqualificado.",,,,,,,,,,2024
+Renegociação,2024-08-13 18:44:16,Anderson Rios,Simplou,Hugo Guedes,Startup,Tecnologia da Informação (TI),Synergy,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-13 19:14:20,Rodrigo ,BS4 Tecnologia,Nayara VIthória Araújo de Sena,Empresa consolidada,Tecnologia da Informação (TI),Synergy,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-13 19:16:56,Rogério Pereira,VESTED,Hugo Guedes,Startup,Finanças e Serviços Financeiros,,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-13 19:17:04,Lead sem nome,,Nayara VIthória Araújo de Sena,,,,Prospecção Ativa,,,,,,,,,,,,,2024
+Perdido,2024-08-14 13:18:26,Tiago Nogueira,Viitra,Hugo Guedes,Empresa consolidada,Tecnologia da Informação (TI),,Prospecção Ativa,,Não é o momento para a empresa,,,,,,,,,,,2024
+Perdido,2024-08-14 17:48:35,Cleodon Fonseca,Cleodon Fônseca Advocacia,Mateus Guerra,Empreendedor,Consultoria e Serviços Profissionais,"Landing/One page, Site institucional",Indicação MEJ,,,,,,,,,,,,,2024
+Renegociação,2024-08-15 14:16:17,André Orrico,LM Mobilidade,Gabriel Ayres,Empresa consolidada,Transporte e Logística,Consultoria de Dados,Parcerias,45000.0,,,,,,,,,,,,2024
+Perdido,2024-08-15 17:49:10,Luana,Ferreira Costa,Igor Corrêa,Empresa consolidada,Varejo e Comércio Eletrônico,Synergy,Prospecção Ativa,45000.0,,,,,,,,,,,,2024
+Perdido,2024-08-19 13:14:28,Anne,Grupo de Pesquisa - UFPE,Camila Chagas,Grupo de pesquisa,Saúde e Cuidados Médicos,"Desenvolvimento Mobile, Desenvolvimento Web, Site institucional",CIn,3500.0,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-19 13:23:40,Raul,Jogga Digital,Camila Chagas,Empresa consolidada,Marketing e Publicidade,,Prospecção Ativa,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-08-22 18:04:00,Fabrício Dantas,Arcturo Tech,Mateus Guerra,Startup,Tecnologia da Informação (TI),Synergy,Prospecção Ativa,,,"Empresa chegou há poucos meses no mercado e tá buscando se fortalecer ainda, não viu tanta demanda em synergy atualmente, mas talvez num futuro",,,,,,,,,,2024
+Perdido,2024-08-26 16:28:47,Sophia Daltro ,empresa jr UFBA,Clara Tenório,Empresas Juniores,Consultoria e Serviços Profissionais,Desenvolvimento Web,Membre do CITi,2700.0,,,,,,,,,,,,2024
+Renegociação,2024-08-26 16:31:29,Ana Claudia,Tomus,Clara Tenório,Empresa consolidada,Tecnologia da Informação (TI),"Concepção, Site institucional",Membre do CITi,2700.0,,,,,,,,,,,,2024
+Negociação,2024-08-26 16:33:29,Ruan Andrade,ej unicap,Clara Tenório,Empresas Juniores,Consultoria e Serviços Profissionais,Site institucional,Membre do CITi,,,,,,,,,,,,,2024
+Perdido,2024-08-27 18:33:21,Abdo Vila Nova,Restaurante Castelus,Hugo Guedes,Empresa consolidada,Alimentos e Bebidas,"Concepção, Desenvolvimento Web",Comunidade CITi,71400.0,Prazo incompatível,,,,,,,,,,,2024
+Perdido,2024-09-05 19:17:48,Ítalo Rodrigo,Wi Consultoria,Hugo Guedes,Startup,Tecnologia da Informação (TI),Desenvolvimento Web,Prospecção Ativa,,Perda para Concorrência,,,,,,,,,,,2024
+Leads não-qualificados,2024-09-09 16:06:36,Reginaldo ,GTECPRO,Camila Chagas,,,,,,,,,,,,,,,,,2024
+Montagem de proposta,2024-09-10 14:22:45,Eduardo Barradas Mendonça,ThroRá,Camila Chagas,Startup,Alimentos e Bebidas,"Construção de API, Ecommerce, Landing/One page",Ex cliente,,,,,,,,,,,,,2024
+Renegociação,2024-09-10 17:37:45,Dara Cristovam,EJ Unicap ,Mateus Guerra,Empreendedor,Alimentos e Bebidas,Concepção,Indicação MEJ,25850.0,,,,,,,,,,,,2024
+Leads não-qualificados,2024-09-11 18:50:09,Vanessa Mendonça,,Camila Chagas,,,,Parcerias,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-09-12 01:35:11,Maicon Serrão Gavino, AgroScan,Vinicius Zorrilla,,Agricultura e Agroindústria,,Prospecção LinkedIn,,,,,,,,,,,,,2024
+Renegociação,2024-09-16 16:43:10,Fabio Acquati ,NGN Telecom,Camila Chagas,,,,Prospecção LinkedIn,,,,,,,,,,,,,2024
+Negociação,2024-09-18 18:02:45,Welson,CAS Tecnologia,Igor Corrêa,Empresa consolidada,Tecnologia da Informação (TI),"Desenvolvimento Mobile, Desenvolvimento Web",Ex cliente,,,,,,,,,,,,,2024
+Negociação,2024-09-20 19:28:50,Eduardo Vasconcelos (O Retorno),Academic Research,Vinicius Zorrilla,Empreendedor,Educação e Ensino,"Concepção, Desenvolvimento Web",Ex cliente,,,,,,,,,,,,,2024
+Montagem de proposta,2024-09-23 18:37:32,Luiza Melo,litpeg UFPE,Clara Tenório,Grupo de pesquisa,Educação e Ensino,Site institucional,CIn,,,,,,,,,,,,,2024
+Base de prospects,2024-09-23 18:40:35,Gabrielle Borges,Tarea,Hugo Guedes,Empresa consolidada,Tecnologia da Informação (TI),,Prospecção LinkedIn,,,,,,,,,,,,,2024
+Base de prospects,2024-09-25 14:08:00,Sandro Angélico,Qualidoc,Vinicius Zorrilla,,Saúde e Cuidados Médicos,Synergy,Prospecção LinkedIn,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-09-30 16:36:49,Gabriel Alderete,Luzone Group,Camila Chagas,,,,,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-09-30 17:20:49,Pedro Henrique Carvalho,Pro Gamers,Mateus Guerra,Startup,Entretenimento e Mídia,Synergy,Prospecção Ativa,,,,,,,,,,,,,2024
+Negociação,2024-09-30 17:36:34,Rafael Gusmão,RBG Consultoria,Camila Chagas,Empresa consolidada,Consultoria e Serviços Profissionais,"Concepção, Desenvolvimento Web",Indicação MEJ,,,,,,,,,,,,,2024
+Leads não-qualificados,2024-09-30 18:16:30,Maria Clara,UFABC JR,Clara Tenório,Empresas Juniores,,Synergy,,,,"Seria uma tercerização para o CITi, mas veio dizer que a empresa não tem o dinheiro para pagar pelo serviço.",,,,,,,,,,2024
+Diagnóstico,2024-10-01 17:37:38,Henrique Freitas,Moovolt,Vinicius Zorrilla,,,,Prospecção Ativa,,,,,,,,,,,,,2024
+Ganho,2024-10-04 18:04:20,Pedro Nunes,Grupo de pesquisa PPGBA,Camila Chagas,Grupo de pesquisa,Educação e Ensino,Site institucional,UFPE,,,,,,,,,,2024-10-21 16:33:40,,,2024
+Perdido,2024-10-07 17:03:16,Pâmmela,Moves,Camila Chagas,,,,,,,,,,,,,,,,,2024
+Renegociação,2024-10-10 18:04:45,Carlos Feledi,TECPEL,Hugo Guedes,Empresa consolidada,Transporte e Logística,"Squad as a Service, Synergy",Ex cliente,,,,,,,,,,,,,2024
+Montagem de proposta,2024-10-15 17:00:49,Rodrigo Moreda,HUB22,Mateus Guerra,Empreendedor,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Mobile",Ex cliente,,,,,,,,,,,,,2024
+Diagnóstico,2024-10-15 17:19:16,Ana Lemos,Primus Consultoria ,Mateus Guerra,Empresas Juniores,Consultoria e Serviços Profissionais,Site institucional,Indicação MEJ,,,,,,,,,,,,,2024
+Renegociação,2024-10-15 17:59:09,Jadson Medeiros,Derivax ,Mateus Guerra,Startup,,Synergy,Prospecção Ativa,,,,,,,,,,,,,2024
+Diagnóstico,2024-10-18 16:02:38,Samuelson,Smile Saúde,Vinicius Zorrilla,Empresa consolidada,Saúde e Cuidados Médicos,"Concepção, Desenvolvimento Mobile, Desenvolvimento Web",Marketing,,,,,,,,,,,,,2024
+Diagnóstico,2024-10-18 20:38:00,Neto Santana,Lightwall,Hugo Guedes,Empresa consolidada,Construção e Engenharia,"Consultoria de Dados, Synergy",Ex cliente,,,,,,,,,,,,,2024
+Renegociação,2024-10-18 21:07:21,Marcos Antonio de Souza e Silva,SSIG,Hugo Guedes,Startup,Tecnologia da Informação (TI),,Prospecção Ativa,,,,,,,,,,,,,2024
+Base de prospects,2024-10-18 21:49:54,André Orathes do Rego Barros,A0 Projetos,Hugo Guedes,Startup,Construção e Engenharia,,Prospecção Ativa,,,,,,,,,,,,,2024
