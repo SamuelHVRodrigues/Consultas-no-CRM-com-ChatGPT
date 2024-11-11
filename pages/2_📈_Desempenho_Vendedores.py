@@ -11,7 +11,7 @@ from utils import (
     definir_colunas_tempo
 )
 
-# Configurar a página para ter layout largo
+# Configurações globais da página, incluindo o título, ícone do CITi, layout largo e estado inicial da barra lateral
 st.set_page_config(layout="wide",
                    page_title="Desempenho Individual",
                    page_icon="assets/Logo.svg",
@@ -56,30 +56,32 @@ base = carregar_base()
 base_ganho = base[base['Fase atual'] == 'Ganho']
 
 
-# Verificar se algum valor em 'Vendedor' tem múltiplos nomes e dividir
+# Verificar se algum valor em 'Vendedor' tem mais de um vendedor (separados por vírgula)
 base['Vendedor'] = base['Vendedor'].str.split(', ')
 base = base.explode('Vendedor')  # Separar os vendedores em linhas individuais
 
-# **Manter apenas Nome e Sobrenome**
+# Manter apenas Nome e Sobrenome dos vendedores (separados por espaço)
 base['Vendedor'] = base['Vendedor'].apply(lambda x: ' '.join(x.split()[:2]))
 base_ganho['Vendedor'] = base_ganho['Vendedor'].apply(lambda x: ' '.join(x.split()[:2]))
 
-# Sidebar para seleção do ano
+# Sidebar para seleção do ano de acordo com as opções disponíveis 
 anos_disponiveis = sorted(base_ganho['Ano'].dropna().unique(), reverse=True)
 ano_selecionado = st.sidebar.radio("Selecione o ano:", anos_disponiveis)
 
-# Filtrar a base geral pelo ano selecionado
+# Filtrar a base geral pelo ano selecionado (só exibir informações daquele ano)
 base_filtrada = base[base['Ano'] == int(ano_selecionado)]
 # Filtrar base ganha pelo ano selecionado
 base_filtrada_ganho = base_ganho[base_ganho['Ano'] == int(ano_selecionado)]
 
 
-# Atualizar lista de vendedores com base no ano selecionado
-vendedores_disponiveis = sorted(base_filtrada['Vendedor'].dropna().unique())
+# Filtrar e ordenar os vendedores disponíveis
+vendedores_disponiveis = sorted(base_filtrada['Vendedor']. #filtra a base por vendedor e ordena alfabeticamente
+                                dropna(). # remove vendedores nulos
+                                unique()) # remove duplicatas de vendedores
 
 # Adicionar a opção 'Todos' como primeira escolha
 vendedores_disponiveis = ['Todos'] + vendedores_disponiveis
-# Sidebar para seleção do vendedor
+# Sidebar com selectbox para seleção do vendedor
 vendedor_selecionado = st.sidebar.selectbox("Selecione o vendedor:", list(vendedores_disponiveis))
 
 
@@ -94,13 +96,15 @@ total_vendas_ganhas = len(base_filtrada_ganho)
 taxa_conversao = calcular_taxa_conversao(base_filtrada)
 
 colunas_tempo = definir_colunas_tempo()
-# Cálculo do tempo médio de fechamento 
+# Criação de uma nova coluna com a quantidade de dias que o lead permaneceu no funil 
 base_filtrada_ganho['Quantidade de dias'] = (base_filtrada_ganho['Primeira vez que entrou na fase Ganho'] - base_filtrada_ganho['Criado em']).dt.days
+# Cálculo do tempo médio de fechamento a partir da coluna criada e da função 'mean'
 tempo_medio_fechamento = base_filtrada_ganho['Quantidade de dias'].mean()
 
+# Para quando o tempo médio de fechamento for zero
 tempo_medio_fechamento = tempo_medio_fechamento if tempo_medio_fechamento > 0 else 'Não consta'
 
-
+# Função para exibir o desempenho geral, ou seja, quando a opção 'Todos' é selecionada
 def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento):
 # Criar colunas para o título e gráficos
     col_title, col1, col2, col3 = st.columns([2.5, 1, 1, 1])
@@ -136,6 +140,7 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
     col4, col5 = st.columns(2)
 
     with col4:
+        # Criar uma selectbox para escolha da métrica
         st.selectbox("Defina a métrica", ['Quantidade', 'Faturamento'], key='metrica')        
         metrica = st.session_state['metrica']
 
@@ -166,16 +171,20 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
             alt.Chart(dados_metrica_vendedor).mark_bar(color='#3f9c81').encode(y=y_axis, x=x_axis)
             .properties(title=f"{metrica} por vendedor", width=400, height=400), 
             use_container_width=True)
+        
 
     with col5:
         # Gráfico da taxa de conversão por vendedor
+        # Agrupa os dados da base filtrada por vendedor e aplica a função de cálculo de taxa de conversão a cada grupo.
+        # Em seguida, reinicia o índice para transformar o índice 'Vendedor' em uma coluna.
         taxa_conversao_vendedores = base_filtrada.groupby('Vendedor').apply(calcular_taxa_conversao).reset_index()
+        # Renomear as colunas do df resultante para 'Vendedor' e 'Taxa de Conversão', facilitando a leitura dos dados.
         taxa_conversao_vendedores.columns = ['Vendedor', 'Taxa de Conversão']
         
        # Filtrar os vendedores com taxa de conversão maior que 0
         taxa_conversao_vendedores_filtrada = taxa_conversao_vendedores[taxa_conversao_vendedores['Taxa de Conversão'] > 0]
 
-        # Verificar se há dados para plotar
+        # Verificar se há dados para plotar e, caso tenha, exibir o gráfico
         if not taxa_conversao_vendedores_filtrada.empty:
             st.altair_chart(alt.Chart(taxa_conversao_vendedores_filtrada).mark_bar(color='#3f9c81').encode(
                 x=alt.X('Vendedor:N', title='', sort='-y', axis=alt.Axis(labelAngle=0)),  # Rótulos dos vendedores na horizontal
@@ -188,10 +197,12 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
             ).interactive()
             )
         else:
+            # Caso contrário, exibir uma mensagem de aviso
             st.info("Não há dados de taxa de conversão disponíveis para os vendedores selecionados.")
 
 
         # Gráfico de pizza com a quantidade de negociações em cada fase
+        # Filtrar as fases com mais de 0 negociações e exibir o gráfico
         if not base_filtrada.empty:
             # Criar o gráfico
             fig = px.pie(base_filtrada, names='Fase atual', title='Panorama de negociações por Fase', 
@@ -206,9 +217,10 @@ def todos_escolhidos(faturamento_total, total_vendas_ganhas, taxa_conversao, tem
                         ))
             st.plotly_chart(fig, use_container_width=True)
         else:
+            # Caso contrário, exibir uma mensagem de aviso
             st.info("Não há dados de negociações para exibir o gráfico.")
 
-
+# Função para exibir as métricas de um vendedor selecionado
 def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao, tempo_medio_fechamento):
     # Criar colunas para o título e as métricas
     col_title, col1, col2, col3 = st.columns([4, 1.5, 1, 1.5])
@@ -259,33 +271,38 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
         
         # Filtrar com base na situação selecionada
         base_filtrada_situacao = base_vendedor.copy()
+        # Caso a siuação seja 'Ativo', excluir registros onde a 'Fase atual' é 'Ganho', 'Perdido' ou 'Leads não-qualificados'
         if situacao == 'Ativo':
             base_filtrada_situacao = base_vendedor[~base_vendedor['Fase atual'].isin(['Ganho', 'Perdido', 'Leads não-qualificados'])]
         else:
             base_filtrada_situacao = base_vendedor  # Caso 'Geral', mantém todos os leads
 
-        # Empresas filtradas com base na situação escolhida (em subcol2), e tirar valores nan da lista
+        # Empresas filtradas com base na situação escolhida (em subcol2)
+        # Filtra a lista 'empresas_filtradas', removendo entradas que estão vazias (dropna) ou contêm apenas espaços em branco (!= '').
+        # Usa o método 'str.strip()' para remover espaços em branco antes de verificar se a entrada é uma string vazia.
         empresas_filtradas = base_filtrada_situacao['Empresa'].dropna()
         empresas_filtradas = empresas_filtradas[empresas_filtradas.str.strip() != '']
         
         with subcol2:
+            # Selecionar o lead caso exista uma empresa disponível para a situação selecionada
             if len(empresas_filtradas) > 0:
                 lead_selecionado = st.selectbox("Selecione o Lead", empresas_filtradas, key='lead')
             else:
+                # Exibir uma mensagem de aviso caso nenhuma empresa seja disponível para a situação selecionada
                 st.warning("Nenhuma empresa disponível para a situação selecionada.")
                 lead_selecionado = None  # Definir como None para evitar erros posteriores
         
         if lead_selecionado:
-            # Selecionar dados do lead escolhido
+            # Selecionar dados do lead selecionado, com base na coluna 'Empresa'
             lead_data = base_filtrada_situacao[base_filtrada_situacao['Empresa'] == lead_selecionado]
-            
+            # Se o conteúdo de 'lead_data' não estiver vazio
             if not lead_data.empty:
                 # Calcular o tempo total no funil somando as colunas de dias
                 lead_data['Criado em'] = pd.to_datetime(lead_data['Criado em'], errors='coerce')
                 lead_data['Quantidade de dias no Funil'] =(pd.Timestamp('now') - lead_data['Criado em']).dt.days
 
 
-            # Container com borda antao redor das colunas
+            # Container com borda ao redor das colunas
             with st.container(border=True):
 
                 # Subcolunas para dispor as informações do lead selecionado
@@ -333,19 +350,22 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                 st.warning("Dados do lead não encontrados.")
 
     with col5:
-        # Gráfico de indicador com a taxa de conversão do vendedor selecionado
+        # Agrupar a base de dados filtrada por vendedor e aplicar a função 'calcular_taxa_conversao' a cada grupo para calcular a taxa de conversão.
+        # Em seguida, reiniciar o índice para transformar 'Vendedor' em uma coluna regular.
         taxa_conversao_vendedor = base_filtrada.groupby('Vendedor').apply(calcular_taxa_conversao).reset_index()
+        # Renomear as colunas do df resultante para 'Vendedor' e 'Taxa de Conversão', facilitando a interpretação dos dados.
         taxa_conversao_vendedor.columns = ['Vendedor', 'Taxa de Conversão']
         
         # Criando subcolunas para garantir a disposição correta do gráfico
         subcol1, subcol2, subcol3 = st.columns([1,2.5,1])
         with subcol2:
-        # Verificar se há dados para plotar o indicador
+        # Verificar se há dados para plotar o gráfico de indicador com a taxa de conversão do vendedor selecionado
             if not taxa_conversao_vendedor.empty:
                 # Extrair a taxa de conversão do vendedor selecionado
                 taxa_vendedor = taxa_conversao_vendedor[taxa_conversao_vendedor['Vendedor'] == vendedor_selecionado]['Taxa de Conversão'].values
                 taxa_vendedor = taxa_vendedor[0] if len(taxa_vendedor) > 0 else 0
 
+                # Criar o gráfico de indicador
                 fig = go.Figure(go.Indicator(
                     mode="gauge+number",
                     value=taxa_vendedor,
@@ -361,7 +381,7 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                     }
                 ))
 
-                # Ajustando o layout para definir width e height
+                # Ajustando o layout para definir melhor o width (largura) e height (altura)
                 fig.update_layout(
                     width=250,  # Largura do gráfico
                     height=200,  # Altura do gráfico
@@ -372,28 +392,32 @@ def vendedor_selecionados(faturamento_total, total_vendas_ganhas, taxa_conversao
                 st.plotly_chart(fig)
                 
             else:
+                # Caso nenhuma taxa de conversão seja encontrada, exibir uma mensagem de aviso
                 st.info("Não há dados de taxa de conversão disponíveis para o vendedor selecionado.")
 
-        # Placeholder para o título dinâmico 
+        # Criar um placeholder vazio na interface Streamlit, permitindo que um título seja inserido ou atualizado posteriormente. 
+        # Isso permite que o título seja atualizado dinamicamente com base na seleção do selectbox.
         title_placeholder = st.empty()  
 
        # Colunas para o gráfico e o selectbox
         subcol1, subcol2 = st.columns([0.95,2])
 
         with subcol1:
+            # Selectbox para escolha da categoria
             categoria = st.selectbox("Selecione a Categoria", ['Origem', 'Setor', 'Serviço', 'Perfil de cliente'], key='categoria')
-            # Filtrar para garantir que apenas valores de texto (strings) sejam considerados
+            # Filtrar a base de dados para manter apenas os registros em que a coluna especificada por 'categoria' contém valores do tipo string e que não são compostos apenas por dígitos.
+            # Usar 'apply' com uma função lambda que verifica se o valor é uma string e não é numérico.
             base_filtrada_categoria = base_filtrada[base_filtrada[categoria].apply(lambda x: isinstance(x, str) and not x.isdigit())]
         
             # Contando quantas vezes cada valor da categoria aparece
             categoria_count = base_filtrada_categoria[categoria].value_counts().reset_index()
             categoria_count.columns = [categoria, 'Quantidade']
 
-            # Atualiza o título dinamicamente baseado na seleção do selectbox 
+            # Atualiza o placeholder 'title_placeholder' (que foi criado anteriormente, mas estava vazio) para exibir um título de acordo com a categoria selecionada 
             title_placeholder.markdown(f"#### Análise dos leads por {categoria}")
 
         with subcol2:     
-            # Criando o gráfico de pizza com base na contagem
+            # Criando o gráfico de pizza se 'categoria_count' não estiver vazio
             if not categoria_count.empty:
                 fig_categoria = px.pie(categoria_count, names=categoria, values='Quantidade',
                                         color_discrete_sequence=px.colors.sequential.Blugrn_r, width=510, height=320)

@@ -44,12 +44,13 @@ base = carregar_base()
 # Filtrar somente vendas ganhas
 base_ganho = base[base['Fase atual'] == 'Ganho']
 
-# Filtro de ano
+# Filtro de ano, e adição da opção 'Tudo' que engloba todos os anos
 anos_disponiveis = sorted(base_ganho['Ano'].dropna().unique(), reverse=True)
 anos_disponiveis.append('Tudo')
+# Adição do selectbox, com os anos contidos na base e a opção 'Tudo'
 ano_selecionado = st.sidebar.selectbox("Selecione o ano:", anos_disponiveis)
 
-# Filtrar base de acordo com o ano selecionado
+# Filtrar base de acordo com o ano selecionado no selectbox
 if ano_selecionado != 'Tudo':
     base_filtrada = base_ganho[base_ganho['Ano'] == int(ano_selecionado)]
 else:
