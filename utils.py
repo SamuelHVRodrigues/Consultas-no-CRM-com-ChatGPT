@@ -1,21 +1,31 @@
 import pandas as pd
 import streamlit as st
 import altair as alt
+import os
+import os
+import os
 
 import gspread
+from dotenv import load_dotenv
 from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 
+load_dotenv()
+SheetsID = os.getenv("SHEETS_ID")
+
+
 def carregar_base():
+    # Acessa as variáveis de ambiente
     credentials = st.secrets["google_service_account"]
 
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
     client = gspread.authorize(creds)
     
-    # Insira o ID da planilha diretamente para testar
-    SheetsID = st.secrets['SHEETS_ID']
+
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope) # Verificar 'os.path.join(os.getcwd()' para puxar as credenciais
+    client = gspread.authorize(creds)
     
     # Abre a planilha
     sheet = client.open_by_key(SheetsID)

@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import requests
 import json
+import streamlit as st
 from io import BytesIO
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -17,6 +18,7 @@ def get_data():
     mytoken = os.getenv('PIPEFY_TOKEN')
     PipeID = os.getenv('PIPE_ID')
     PipeReportID = os.getenv('PIPE_REPORT_ID')
+    print(f"Obtendo dados para Pipe ID: {PipeID}, Report ID: {PipeReportID}")
 
     url = "https://api.pipefy.com/graphql"
     headers = {
@@ -47,6 +49,8 @@ def get_data():
     if 'data' not in response_json:
         print("Resposta inesperada da API:", response_json)
         return None
+    
+   
 
     export_id = response_json['data']['exportPipeReport']['pipeReportExport']['id']
     
@@ -107,9 +111,8 @@ def get_data():
         return None
 
 def get_data_gsheet():
-    credentials_str = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
-    credentials = json.loads(credentials_str)
-    
+    credentials = st.secrets["google_service_account"]
+
     # Acessa as variáveis de ambiente
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
@@ -117,7 +120,8 @@ def get_data_gsheet():
     SheetsID = os.getenv('SHEETS_ID')
     # Abre a planilha
     sheet = client.open_by_key(SheetsID)
-    worksheet = sheet.worksheet('Base23')
+    worksheet = sheet.worksheet('Base24e23')
+    
 
     # Lê os dados
     data = worksheet.get_all_values()
@@ -201,10 +205,10 @@ def type_fix(relatorio):
 
 def treat_data(relatorio):
     # Trata os dados
-    base23 = get_data_gsheet()
+    base24e23 = get_data_gsheet()
     relatorio = reorganize_columns(relatorio)
     relatorio = type_fix(relatorio)
-    base_completa = pd.concat([relatorio, base23])
+    base_completa = pd.concat([relatorio, base24e23])
     # Converter 'Criado em' para datetime e Ordenar por data
     base_completa['Criado em'] = pd.to_datetime(base_completa['Criado em'], errors='coerce', dayfirst=True)
     base_completa = base_completa.sort_values(by='Criado em')
@@ -221,14 +225,14 @@ def UploadDataToGSheet(df):
             return
 
         # Converte objetos Timestamp para string
-        df = df.applymap(lambda x: x.strftime('%Y-%m-%d %H:%M:%S') if isinstance(x, pd.Timestamp) else x)
+        df = df.apply(lambda col: col.map(lambda x: x.strftime('%Y-%m-%d %H:%M:%S') if isinstance(x, pd.Timestamp) else x))
 
-        credentials_json = os.getenv('GOOGLE_SHEETS_CREDENTIALS')
-        credentials_dict = json.loads(credentials_json)
 
+        credentials = st.secrets["google_service_account"]
+        
         # Acessa as variáveis de ambiente
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-        creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials, scope)
         client = gspread.authorize(creds)
         
         SheetsID = os.getenv('SHEETS_ID')
